@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KfksScore.Interfaces;
+using KfksScore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,29 +12,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace KfksScore
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ESBoard.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ESBoard : Window
     {
-        public MainWindow()
+        IESBoard board = new Board ();
+        public ESBoard()
         {
             InitializeComponent();
+            this.Owner = App.Current.MainWindow;
+
+            FillBoard();
+
+            this.DataContext = board;
         }
-
-        private void ESBoard_Button_Click(object sender, RoutedEventArgs e)
+        private void FillBoard()
         {
-            var eSBoard = new ESBoard();
 
-            if (eSBoard.ShowDialog().Equals(true))
-            {
-               
-            }
         }
     }
 }

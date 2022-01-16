@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="КФКС Программа ведения счёта участников соревнования" Height="450" Width="800">
     <Grid>
+        <Button Content="Электронное табло" HorizontalAlignment="Left" Margin="325,321,0,0" VerticalAlignment="Top" Width="128" Click="ESBoard_Button_Click"/>
 
     </Grid>
 </Window>
