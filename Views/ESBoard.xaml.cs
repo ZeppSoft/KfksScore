@@ -21,11 +21,14 @@ namespace KfksScore
     /// </summary>
     public partial class ESBoard : Window
     {
-        IESBoard board = new Board ();
+        public IESBoard board { get; set; }
         public ESBoard()
         {
             InitializeComponent();
             this.Owner = App.Current.MainWindow;
+
+            board = new Board();
+
 
             FillBoard();
 
