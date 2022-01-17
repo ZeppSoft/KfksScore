@@ -21,22 +21,22 @@ namespace KfksScore
     /// </summary>
     public partial class ESBoard : Window
     {
-        public IESBoard board { get; set; }
-        public ESBoard()
+        public IESBoard Board { get; set; }
+        public ESBoard(IESBoard board)
         {
             InitializeComponent();
             this.Owner = App.Current.MainWindow;
 
-            board = new Board();
+            //Board = new Board();
 
 
-            FillBoard();
+            FillBoard(board);
 
-            this.DataContext = board;
+            this.DataContext = Board;
         }
-        private void FillBoard()
+        private void FillBoard(IESBoard board)
         {
-
+            Board = board;
         }
     }
 }
