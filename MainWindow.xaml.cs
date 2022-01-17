@@ -30,7 +30,7 @@ namespace KfksScore
            // eSBoard.Board = Board;
         }
 
-        //private ESBoard eSBoard = new ESBoard();
+        private ESBoard eSBoard;
         public IESBoard Board { get; set; } = new Board();
         //public IESBoard Board { get; set; }
         public string CompetitionName { get { return Board.CompetitionName; } set { Board.CompetitionName = value; } }
@@ -40,11 +40,11 @@ namespace KfksScore
 
         private void ESBoard_Button_Click(object sender, RoutedEventArgs e)
         {
-            var eSBoard = new ESBoard(Board);
-            //eSBoard.Board = Board;
-
-
-            eSBoard.Show();
+            if (eSBoard == null)
+            {
+                eSBoard = new ESBoard(Board);
+                eSBoard.Show();
+            }
 
             //if (eSBoard.ShowDialog().Equals(true))
             //{
