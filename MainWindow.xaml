@@ -3,18 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:CustomControls="clr-namespace:KfksScore.Controls"
         mc:Ignorable="d"
         Title="КФКС Программа ведения счёта участников соревнования" Height="450" Width="800">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="780" Margin="0,0,0,342">
-            <!--<TextBox x:Name="competitionName" TextWrapping="Wrap" Text="{Binding CompetitionName, Mode=TwoWay}" Width="492"/>-->
             <TextBox x:Name="competitionName" TextWrapping="Wrap" Text="{Binding CompetitionName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="492"/>
             <StackPanel Orientation="Horizontal">
                 <CheckBox x:Name="Tatami" Content="татами"  Width="84"/>
                 <RadioButton x:Name="SexM" Content="Муж." Width="148"/>
                 <RadioButton x:Name="SexF" Content="Жен." RenderTransformOrigin="1.297,0.474"/>
                 <CheckBox x:Name="Veterans" Content="Ветераны"/>
-            </StackPanel>   
+
+                <CustomControls:NumericUpDown x:Name="NumericUpDownControl"
+                                      Margin="20"
+                                      DecimalPlaces="2"
+                                      MaxValue="10000"
+                                      MinValue="0" />
+            </StackPanel>
         </StackPanel>
         <Button Content="Электронное табло" HorizontalAlignment="Left" Margin="325,321,0,0" VerticalAlignment="Top" Width="128" Click="ESBoard_Button_Click"/>
 
