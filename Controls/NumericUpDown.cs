@@ -35,8 +35,11 @@ namespace KfksScore.Controls
         {
             var control = (NumericUpDown)element;
 
-            control.TextBox.UndoLimit = 0;
-            control.TextBox.UndoLimit = 1;
+            if (control?.TextBox != null)
+            {
+                control.TextBox.UndoLimit = 0;
+                control.TextBox.UndoLimit = 1;
+            }
         }
 
         private static object CoerceValue(DependencyObject element, object baseValue)
@@ -519,7 +522,7 @@ namespace KfksScore.Controls
         {
             base.OnApplyTemplate();
 
-            var textBox = GetTemplateChild("PART_TextBox");// as TextBox;
+            var textBox = GetTemplateChild("PART_TextBox") as TextBox;
 
             AttachToVisualTree();
             AttachCommands();

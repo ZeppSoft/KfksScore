@@ -7,22 +7,83 @@
         mc:Ignorable="d"
         Title="КФКС Программа ведения счёта участников соревнования" Height="450" Width="800">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="780" Margin="0,0,0,342">
-            <TextBox x:Name="competitionName" TextWrapping="Wrap" Text="{Binding CompetitionName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="492"/>
-            <StackPanel Orientation="Horizontal">
-                <CheckBox x:Name="Tatami" Content="татами"  Width="84"/>
-                <RadioButton x:Name="SexM" Content="Муж." Width="148"/>
-                <RadioButton x:Name="SexF" Content="Жен." RenderTransformOrigin="1.297,0.474"/>
-                <CheckBox x:Name="Veterans" Content="Ветераны"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Vertical"  >
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <CustomControls:NumericUpDown x:Name="TatamiLeftValue"
+                                      DecimalPlaces="0"
+                                      MaxValue="10000"
+                                      MinValue="0" 
+                                              Width="60"
+                                              HorizontalAlignment="Left"
+                                              Margin="10,0,0,0"
+                                              Value="{Binding TatamiLeftValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                <CustomControls:NumericUpDown x:Name="NumericUpDownControl"
+                <TextBox x:Name="competitionName" TextWrapping="Wrap" Text="{Binding CompetitionName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="630" Margin="10,0,10,0" Height="20"/>
+                <CustomControls:NumericUpDown x:Name="TatamiRightValue"
+                                      DecimalPlaces="0"
+                                      MaxValue="10000"
+                                      MinValue="0" 
+                                              Width="60"
+                                              Value="{Binding TatamiRightValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="0,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="TatamiLeft" Content="татами"  Width="84" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                <RadioButton x:Name="SexM" Content="Муж." Width="48" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <RadioButton x:Name="SexF" Content="Жен." Width="48" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <CheckBox x:Name="Veterans" Content="Ветераны" Width="81" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <!--<CustomControls:NumericUpDown x:Name="AgeFrom"
+                                      DecimalPlaces="0"
+                                      MaxValue="18"
+                                      MinValue="0" 
+                                              Width="60"
+                                              Value="{Binding AgeFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                              VerticalAlignment="Center" />-->
+
+                <CustomControls:NumericUpDown x:Name="AgeFrom"
+                                      DecimalPlaces="0"
+                                      MaxValue="18"
+                                      MinValue="1" 
+                                              Width="60"
+                                              Value="{Binding AgeFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                              VerticalAlignment="Center" />
+                <Label   Content="лет" FontSize="14"  Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <CustomControls:NumericUpDown x:Name="AgeTo"
+                                      DecimalPlaces="0"
+                                      MaxValue="18"
+                                      MinValue="1" 
+                                              Width="60"
+                                               Value="{Binding AgeTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                              VerticalAlignment="Center" />
+
+                <RadioButton x:Name="WeightAbove" Content="Св." Width="48" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <RadioButton x:Name="WeightTo" Content="До." Width="48" Margin="-5,0,0,0" VerticalAlignment="Center"/>
+                <CustomControls:NumericUpDown x:Name="Weight"
+                                      DecimalPlaces="1"
+                                      MaxValue="150"
+                                      MinValue="1" 
+                                              Width="60"
+                                               Value="{Binding Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                              VerticalAlignment="Center" />
+                <Label   Content="кг" FontSize="14"  Margin="-5,0,0,0" VerticalAlignment="Center"/>
+                <CheckBox x:Name="TatamiRight" Content="татами"  Width="86" Margin="80,0,0,0" VerticalAlignment="Center"/>
+
+
+
+                    <!--<CustomControls:NumericUpDown x:Name="NumericUpDownControl"
                                       Margin="20"
                                       DecimalPlaces="2"
                                       MaxValue="10000"
-                                      MinValue="0" />
+                                      MinValue="0" />-->
             </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label   Content="Основное время" FontSize="14"  Margin="300,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </StackPanel>
+
         </StackPanel>
-        <Button Content="Электронное табло" HorizontalAlignment="Left" Margin="325,321,0,0" VerticalAlignment="Top" Width="128" Click="ESBoard_Button_Click"/>
+        <!--<StackPanel Orientation="Horizontal">-->
+        <Button Content="Электронное табло" HorizontalAlignment="Left" Margin="325,321,0,0" VerticalAlignment="Top" Width="128" Click="ESBoard_Button_Click" RenderTransformOrigin="0.547,-4.106"/>
+        <!--</StackPanel>-->
 
     </Grid>
 </Window>
