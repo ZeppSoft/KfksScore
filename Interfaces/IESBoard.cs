@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KfksScore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace KfksScore.Interfaces
          string CompetitionCategory { get; set; }
          string CompetitionTime { get; set; }
          string CompetitionScore { get; set; }
+        // Timer Timer { get; set; }
     }
 }

@@ -11,10 +11,11 @@
         <Label Content="Категория" HorizontalAlignment="Left" Margin="50,61,0,0" VerticalAlignment="Top" Width="74" Name="competitionCategoryLabel"/>
         <Label Content="Основное время" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="108" Name="competitionTimeLabel"/>
         <Label Content="Счёт" HorizontalAlignment="Left" Margin="50,141,0,0" VerticalAlignment="Top" Width="37" Name="competitionScoreLabel"/>
-        <TextBlock HorizontalAlignment="Left" Margin="219,31,0,0" TextWrapping="Wrap" Text="{Binding CompetitionName, Mode=TwoWay}" VerticalAlignment="Top" Width="181" Name="competitionNameText"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,31,0,0" TextWrapping="Wrap" Text="{Binding Board.CompetitionName, Mode=TwoWay}" VerticalAlignment="Top" Width="181" Name="competitionNameText"/>
         <TextBlock HorizontalAlignment="Left" Margin="219,66,0,0" TextWrapping="Wrap" Text="{Binding CompetitionCategory, Mode=TwoWay}" VerticalAlignment="Top" Width="181" Name="competitionCategoryText"/>
         <TextBlock HorizontalAlignment="Left" Margin="219,105,0,0" TextWrapping="Wrap" Text="{Binding CompetitionTime, Mode=TwoWay}"  VerticalAlignment="Top" Width="181" Name="competitionTimeText"/>
         <TextBlock HorizontalAlignment="Left" Margin="219,138,0,0" TextWrapping="Wrap" Text="{Binding CompetitionScore, Mode=TwoWay}"  VerticalAlignment="Top" Width="181" Name="competitionScoreText"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,138,0,0" TextWrapping="Wrap" Text="{Binding Timer.TimeElapsed, Mode=TwoWay}"  VerticalAlignment="Top" Width="181" Name="competitionTimerText"/>
 
     </Grid>
 </Window>

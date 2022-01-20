@@ -45,6 +45,8 @@ namespace KfksScore.Models
             get { return _сompetitionScore; }
             set { _сompetitionScore = value; OnPropertyChanged("CompetitionScore"); }
         }
+
+       // public Timer Timer { get; set; } = new Timer();
         #endregion
 
         #region INotifyPropertyChanged
