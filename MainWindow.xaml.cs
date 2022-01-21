@@ -61,19 +61,16 @@ namespace KfksScore
 
         private void TimerStart_Click(object sender, RoutedEventArgs e)
         {
-            Timer.StartTimer();
-            //if (eSBoard != null && Board.Timer != null)
-            //{
-            //    Board.Timer.StartTimer();
-            //}
+            //Timer?.StartTimer();
+            Timer?.StartTimerNew();
+
+
         }
 
         private void TimerStop_Click(object sender, RoutedEventArgs e)
         {
-            //if (eSBoard != null && Board.Timer != null)
-            //{
-            //    Board.Timer.St();
-            //}
+            Timer?.StopTimer();
+           //Timer?.PauseStart();
         }
     }
 }
