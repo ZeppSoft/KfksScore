@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <PackageReference Include="DevExpress.WindowsDesktop.Wpf" Version="20.2.10" />
-    <PackageReference Include="devexpress.wpf.charts" Version="21.2.4" />
   </ItemGroup>
 
 </Project>
