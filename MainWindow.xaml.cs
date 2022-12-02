@@ -33,6 +33,8 @@ namespace KfksScore
             this.DataContext = this;
             IsTatamiVisible = false;
             TatamiValue = 1;
+            CompetitorLeftScore = 0;
+            CompetitorRightScore = 0;
 
             // eSBoard.Board = Board;
         }
@@ -64,6 +66,21 @@ namespace KfksScore
         {
             get { return _isTatamiVisible; }
             set { _isTatamiVisible = value; OnPropertyChanged("IsTatamiVisible"); }
+        }
+
+
+        private int _competitorLeftScore;
+        public int CompetitorLeftScore
+        {
+            get { return _competitorLeftScore; }
+            set { _competitorLeftScore = value; OnPropertyChanged("CompetitorLeftScore"); }
+        }
+
+        private int _competitorRightScore;
+        public int CompetitorRightScore
+        {
+            get { return _competitorRightScore; }
+            set { _competitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
         }
 
         #endregion

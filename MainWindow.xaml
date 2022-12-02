@@ -107,23 +107,72 @@
                     <TextBlock x:Name="competitionTimer"  Margin="430,0,0,0" TextWrapping="Wrap" Text="{Binding Timer.TimeElapsed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Arial" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
                 </StackPanel>
             </StackPanel>
-            <!--<StackPanel Orientation="Horizontal">
-                <TextBlock x:Name="competitionTimer" TextWrapping="Wrap" Text="{Binding Timer.TimeElapsed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Arial" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
-                -->
-            <!--<CustomControls:CountTimer x:Name="T"/>-->
-            <!--
-            </StackPanel>-->
-            <!--<StackPanel Orientation="Horizontal">
-                <dxe:SpinEdit Value="8" Increment="0.5" MinValue="0" MaxValue="10" AllowSpinOnMouseWheel="False" />
-            </StackPanel>-->
-            <!--<dxe:TimePicker/>-->
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Ожидание спортсмена" Width="440" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Ожидание спортсмена" Width="430"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="competitorLeftName" TextWrapping="Wrap" Text="{Binding CompetitorLeftName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="440" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="competitorRightName" TextWrapping="Wrap" Text="{Binding CompetitorRightName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="430" Margin="0,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="competitorLeftScore"   Text="{Binding CompetitorLeftScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="Red" Width="440" Margin="10,0,0,0">
+                        <TextBlock.Background>
+                            <SolidColorBrush Color="LightGray" />
+                        </TextBlock.Background>
+                    </TextBlock>
+                               
+                               
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="competitorRightScore"   Text="{Binding CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="DarkBlue" Width="430" Margin="0,0,0,0">
+                        <TextBlock.Background>
+                            <SolidColorBrush Color="DarkGray" />
+                        </TextBlock.Background>
+                    </TextBlock>
+                    
+                </StackPanel>
+
+                <!--<StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="competitorRightScore" TextWrapping="Wrap" Text="{Binding CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Width="430" Margin="0,0,0,0"/>
+                </StackPanel>-->
+            </StackPanel>
+
 
         </StackPanel>
 
+
+        <!--<GroupBox Header="GroupBox Sample" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock>First name:</TextBlock>
+                <TextBox />
+                <TextBlock>Last name:</TextBlock>
+                <TextBox />
+                <Button Margin="0,20">Add User</Button>
+            </StackPanel>
+        </GroupBox>-->
+
+
+
         <!--<StackPanel Orientation="Horizontal">-->
-        <Button Content="Электронное табло" HorizontalAlignment="Left" Margin="325,321,0,0" VerticalAlignment="Top" Width="128" Click="ESBoard_Button_Click" RenderTransformOrigin="0.547,-4.106"/>
+        <!--<Button Content="Электронное табло" HorizontalAlignment="Left" Margin="325,321,0,0" VerticalAlignment="Top" Width="128" Click="ESBoard_Button_Click" RenderTransformOrigin="0.547,-4.106"/>
         <Button Content="Старт таймера" HorizontalAlignment="Left" Margin="352,280,0,0" VerticalAlignment="Top" Click="TimerStart_Click"/>
-        <Button Content="Стоп таймера" HorizontalAlignment="Left" Margin="200,280,0,0" VerticalAlignment="Top" Click="TimerStop_Click"/>
+        <Button Content="Стоп таймера" HorizontalAlignment="Left" Margin="200,280,0,0" VerticalAlignment="Top" Click="TimerStop_Click"/>-->
 
         <!--</StackPanel>-->
 
