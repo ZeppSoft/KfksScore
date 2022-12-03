@@ -13,19 +13,17 @@ namespace KfksScore.Models
     {
         public Board()
         {
-            CompetitionName = "Зимове змагання КФКС";
-            CompetitionCategory = "Хлопчики 10-11 років вагою до 42кг";
-            //CompetitionTime = "Основное время";
-            //CompetitionScore = "Счёт";
+            //CompetitionName = "Зимове змагання КФКС";
+            //CompetitionCategory = "Хлопчики 10-11 років вагою до 42кг";
 
-            DisplayWidth = ((int)System.Windows.SystemParameters.PrimaryScreenWidth / 2) - 100;
-            DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 250;
+            //DisplayWidth = ((int)System.Windows.SystemParameters.PrimaryScreenWidth / 2) - 100;
+            //DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 250;
 
-            CompetitorLeftScore = 1;
-            CompetitorRightScore = 2;
+            //CompetitorLeftScore = 1;
+            //CompetitorRightScore = 2;
 
-            CompetitorLeftName = "Петренко Петро";
-            CompetitorRightName = "Васильченко Василь";
+            //CompetitorLeftName = "Петренко Петро";
+            //CompetitorRightName = "Васильченко Василь";
 
         }
         #region IESBoard

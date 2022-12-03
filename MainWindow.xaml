@@ -100,11 +100,12 @@
 
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <Label   Content="Загальний час" FontSize="14"  Margin="400,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock   Text="Загальний час" FontSize="14"  Margin="400,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock x:Name="competitionTimer"  Margin="430,0,0,0" TextWrapping="Wrap" Text="{Binding Timer.TimeElapsed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Arial" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <!--<TextBlock x:Name="competitionTimer"  Margin="430,0,0,0" TextWrapping="Wrap" Text="{Binding Time, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Arial" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold" TextAlignment="Center"/>-->
                 </StackPanel>
             </StackPanel>
 

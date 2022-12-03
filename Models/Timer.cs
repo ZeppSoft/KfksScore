@@ -13,7 +13,7 @@ namespace KfksScore.Models
 {
     public class Timer : INotifyPropertyChanged
     {
-        public string TimeElapsed { get; set; } 
+        public string TimeElapsed { get; set; } = "00:00";
 
         private DispatcherTimer timer;
         private Stopwatch stopWatch;

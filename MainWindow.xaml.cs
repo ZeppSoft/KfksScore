@@ -35,6 +35,14 @@ namespace KfksScore
             TatamiValue = 1;
             CompetitorLeftScore = 0;
             CompetitorRightScore = 0;
+            CompetitionName = "Зимове змагання КФКС";
+            CompetitionCategory = "Хлопчики 10-11 років вагою до 42кг";
+
+
+            DisplayWidth = ((int)System.Windows.SystemParameters.PrimaryScreenWidth / 2) - 100;
+            DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 250;
+            CompetitorLeftName = "Петренко Петро";
+            CompetitorRightName = "Васильченко Василь";
 
             // eSBoard.Board = Board;
         }
@@ -52,7 +60,20 @@ namespace KfksScore
         public string CompetitionScore { get { return Board.CompetitionScore; } set { Board.CompetitionScore = value; } }
         //public string TimeElapsed { get { return Timer.TimeElapsed; } set { Timer.TimeElapsed = value; } }
 
-        
+
+        public string Time
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(Timer.TimeElapsed))
+                {
+                    return "00:00";
+                }
+                
+                return Timer.TimeElapsed;
+            }
+        }
+
 
         private decimal _tatamiValue;
         public decimal TatamiValue
@@ -69,19 +90,57 @@ namespace KfksScore
         }
 
 
-        private int _competitorLeftScore;
-        public int CompetitorLeftScore
+
+        public int DisplayWidth
         {
-            get { return _competitorLeftScore; }
-            set { _competitorLeftScore = value; OnPropertyChanged("CompetitorLeftScore"); }
+            get { return Board.DisplayWidth; }
+            set { Board.DisplayWidth = value; OnPropertyChanged("DisplayWidth"); }
         }
 
-        private int _competitorRightScore;
+        public int DisplayHeight
+        {
+            get { return Board.DisplayHeight; }
+            set { Board.DisplayHeight = value; OnPropertyChanged("DisplayHeight"); }
+        }
+
+        public string CompetitorLeftName
+        {
+            get { return Board.CompetitorLeftName; }
+            set { Board.CompetitorLeftName = value; OnPropertyChanged("CompetitorLeftName"); }
+        }
+
+        public string CompetitorRightName
+        {
+            get { return Board.CompetitorRightName; }
+            set { Board.CompetitorRightName = value; OnPropertyChanged("CompetitorRightName"); }
+        }
+
+
+        public int CompetitorLeftScore
+        {
+            get { return Board.CompetitorLeftScore; }
+            set { Board.CompetitorLeftScore = value; OnPropertyChanged("CompetitorLeftScore"); }
+        }
+
         public int CompetitorRightScore
         {
-            get { return _competitorRightScore; }
-            set { _competitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
+            get { return Board.CompetitorRightScore; }
+            set { Board.CompetitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
         }
+
+        //private int _competitorLeftScore;
+        //public int CompetitorLeftScore
+        //{
+        //    get { return _competitorLeftScore; }
+        //    set { _competitorLeftScore = value; OnPropertyChanged("CompetitorLeftScore"); }
+        //}
+
+        //private int _competitorRightScore;
+        //public int CompetitorRightScore
+        //{
+        //    get { return _competitorRightScore; }
+        //    set { _competitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
+        //}
 
         #endregion
         #region INotifyPropertyChanged
