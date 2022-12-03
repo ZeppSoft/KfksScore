@@ -13,10 +13,20 @@ namespace KfksScore.Models
     {
         public Board()
         {
-            //CompetitionName = "Название соревнования";
-            //CompetitionCategory = "Мальчики 10-11 лет весом до 42кг";
+            CompetitionName = "Зимове змагання КФКС";
+            CompetitionCategory = "Хлопчики 10-11 років вагою до 42кг";
             //CompetitionTime = "Основное время";
             //CompetitionScore = "Счёт";
+
+            DisplayWidth = ((int)System.Windows.SystemParameters.PrimaryScreenWidth / 2) - 100;
+            DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 250;
+
+            CompetitorLeftScore = 1;
+            CompetitorRightScore = 2;
+
+            CompetitorLeftName = "Петренко Петро";
+            CompetitorRightName = "Васильченко Василь";
+
         }
         #region IESBoard
         private string _competitionName;
@@ -46,7 +56,52 @@ namespace KfksScore.Models
             set { _сompetitionScore = value; OnPropertyChanged("CompetitionScore"); }
         }
 
-       // public Timer Timer { get; set; } = new Timer();
+        private int _displayWidth;
+        public int DisplayWidth
+        {
+            get { return _displayWidth; }
+            set { _displayWidth = value; OnPropertyChanged("DisplayWidth"); }
+        }
+
+        private int _displayHeight;
+        public int DisplayHeight
+        {
+            get { return _displayHeight; }
+            set { _displayHeight = value; OnPropertyChanged("DisplayHeight"); }
+        }
+
+
+        private int _competitorLeftScore;
+        public int CompetitorLeftScore
+        {
+            get { return _competitorLeftScore; }
+            set { _competitorLeftScore = value; OnPropertyChanged("CompetitorLeftScore"); }
+        }
+
+        private int _competitorRightScore;
+        public int CompetitorRightScore
+        {
+            get { return _competitorRightScore; }
+            set { _competitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
+        }
+
+        private string _competitorLeftName;
+        public string CompetitorLeftName
+        {
+            get { return _competitorLeftName; }
+            set { _competitorLeftName = value; OnPropertyChanged("CompetitorLeftName"); }
+        }
+
+        private string _competitorRightName;
+        public string CompetitorRightName
+        {
+            get { return _competitorRightName; }
+            set { _competitorRightName = value; OnPropertyChanged("CompetitorRightName"); }
+        }
+
+      
+
+        // public Timer Timer { get; set; } = new Timer();
         #endregion
 
         #region INotifyPropertyChanged

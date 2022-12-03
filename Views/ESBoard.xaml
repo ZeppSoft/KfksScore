@@ -5,40 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KfksScore"
         mc:Ignorable="d"
-        Title="Электронное табло" Height="450" Width="800">
+        Title="Єлектронне табло"  
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}">
     <Grid>
-        <StackPanel  Orientation="Vertical"  >
-            <!--<Label Content="Название соревнования" HorizontalAlignment="Left" Height="34" Margin="50,27,0,0" VerticalAlignment="Top" Width="147" Name="competitionNameLabel"/>
-        <Label Content="Категория" HorizontalAlignment="Left" Margin="50,61,0,0" VerticalAlignment="Top" Width="74" Name="competitionCategoryLabel"/>
-        <Label Content="Основное время" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="108" Name="competitionTimeLabel"/>
-        <Label Content="Счёт" HorizontalAlignment="Left" Margin="50,141,0,0" VerticalAlignment="Top" Width="37" Name="competitionScoreLabel"/>-->
-            <TextBlock HorizontalAlignment="Left" Margin="219,31,0,0" TextWrapping="Wrap" Text="{Binding Board.CompetitionName, Mode=TwoWay}" VerticalAlignment="Top" Width="181" Name="competitionNameText"/>
-            <TextBlock HorizontalAlignment="Left" Margin="219,66,0,0" TextWrapping="Wrap" Text="{Binding CompetitionCategory, Mode=TwoWay}" VerticalAlignment="Top" Width="181" Name="competitionCategoryText"/>
-            <!--<TextBlock HorizontalAlignment="Left" Margin="219,105,0,0" TextWrapping="Wrap" Text="{Binding CompetitionTime, Mode=TwoWay}"  VerticalAlignment="Top" Width="181" Name="competitionTimeText"/>-->
-            <!--<TextBlock HorizontalAlignment="Left" Margin="219,138,0,0" TextWrapping="Wrap" Text="{Binding CompetitionScore, Mode=TwoWay}"  VerticalAlignment="Top" Width="181" Name="competitionScoreText"/>-->
-            <!--<Label Content="Основное время" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="108" TextAlignment="Center" Name="competitionTimeLabel"/>-->
-            <TextBlock   TextWrapping="Wrap" Text="Основное время" TextAlignment="Center"  HorizontalAlignment="Center" Width="181" />
-            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Timer.TimeElapsed, Mode=TwoWay}" TextAlignment="Center" VerticalAlignment="Top" Width="354" Name="competitionTimerText" />
+        <StackPanel  Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+            <TextBlock TextWrapping="Wrap" Text="{Binding Board.CompetitionName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto" Name="competitionNameText" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="{Binding Board.CompetitionCategory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" Width="auto" Name="competitionCategoryText" FontFamily="Arial" FontSize="30"  />
+            <TextBlock   TextWrapping="Wrap" Text="Основний час" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Timer.TimeElapsed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" VerticalAlignment="Top" Width="354" Name="competitionTimerText" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>
 
 
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical" Margin="5,0,0,0" Background="LightGray">
-                    <TextBlock   TextWrapping="Wrap" Text="Фамилия спортсмена" TextAlignment="Center"  HorizontalAlignment="Center" Width="181" Background="LightGray"/>
-                    <TextBlock x:Name="competitorLeftScore"   Text="{Binding CompetitorLeftScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="Red" Width="390" Margin="10,0,0,0">
-                    <TextBlock.Background>
-                        <SolidColorBrush Color="LightGray" />
-                    </TextBlock.Background>
-                </TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel Orientation="Vertical" Margin="100,0,0,0" Background="LightGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorLeftName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
+                    <TextBlock x:Name="competitorLeftScore"   Text="{Binding Board.CompetitorLeftScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="700"  FontWeight="Bold" Foreground="Red" Width="{Binding Board.DisplayWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="{Binding Board.DisplayHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0">
+                        <TextBlock.Background>
+                            <SolidColorBrush Color="LightGray" />
+                        </TextBlock.Background>
+                    </TextBlock>
 
                 </StackPanel>
 
-                <StackPanel Orientation="Vertical" Background="DarkGray">
-                    <TextBlock   TextWrapping="Wrap" Text="Фамилия спортсмена" TextAlignment="Center"  HorizontalAlignment="Center" Width="181" Background="DarkGray"/>
-                    <TextBlock x:Name="competitorRightScore"   Text="{Binding CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="DarkBlue" Width="390" Margin="0,0,0,0">
-                    <TextBlock.Background>
-                        <SolidColorBrush Color="DarkGray" />
-                    </TextBlock.Background>
-                </TextBlock>
+                <StackPanel Orientation="Vertical" Background="DarkGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorRightName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
+                    <TextBlock x:Name="competitorRightScore"   Text="{Binding Board.CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" FontFamily="Arial" FontSize="700"  FontWeight="Bold" Foreground="DarkBlue" Width="{Binding Board.DisplayWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="{Binding Board.DisplayHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0">
+                        <TextBlock.Background>
+                            <SolidColorBrush Color="DarkGray" />
+                        </TextBlock.Background>
+                    </TextBlock>
                 </StackPanel>
 
             </StackPanel>

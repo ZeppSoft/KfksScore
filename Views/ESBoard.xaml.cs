@@ -23,6 +23,8 @@ namespace KfksScore
     {
         public IESBoard Board { get; set; }
         public Timer Timer { get; set; }
+
+      
         public ESBoard(IESBoard board, Timer timer)
         {
             InitializeComponent();
@@ -40,6 +42,9 @@ namespace KfksScore
         private void FillBoard(IESBoard board)
         {
             Board = board;
+
+            //DisplayWidth = (int)System.Windows.SystemParameters.PrimaryScreenWidth / 2;
+            //DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight / 2;
         }
     }
 }
