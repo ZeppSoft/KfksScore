@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+using Timer = KfksScore.Models.Timer;
 
 namespace KfksScore
 {
@@ -38,6 +40,29 @@ namespace KfksScore
             //this.DataContext = Board;
             this.DataContext = this;
 
+        }
+        private Screen GetSecondaryScreen()
+        {
+            foreach (Screen screen in Screen.AllScreens)
+            {
+                if (screen != Screen.PrimaryScreen)
+                    return screen;
+            }
+            return Screen.PrimaryScreen;
+        }
+
+        private void Window_LocationChanged(object sender, EventArgs e)
+        {
+            //System.Windows.Forms.SystemInformation.MonitorCount;
+
+            var currentScreen = GetSecondaryScreen();
+
+            if (Screen.PrimaryScreen != currentScreen)
+            {
+                Board.FormSizeWidth = currentScreen.Bounds.Width; //(currentScreen.Bounds.Width / 2) - 100;
+                Board.FormSizeHeight = currentScreen.Bounds.Height;//currentScreen.Bounds.Height - 250;
+                //this.WindowState = WindowState.Maximized;
+            }
         }
         private void FillBoard(IESBoard board)
         {

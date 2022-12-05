@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:KfksScore"
         mc:Ignorable="d"
         Title="Єлектронне табло"  
-        Width="{x:Static SystemParameters.PrimaryScreenWidth}"
-        Height="{x:Static SystemParameters.PrimaryScreenHeight}">
+        Width="{Binding Board.FormSizeWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        Height="{Binding Board.FormSizeHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        LocationChanged="Window_LocationChanged">
     <Grid>
         <StackPanel  Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 

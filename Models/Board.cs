@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace KfksScore.Models
 {
@@ -26,6 +28,7 @@ namespace KfksScore.Models
             //CompetitorRightName = "Васильченко Василь";
 
         }
+       
         #region IESBoard
         private string _competitionName;
         public string CompetitionName 
@@ -97,7 +100,19 @@ namespace KfksScore.Models
             set { _competitorRightName = value; OnPropertyChanged("CompetitorRightName"); }
         }
 
-      
+        private int _formSizeWidth = (int)System.Windows.SystemParameters.PrimaryScreenWidth;
+        public int FormSizeWidth 
+        {
+            get { return _formSizeWidth; }
+            set { _formSizeWidth = value; OnPropertyChanged("FormSizeWidth"); }
+        }
+
+        private int _formSizeHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight;
+        public int FormSizeHeight
+        {
+            get { return _formSizeHeight; }
+            set { _formSizeHeight = value; OnPropertyChanged("FormSizeHeight"); }
+        }
 
         // public Timer Timer { get; set; } = new Timer();
         #endregion
