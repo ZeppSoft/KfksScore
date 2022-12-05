@@ -50,6 +50,8 @@ namespace KfksScore
             CompetitorLeftScoreHistory = String.Empty;
             CompetitorRightScoreHistory = String.Empty;
 
+            ScorePlus.IsChecked = true;
+
             CompetitionName = "Зимове змагання КФКС";
             CompetitionCategory = String.Empty;//"Хлопчики 10-11 років вагою до 42кг";
 
@@ -254,6 +256,13 @@ namespace KfksScore
             set { Board.CompetitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
         }
 
+        private string _leftOneButtonContent = "1";
+        public string LeftOneButtonContent
+        {
+            get { return _leftOneButtonContent; }
+            set { _leftOneButtonContent = value; OnPropertyChanged("LeftOneButtonContent"); }
+        }
+
         //private int _competitorLeftScore;
         //public int CompetitorLeftScore
         //{
@@ -409,11 +418,14 @@ namespace KfksScore
         private void PlusScoreChecked(object sender, RoutedEventArgs e)
         {
             ScoreSign = "+";
+
+            LeftOneButtonContent = $"+ 1";
         }
 
         private void MinusScoreChecked(object sender, RoutedEventArgs e)
         {
             ScoreSign = "-";
+            LeftOneButtonContent = $"- 1";
         }
 
         private void LeftOneButtonPressed(object sender, RoutedEventArgs e)

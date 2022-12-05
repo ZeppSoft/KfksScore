@@ -139,7 +139,7 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Background="LightGray">
-                        <Button Content="1" Background="LightGray" Click="LeftOneButtonPressed" ></Button>
+                        <Button Content="{Binding LeftOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Click="LeftOneButtonPressed" ></Button>
                         <Button Content="2" Background="LightGray" Margin="10,0,0,0" Click="LeftTwoButtonPressed"></Button>
                         <Button Content="3" Background="LightGray" Margin="10,0,0,0" Click="LeftThreeButtonPressed"></Button>
                         <Button Content="4" Background="LightGray" Margin="10,0,0,0" Click="LeftFourButtonPressed"></Button>
@@ -320,7 +320,7 @@
                             <!--<GroupBox Header="Бали" Margin="10" Padding="10">-->
                             <!--<ToggleButton Content="+" Checked="PlusButton_Checked"  Width="63" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold" />-->
                             <!--<ToggleButton Content="-" Checked="PlusButton_Checked" Width="63"    HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>-->
-                            <RadioButton Content="+" Style="{StaticResource {x:Type ToggleButton}}" GroupName="Score"  Width="63" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold" VerticalAlignment="Center" Checked="PlusScoreChecked" />
+                            <RadioButton x:Name="ScorePlus" Content="+" Style="{StaticResource {x:Type ToggleButton}}" GroupName="Score"  Width="63" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold" VerticalAlignment="Center" Checked="PlusScoreChecked" />
                             <RadioButton Content="-" Style="{StaticResource {x:Type ToggleButton}}" GroupName="Score"  Width="63" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold" VerticalAlignment="Center" Checked="MinusScoreChecked"/>
 
                             <!--<RadioButton GroupName="Score" Content="+" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsPlusScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsTabStop="True"/>
