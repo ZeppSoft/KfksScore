@@ -35,12 +35,27 @@ namespace KfksScore
             TatamiValue = 1;
             CompetitorLeftScore = 0;
             CompetitorRightScore = 0;
+            IsMale = true;
+            YearsFrom = 10;
+            YearsTo = 11;
+            IsWeightTo = true;
+            CompetitorsWeight = 42;
+            IsMainTime = true;
+            MainTimeMin = 3;
+            MainTimeSec = 0;
+            AddTimeMin = 1;
+            AddTimeSec = 0;
+            WaitTimeMin = 1;
+            WaitTimeSec = 0;
+            CompetitorLeftScoreHistory = "1+2+3";
+            CompetitorRightScoreHistory = "3+2+1";
+
             CompetitionName = "Зимове змагання КФКС";
             CompetitionCategory = "Хлопчики 10-11 років вагою до 42кг";
 
 
             DisplayWidth = ((int)System.Windows.SystemParameters.PrimaryScreenWidth / 2) - 100;
-            DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 250;
+            DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 300;
             CompetitorLeftName = "Петренко Петро";
             CompetitorRightName = "Васильченко Василь";
 
@@ -60,26 +75,14 @@ namespace KfksScore
         public string CompetitionScore { get { return Board.CompetitionScore; } set { Board.CompetitionScore = value; } }
         //public string TimeElapsed { get { return Timer.TimeElapsed; } set { Timer.TimeElapsed = value; } }
 
+        public string CompetitorLeftScoreHistory { get { return Board.CompetitorLeftScoreHistory; } set { Board.CompetitorLeftScoreHistory = value; } }
 
-        public string Time
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(Timer.TimeElapsed))
-                {
-                    return "00:00";
-                }
-                
-                return Timer.TimeElapsed;
-            }
-        }
+        public string CompetitorRightScoreHistory { get { return Board.CompetitorRightScoreHistory; } set { Board.CompetitorRightScoreHistory = value; } }
 
-
-        private decimal _tatamiValue;
         public decimal TatamiValue
         {
-            get { return _tatamiValue; }
-            set { _tatamiValue = value; OnPropertyChanged("TatamiValue"); }
+            get { return Board.TatamiNumber; }
+            set { Board.TatamiNumber = value; OnPropertyChanged("TatamiValue"); }
         }
 
         private bool _isTatamiVisible;
@@ -89,6 +92,127 @@ namespace KfksScore
             set { _isTatamiVisible = value; OnPropertyChanged("IsTatamiVisible"); }
         }
 
+        private bool _isMale;
+        public bool IsMale
+        {
+            get { return _isMale; }
+            set { _isMale = value; OnPropertyChanged("IsMale"); }
+        }
+
+        private bool _isFeMale;
+        public bool IsFeMale
+        {
+            get { return _isFeMale; }
+            set { _isFeMale = value; OnPropertyChanged("IsFeMale"); }
+        }
+
+        private bool _isVeterans;
+        public bool IsVeterans
+        {
+            get { return _isVeterans; }
+            set { _isVeterans = value; OnPropertyChanged("IsVeterans"); }
+        }
+
+        private decimal _yearsFrom;
+        public decimal YearsFrom
+        {
+            get { return _yearsFrom; }
+            set { _yearsFrom = value; OnPropertyChanged("YearsFrom"); }
+        }
+
+        private decimal _yearsTo;
+        public decimal YearsTo
+        {
+            get { return _yearsTo; }
+            set { _yearsTo = value; OnPropertyChanged("YearsTo"); }
+        }
+
+        private bool _isWeightOver;
+        public bool IsWeightOver
+        {
+            get { return _isWeightOver; }
+            set { _isWeightOver = value; OnPropertyChanged("IsWeightOver"); }
+        }
+
+        private bool _isWeightTo;
+        public bool IsWeightTo
+        {
+            get { return _isWeightTo; }
+            set { _isWeightTo = value; OnPropertyChanged("IsWeightTo"); }
+        }
+
+        private decimal _competitorsWeight;
+        public decimal CompetitorsWeight
+        {
+            get { return _competitorsWeight; }
+            set { _competitorsWeight = value; OnPropertyChanged("CompetitorsWeight"); }
+        }
+
+
+        private bool _isMainTime;
+        public bool IsMainTime
+        {
+            get { return _isMainTime; }
+            set { _isMainTime = value; OnPropertyChanged("IsMainTime"); }
+        }
+
+        private decimal _mainTimeMin;
+        public decimal MainTimeMin
+        {
+            get { return _mainTimeMin; }
+            set { _mainTimeMin = value; OnPropertyChanged("MainTimeMin"); }
+        }
+
+        private decimal _mainTimeSec;
+        public decimal MainTimeSec
+        {
+            get { return _mainTimeSec; }
+            set { _mainTimeSec = value; OnPropertyChanged("MainTimeSec"); }
+        }
+
+
+        private bool _isAddTime;
+        public bool IsAddTime
+        {
+            get { return _isAddTime; }
+            set { _isAddTime = value; OnPropertyChanged("IsAddTime"); }
+        }
+
+        private decimal _addTimeMin;
+        public decimal AddTimeMin
+        {
+            get { return _addTimeMin; }
+            set { _addTimeMin = value; OnPropertyChanged("AddTimeMin"); }
+        }
+
+        private decimal _addTimeSec;
+        public decimal AddTimeSec
+        {
+            get { return _addTimeSec; }
+            set { _addTimeSec = value; OnPropertyChanged("AddTimeSec"); }
+        }
+
+
+        private bool _isWaitTime;
+        public bool IsWaitTime
+        {
+            get { return _isWaitTime; }
+            set { _isWaitTime = value; OnPropertyChanged("IsWaitTime"); }
+        }
+
+        private decimal _waitTimeMin;
+        public decimal WaitTimeMin
+        {
+            get { return _waitTimeMin; }
+            set { _waitTimeMin = value; OnPropertyChanged("WaitTimeMin"); }
+        }
+
+        private decimal _waitTimeSec;
+        public decimal WaitTimeSec
+        {
+            get { return _waitTimeSec; }
+            set { _waitTimeSec = value; OnPropertyChanged("WaitTimeSec"); }
+        }
 
 
         public int DisplayWidth

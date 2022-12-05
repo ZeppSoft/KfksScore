@@ -114,6 +114,39 @@ namespace KfksScore.Models
             set { _formSizeHeight = value; OnPropertyChanged("FormSizeHeight"); }
         }
 
+        private decimal _tatamiNumber = 0;
+        public decimal TatamiNumber
+        {
+            get { return _tatamiNumber; }
+            set { _tatamiNumber = value; OnPropertyChanged("TatamiNumber"); }
+        }
+
+
+        private string _competitorLeftScoreHistory;
+        public string CompetitorLeftScoreHistory
+        {
+            get { return _competitorLeftScoreHistory; }
+            set { _competitorLeftScoreHistory = value; OnPropertyChanged("CompetitorLeftScoreHistory"); }
+        }
+
+        private string _competitorRightScoreHistory;
+        public string CompetitorRightScoreHistory
+        {
+            get { return _competitorRightScoreHistory; }
+            set { _competitorRightScoreHistory = value; OnPropertyChanged("CompetitorRightScoreHistory"); }
+        }
+
+        public string FirstLeft1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string FirstLeft2 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string FirstLeft3 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string FirstLeft4 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string FirstLeft5 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SecondLeft1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SecondLeft2 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SecondLeft3 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SecondLeft4 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SecondLeft5 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         // public Timer Timer { get; set; } = new Timer();
         #endregion
 
