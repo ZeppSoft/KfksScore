@@ -48,7 +48,7 @@ namespace KfksScore
             WaitTimeMin = 1;
             WaitTimeSec = 0;
             CompetitorLeftScoreHistory = String.Empty;
-            CompetitorRightScoreHistory = "3+2+1";
+            CompetitorRightScoreHistory = String.Empty;
 
             CompetitionName = "Зимове змагання КФКС";
             CompetitionCategory = "Хлопчики 10-11 років вагою до 42кг";
@@ -77,7 +77,7 @@ namespace KfksScore
 
         public string CompetitorLeftScoreHistory { get { return Board.CompetitorLeftScoreHistory; } set { Board.CompetitorLeftScoreHistory = value; OnPropertyChanged("CompetitorLeftScoreHistory"); } }
 
-        public string CompetitorRightScoreHistory { get { return Board.CompetitorRightScoreHistory; } set { Board.CompetitorRightScoreHistory = value; } }
+        public string CompetitorRightScoreHistory { get { return Board.CompetitorRightScoreHistory; } set { Board.CompetitorRightScoreHistory = value; OnPropertyChanged("CompetitorRightScoreHistory"); } }
 
         public decimal TatamiValue
         {
@@ -405,67 +405,119 @@ namespace KfksScore
 
         private void LeftTwoButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(2, CompetitorLeftScore);
+            CompetitorLeftScore = score;
 
+            if (CompetitorLeftScore > 0)
+                CompetitorLeftScoreHistory += $" {ScoreSign}{"2"}";
         }
 
         private void LeftThreeButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(3, CompetitorLeftScore);
+            CompetitorLeftScore = score;
 
+            if (CompetitorLeftScore > 0)
+                CompetitorLeftScoreHistory += $" {ScoreSign}{"3"}";
         }
 
         private void LeftFourButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(4, CompetitorLeftScore);
+            CompetitorLeftScore = score;
 
+            if (CompetitorLeftScore > 0)
+                CompetitorLeftScoreHistory += $" {ScoreSign}{"4"}";
         }
 
         private void LeftFiveButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(5, CompetitorLeftScore);
+            CompetitorLeftScore = score;
 
+            if (CompetitorLeftScore > 0)
+                CompetitorLeftScoreHistory += $" {ScoreSign}{"5"}";
         }
 
         private void LeftSixButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(6, CompetitorLeftScore);
+            CompetitorLeftScore = score;
 
+            if (CompetitorLeftScore > 0)
+                CompetitorLeftScoreHistory += $" {ScoreSign}{"6"}";
         }
 
         private void LeftSevenButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(7, CompetitorLeftScore);
+            CompetitorLeftScore = score;
 
+            if (CompetitorLeftScore > 0)
+                CompetitorLeftScoreHistory += $" {ScoreSign}{"7"}";
         }
 
         private void RightOneButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(1, CompetitorRightScore);
+            CompetitorRightScore = score;
 
+            if (CompetitorRightScore > 0)
+                CompetitorRightScoreHistory += $" {ScoreSign}{"1"}";
         }
 
         private void RightTwoButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(2, CompetitorRightScore);
+            CompetitorRightScore = score;
 
+            if (CompetitorRightScore > 0)
+                CompetitorRightScoreHistory += $" {ScoreSign}{"2"}";
         }
 
         private void RightThreeButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(3, CompetitorRightScore);
+            CompetitorRightScore = score;
 
+            if (CompetitorRightScore > 0)
+                CompetitorRightScoreHistory += $" {ScoreSign}{"3"}";
         }
 
         private void RightFourButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(4, CompetitorRightScore);
+            CompetitorRightScore = score;
 
+            if (CompetitorRightScore > 0)
+                CompetitorRightScoreHistory += $" {ScoreSign}{"4"}";
         }
 
         private void RightFiveButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(5, CompetitorRightScore);
+            CompetitorRightScore = score;
 
+            if (CompetitorRightScore > 0)
+                CompetitorRightScoreHistory += $" {ScoreSign}{"5"}";
         }
 
         private void RightSixButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(6, CompetitorRightScore);
+            CompetitorRightScore = score;
 
+            if (CompetitorRightScore > 0)
+                CompetitorRightScoreHistory += $" {ScoreSign}{"6"}";
         }
 
         private void RightSevenButtonPressed(object sender, RoutedEventArgs e)
         {
+            var score = CalculateScore(7, CompetitorRightScore);
+            CompetitorRightScore = score;
 
+            if (CompetitorRightScore > 0)
+                CompetitorRightScoreHistory += $" {ScoreSign}{"7"}";
         }
 
         private int CalculateScore(int scoreNewValue, int scoreCurrentValue)
@@ -475,7 +527,6 @@ namespace KfksScore
             if (ScoreSign.Equals("+"))
             {
                 score = scoreCurrentValue + scoreNewValue;
-                return score;
             }
             else if (ScoreSign.Equals("-"))
             {
@@ -485,8 +536,10 @@ namespace KfksScore
                     return scoreCurrentValue;
                 }
                 score = scoreCurrentValue - scoreNewValue;
-                return score;
             }
+
+            if (score <= 0)
+                return 0;
 
             return score;
         }
