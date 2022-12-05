@@ -51,7 +51,7 @@ namespace KfksScore
             CompetitorRightScoreHistory = String.Empty;
 
             CompetitionName = "Зимове змагання КФКС";
-            CompetitionCategory = "Хлопчики 10-11 років вагою до 42кг";
+            CompetitionCategory = String.Empty;//"Хлопчики 10-11 років вагою до 42кг";
 
 
             DisplayWidth = ((int)System.Windows.SystemParameters.PrimaryScreenWidth / 2) - 100;
@@ -346,29 +346,51 @@ namespace KfksScore
 
         private void SexM_Checked(object sender, RoutedEventArgs e)
         {
+            UpdateCompetitionCategory();
+        }
 
+        private void SexM_UnChecked(object sender, RoutedEventArgs e)
+        {
+            IsFeMale = true;
         }
 
         private void SexF_Checked(object sender, RoutedEventArgs e)
         {
-
+            UpdateCompetitionCategory();
         }
 
         private void Veterans_Checked(object sender, RoutedEventArgs e)
         {
+            UpdateCompetitionCategory();
+        }
 
+        private void Veterans_UnChecked(object sender, RoutedEventArgs e)
+        {
+            UpdateCompetitionCategory();
         }
 
         private void WeightAbove_Checked(object sender, RoutedEventArgs e)
         {
-
+            UpdateCompetitionCategory();
         }
 
         private void WeightTo_Checked(object sender, RoutedEventArgs e)
         {
-
+            UpdateCompetitionCategory();
         }
 
+        private void YearsFromChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            UpdateCompetitionCategory();
+        }
+        private void YearsToChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            UpdateCompetitionCategory();
+        }
+        private void CompetitorsWeightChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            UpdateCompetitionCategory();
+        }
         private void WaitForCompetitorLeft(object sender, RoutedEventArgs e)
         {
 
@@ -543,5 +565,50 @@ namespace KfksScore
 
             return score;
         }
+        private void UpdateCompetitionCategory()
+        {
+            string res = string.Empty;
+
+            StringBuilder sb = new StringBuilder();
+
+            if (IsMale)
+            {
+                if (IsVeterans)
+                    sb.Append("Чоловіки ветерани ");
+                else
+                    sb.Append("Хлопчики ");
+            }
+            else if (IsFeMale)
+            {
+                if (IsVeterans)
+                    sb.Append("Жінки ветерани ");
+                else
+                    sb.Append("Дівчата ");
+            }
+
+
+            if (IsVeterans)
+            {
+                if (IsWeightOver)
+                    sb.Append("вагою понад ");
+                else if (IsWeightTo)
+                    sb.Append("вагою до ");
+            }
+            else
+            {
+                sb.Append($"{YearsFrom}-{YearsTo} років ");
+
+                if (IsWeightOver)
+                    sb.Append("вагою понад ");
+                else if (IsWeightTo)
+                    sb.Append("вагою до ");
+            }
+
+            sb.Append($"{CompetitorsWeight} кг") ;
+
+            CompetitionCategory = sb.ToString();
+        }
+
+        
     }
 }
