@@ -47,7 +47,7 @@ namespace KfksScore
             AddTimeSec = 0;
             WaitTimeMin = 1;
             WaitTimeSec = 0;
-            CompetitorLeftScoreHistory = "1+2+3";
+            CompetitorLeftScoreHistory = String.Empty;
             CompetitorRightScoreHistory = "3+2+1";
 
             CompetitionName = "Зимове змагання КФКС";
@@ -75,7 +75,7 @@ namespace KfksScore
         public string CompetitionScore { get { return Board.CompetitionScore; } set { Board.CompetitionScore = value; } }
         //public string TimeElapsed { get { return Timer.TimeElapsed; } set { Timer.TimeElapsed = value; } }
 
-        public string CompetitorLeftScoreHistory { get { return Board.CompetitorLeftScoreHistory; } set { Board.CompetitorLeftScoreHistory = value; } }
+        public string CompetitorLeftScoreHistory { get { return Board.CompetitorLeftScoreHistory; } set { Board.CompetitorLeftScoreHistory = value; OnPropertyChanged("CompetitorLeftScoreHistory"); } }
 
         public string CompetitorRightScoreHistory { get { return Board.CompetitorRightScoreHistory; } set { Board.CompetitorRightScoreHistory = value; } }
 
@@ -84,6 +84,8 @@ namespace KfksScore
             get { return Board.TatamiNumber; }
             set { Board.TatamiNumber = value; OnPropertyChanged("TatamiValue"); }
         }
+
+        public string ScoreSign { get; set; } = "+";
 
         private bool _isTatamiVisible;
         public bool IsTatamiVisible
@@ -325,6 +327,168 @@ namespace KfksScore
         {
             IsTatamiVisible = false;
             TatamiLeft.IsChecked = false;
+        }
+
+        private void mainTime_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addTime_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void waitTime_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SexM_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SexF_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Veterans_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WeightAbove_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WeightTo_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WaitForCompetitorLeft(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WaitForCompetitorRight(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TillFirstTechAction(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PlusScoreChecked(object sender, RoutedEventArgs e)
+        {
+            ScoreSign = "+";
+        }
+
+        private void MinusScoreChecked(object sender, RoutedEventArgs e)
+        {
+            ScoreSign = "-";
+        }
+
+        private void LeftOneButtonPressed(object sender, RoutedEventArgs e)
+        {
+            var score = CalculateScore(1, CompetitorLeftScore);
+            CompetitorLeftScore = score;
+
+            if (CompetitorLeftScore > 0)
+                CompetitorLeftScoreHistory += $" {ScoreSign}{"1"}";
+        }
+
+        private void LeftTwoButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftThreeButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftFourButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftFiveButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftSixButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftSevenButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightOneButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightTwoButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightThreeButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightFourButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightFiveButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightSixButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightSevenButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private int CalculateScore(int scoreNewValue, int scoreCurrentValue)
+        {
+            int score = 0;
+
+            if (ScoreSign.Equals("+"))
+            {
+                score = scoreCurrentValue + scoreNewValue;
+                return score;
+            }
+            else if (ScoreSign.Equals("-"))
+            {
+                if (scoreCurrentValue == 0 || scoreCurrentValue < 0)
+                {
+                   
+                    return scoreCurrentValue;
+                }
+                score = scoreCurrentValue - scoreNewValue;
+                return score;
+            }
+
+            return score;
         }
     }
 }

@@ -37,13 +37,13 @@
                               IsHitTestVisible ="{Binding IsTatamiVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="22"
                               />
 
-               
+
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
                 <CheckBox x:Name="TatamiLeft" Content="татамі"  Width="84"   Margin="0,0,0,0" Checked="TatamiLeft_Checked" Unchecked="TatamiLeft_Unchecked"/>
-                <RadioButton x:Name="SexM" GroupName="SexGroup" Content="Чол." IsChecked="{Binding IsMale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="67" Margin="-10,0,0,0" VerticalAlignment="Center"/>
-                <RadioButton x:Name="SexF" GroupName="SexGroup" Content="Жін." IsChecked="{Binding IsFemale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="-10,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox x:Name="Veterans" Content="Ветерани" Width="81" IsChecked="{Binding IsVeterans, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="40,0,0,0" VerticalAlignment="Center"/>
+                <RadioButton x:Name="SexM" GroupName="SexGroup" Content="Чол." IsChecked="{Binding IsMale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="67" Margin="-10,0,0,0" VerticalAlignment="Center" Checked="SexM_Checked"/>
+                <RadioButton x:Name="SexF" GroupName="SexGroup" Content="Жін." IsChecked="{Binding IsFemale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="-10,0,0,0" VerticalAlignment="Center" Checked="SexF_Checked"/>
+                <CheckBox x:Name="Veterans" Content="Ветерани" Width="81" IsChecked="{Binding IsVeterans, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="40,0,0,0" VerticalAlignment="Center" Checked="Veterans_Checked"/>
 
                 <dxe:SpinEdit x:Name="AgeFrom" Width="60"
                               EditValue="{Binding YearsFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -53,10 +53,10 @@
                               MaskType="Numeric"
                               Height="22"
                               />
-                
-                
-                
-                
+
+
+
+
                 <Label   Content="років" FontSize="14"  Margin="10,0,10,0" VerticalAlignment="Center"/>
 
                 <dxe:SpinEdit x:Name="AgeTo" Width="60"
@@ -69,8 +69,8 @@
                               />
 
 
-                <RadioButton x:Name="WeightAbove" GroupName="WeightGroup" Content="Понад" IsChecked="{Binding IsWeightOver, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Margin="10,0,0,0" VerticalAlignment="Center" />
-                <RadioButton x:Name="WeightTo" GroupName="WeightGroup" Content="До" IsChecked="{Binding IsWeightTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="10,0,0,0" VerticalAlignment="Center" />
+                <RadioButton x:Name="WeightAbove" GroupName="WeightGroup" Content="Понад" IsChecked="{Binding IsWeightOver, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Margin="10,0,0,0" VerticalAlignment="Center" Checked="WeightAbove_Checked" />
+                <RadioButton x:Name="WeightTo" GroupName="WeightGroup" Content="До" IsChecked="{Binding IsWeightTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="10,0,0,0" VerticalAlignment="Center" Checked="WeightTo_Checked" />
                 <!--<RadioButton GroupName="Group1" Content="Свыше" IsChecked="{Binding Path=RadioButton1IsChecked}" />
                 <RadioButton GroupName="Group1" Content="До" IsChecked="{Binding Path=RadioButton2IsChecked}" />-->
 
@@ -82,7 +82,7 @@
                               MaskType="Numeric"
                               Height="22"
                               />
-                
+
                 <Label   Content="кг" FontSize="14"  Margin="5,0,0,0" VerticalAlignment="Center"/>
                 <CheckBox x:Name="TatamiRight" Content="татамі"  Width="84" Margin="95,0,0,0" VerticalAlignment="Center" Checked="TatamiRight_Checked" Unchecked="TatamiRight_Unchecked" RenderTransformOrigin="0.692,0.593" HorizontalAlignment="Right"/>
 
@@ -100,7 +100,7 @@
 
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock   Text="Загальний час" FontSize="14"  Margin="400,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <TextBlock   Text="{Binding TimeDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="14"  Margin="400,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -111,11 +111,11 @@
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Очікування спортсмена" Width="440" Margin="10,0,0,0"/>
+                    <Button Content="Очікування спортсмена" Width="440" Margin="10,0,0,0" Click="WaitForCompetitorLeft"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Очікування спортсмена" Width="430"/>
+                    <Button Content="Очікування спортсмена" Width="430" Click="WaitForCompetitorRight"/>
                 </StackPanel>
             </StackPanel>
 
@@ -139,13 +139,13 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Background="LightGray">
-                        <Button Content="1" Background="LightGray" ></Button>
-                        <Button Content="2" Background="LightGray" Margin="10,0,0,0"></Button>
-                        <Button Content="3" Background="LightGray" Margin="10,0,0,0"></Button>
-                        <Button Content="4" Background="LightGray" Margin="10,0,0,0"></Button>
-                        <Button Content="5" Background="LightGray" Margin="10,0,0,0"></Button>
-                        <Button Content="6" Background="LightGray" Margin="10,0,0,0"></Button>
-                        <Button Content="7" Background="LightGray" Margin="10,0,0,0"></Button>
+                        <Button Content="1" Background="LightGray" Click="LeftOneButtonPressed" ></Button>
+                        <Button Content="2" Background="LightGray" Margin="10,0,0,0" Click="LeftTwoButtonPressed"></Button>
+                        <Button Content="3" Background="LightGray" Margin="10,0,0,0" Click="LeftThreeButtonPressed"></Button>
+                        <Button Content="4" Background="LightGray" Margin="10,0,0,0" Click="LeftFourButtonPressed"></Button>
+                        <Button Content="5" Background="LightGray" Margin="10,0,0,0" Click="LeftFiveButtonPressed"></Button>
+                        <Button Content="6" Background="LightGray" Margin="10,0,0,0" Click="LeftSixButtonPressed"></Button>
+                        <Button Content="7" Background="LightGray" Margin="10,0,0,0" Click="LeftSevenButtonPressed"></Button>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" >
                         <Button Content="1"  ></Button>
@@ -162,18 +162,18 @@
                         <TextBlock   TextWrapping="Wrap" Text="{Binding CompetitorRightScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
 
                         <TextBlock x:Name="competitorRightScore"   Text="{Binding CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="DarkBlue" Width="430" Margin="0,0,0,0">
-                        <TextBlock.Background>
-                            <SolidColorBrush Color="DarkGray" />
-                        </TextBlock.Background>
-                    </TextBlock>
+                            <TextBlock.Background>
+                                <SolidColorBrush Color="DarkGray" />
+                            </TextBlock.Background>
+                        </TextBlock>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Background="DarkGray">
-                            <Button Content="1" Background="DarkGray" ></Button>
-                            <Button Content="2" Background="DarkGray" Margin="10,0,0,0"></Button>
-                            <Button Content="3" Background="DarkGray" Margin="10,0,0,0"></Button>
-                            <Button Content="4" Background="DarkGray" Margin="10,0,0,0"></Button>
-                            <Button Content="5" Background="DarkGray" Margin="10,0,0,0"></Button>
-                            <Button Content="6" Background="DarkGray" Margin="10,0,0,0"></Button>
-                            <Button Content="7" Background="DarkGray" Margin="10,0,0,0"></Button>
+                            <Button Content="1" Background="DarkGray" Click="RightOneButtonPressed" ></Button>
+                            <Button Content="2" Background="DarkGray" Margin="10,0,0,0" Click="RightTwoButtonPressed"></Button>
+                            <Button Content="3" Background="DarkGray" Margin="10,0,0,0" Click="RightThreeButtonPressed"></Button>
+                            <Button Content="4" Background="DarkGray" Margin="10,0,0,0" Click="RightFourButtonPressed"></Button>
+                            <Button Content="5" Background="DarkGray" Margin="10,0,0,0" Click="RightFiveButtonPressed"></Button>
+                            <Button Content="6" Background="DarkGray" Margin="10,0,0,0" Click="RightSixButtonPressed"></Button>
+                            <Button Content="7" Background="DarkGray" Margin="10,0,0,0" Click="RightSevenButtonPressed"></Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
                             <Button Content="1" ></Button>
@@ -189,12 +189,12 @@
 
 
 
-                    
+
 
                 </StackPanel>
 
 
-               
+
 
                 <!--<StackPanel Orientation="Horizontal">
                     <TextBox x:Name="competitorRightScore" TextWrapping="Wrap" Text="{Binding CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Width="430" Margin="0,0,0,0"/>
@@ -208,7 +208,7 @@
                     <GroupBox Header="Час" Margin="10" Padding="10">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="mainTime" GroupName="Time" Content="Основний" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsMainTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <RadioButton x:Name="mainTime" GroupName="Time" Content="Основний" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsMainTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="mainTime_Checked"/>
 
                                 <dxe:SpinEdit x:Name="mainTimeMin" Width="60"
                               EditValue="{Binding MainTimeMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -239,7 +239,7 @@
 
 
                             <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="addTime" GroupName="Time" Content="Додатковий" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsAddTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <RadioButton x:Name="addTime" GroupName="Time" Content="Додатковий" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsAddTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="addTime_Checked"/>
 
                                 <dxe:SpinEdit x:Name="addTimeMin" Width="60"
                               EditValue="{Binding AddTimeMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -270,7 +270,7 @@
 
 
                             <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="waitTime" GroupName="Time" Content="Очикування" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsWaitTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <RadioButton x:Name="waitTime" GroupName="Time" Content="Очикування" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsWaitTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="waitTime_Checked"/>
 
                                 <dxe:SpinEdit x:Name="waitTimeMin" Width="60"
                               EditValue="{Binding WaitTimeMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -299,7 +299,7 @@
 
                             </StackPanel>
 
-                            <Button Content="До першої технічної дії"  Margin="0,10,0,0" Width="330"></Button>
+                            <Button Content="До першої технічної дії"  Margin="0,10,0,0" Width="330" Click="TillFirstTechAction"></Button>
 
                             <!--<TextBlock>First name:</TextBlock>
                             <TextBox />
@@ -317,8 +317,19 @@
                     <StackPanel Orientation="Vertical" Margin="10,0,0,0">
                         <Button Content="Електронне табло" Click="ESBoard_Button_Click" Margin="0,10,0,0" ></Button>
                         <StackPanel Orientation="Horizontal">
-                        <Button Content="+"   ></Button>
-                            <Button Content="-"   ></Button>
+                            <!--<GroupBox Header="Бали" Margin="10" Padding="10">-->
+                            <!--<ToggleButton Content="+" Checked="PlusButton_Checked"  Width="63" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold" />-->
+                            <!--<ToggleButton Content="-" Checked="PlusButton_Checked" Width="63"    HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>-->
+                            <RadioButton Content="+" Style="{StaticResource {x:Type ToggleButton}}" GroupName="Score"  Width="63" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold" VerticalAlignment="Center" Checked="PlusScoreChecked" />
+                            <RadioButton Content="-" Style="{StaticResource {x:Type ToggleButton}}" GroupName="Score"  Width="63" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30"  FontWeight="Bold" VerticalAlignment="Center" Checked="MinusScoreChecked"/>
+
+                            <!--<RadioButton GroupName="Score" Content="+" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsPlusScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsTabStop="True"/>
+                                <RadioButton GroupName="Score" Content="-" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsMinusScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+
+                            <!--<Button Content="+"   ></Button>
+                                <Button Content="-"   ></Button>-->
+                            <!--</GroupBox>-->
+
                         </StackPanel>
                     </StackPanel>
 
@@ -334,17 +345,17 @@
                                     <Button Content="Поперед."  Margin="0,10,0,0" ></Button>
                                 </StackPanel>
                             </StackPanel>
-                            
+
                         </GroupBox>
 
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Orientation="Vertical">
-                            <Button Content="Верх"  Margin="0,10,0,0" ></Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="00"  Margin="0,10,0,0" ></Button>
-                                <Button Content="00"  Margin="0,10,0,0" ></Button>
+                                <Button Content="Верх"  Margin="0,10,0,0" ></Button>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="00"  Margin="0,10,0,0" ></Button>
+                                    <Button Content="00"  Margin="0,10,0,0" ></Button>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
                             <StackPanel Orientation="Vertical">
                                 <Button Content="Початк."  Margin="0,10,0,0" ></Button>
                                 <Button Content="Вийти"  Margin="0,10,0,0" ></Button>

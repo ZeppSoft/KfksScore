@@ -18,7 +18,7 @@
                 <StackPanel  Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" Width="1700">
                 <TextBlock TextWrapping="Wrap" Text="{Binding Board.CompetitionName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto" Name="competitionNameText" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>
                 <TextBlock TextWrapping="Wrap" Text="{Binding Board.CompetitionCategory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" Width="auto" Name="competitionCategoryText" FontFamily="Arial" FontSize="30"  />
-                <TextBlock   TextWrapping="Wrap" Text="Основний час" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>
+                    <TextBlock   TextWrapping="Wrap" Text="{Binding Board.TimeDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>
                 <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Timer.TimeElapsed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" VerticalAlignment="Top" Width="354" Name="competitionTimerText" FontFamily="Arial" FontSize="30"  FontWeight="Bold"/>
                 </StackPanel>
 
