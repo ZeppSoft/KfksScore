@@ -140,12 +140,12 @@
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Background="LightGray">
                         <Button Content="{Binding LeftOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Click="LeftOneButtonPressed" FontSize="30"></Button>
-                        <Button Content="2" Background="LightGray" Margin="10,0,0,0" Click="LeftTwoButtonPressed" FontSize="30"></Button>
-                        <Button Content="3" Background="LightGray" Margin="10,0,0,0" Click="LeftThreeButtonPressed" FontSize="30"></Button>
-                        <Button Content="4" Background="LightGray" Margin="10,0,0,0" Click="LeftFourButtonPressed" FontSize="30"></Button>
-                        <Button Content="5" Background="LightGray" Margin="10,0,0,0" Click="LeftFiveButtonPressed" FontSize="30"></Button>
-                        <Button Content="6" Background="LightGray" Margin="10,0,0,0" Click="LeftSixButtonPressed" FontSize="30"></Button>
-                        <Button Content="7" Background="LightGray" Margin="10,0,0,0" Click="LeftSevenButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftTwoButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftThreeButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftFourButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftFiveButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftSixButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftSevenButtonPressed" FontSize="30"></Button>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" >
                         <RadioButton Content="1 Чук."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12"/>
@@ -170,13 +170,13 @@
                             </TextBlock.Background>
                         </TextBlock>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Background="DarkGray">
-                            <Button Content="1" Background="DarkGray" Click="RightOneButtonPressed" FontSize="30"></Button>
-                            <Button Content="2" Background="DarkGray" Margin="10,0,0,0" Click="RightTwoButtonPressed" FontSize="30"></Button>
-                            <Button Content="3" Background="DarkGray" Margin="10,0,0,0" Click="RightThreeButtonPressed" FontSize="30"></Button>
-                            <Button Content="4" Background="DarkGray" Margin="10,0,0,0" Click="RightFourButtonPressed" FontSize="30"></Button>
-                            <Button Content="5" Background="DarkGray" Margin="10,0,0,0" Click="RightFiveButtonPressed" FontSize="30"></Button>
-                            <Button Content="6" Background="DarkGray" Margin="10,0,0,0" Click="RightSixButtonPressed" FontSize="30"></Button>
-                            <Button Content="7" Background="DarkGray" Margin="10,0,0,0" Click="RightSevenButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Click="RightOneButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightTwoButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightThreeButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightFourButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightFiveButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightSixButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightSevenButtonPressed" FontSize="30"></Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
                             <RadioButton Content="1 Чук."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12"/>

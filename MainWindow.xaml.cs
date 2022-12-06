@@ -271,6 +271,86 @@ namespace KfksScore
             set { _leftOneButtonContent = value; OnPropertyChanged("LeftOneButtonContent"); }
         }
 
+        private string _leftTwoButtonContent = "2";
+        public string LeftTwoButtonContent
+        {
+            get { return _leftTwoButtonContent; }
+            set { _leftTwoButtonContent = value; OnPropertyChanged("LeftTwoButtonContent"); }
+        }
+        private string _leftThreeButtonContent = "3";
+        public string LeftThreeButtonContent
+        {
+            get { return _leftThreeButtonContent; }
+            set { _leftThreeButtonContent = value; OnPropertyChanged("LeftThreeButtonContent"); }
+        }
+        private string _leftFourButtonContent = "4";
+        public string LeftFourButtonContent
+        {
+            get { return _leftFourButtonContent; }
+            set { _leftFourButtonContent = value; OnPropertyChanged("LeftFourButtonContent"); }
+        }
+        private string _leftFiveButtonContent = "5";
+        public string LeftFiveButtonContent
+        {
+            get { return _leftFiveButtonContent; }
+            set { _leftFiveButtonContent = value; OnPropertyChanged("LeftFiveButtonContent"); }
+        }
+        private string _leftSixButtonContent = "6";
+        public string LeftSixButtonContent
+        {
+            get { return _leftSixButtonContent; }
+            set { _leftSixButtonContent = value; OnPropertyChanged("LeftSixButtonContent"); }
+        }
+        private string _leftSevenButtonContent = "7";
+        public string LeftSevenButtonContent
+        {
+            get { return _leftSevenButtonContent; }
+            set { _leftSevenButtonContent = value; OnPropertyChanged("LeftSevenButtonContent"); }
+        }
+
+
+        private string _rightOneButtonContent = "1";
+        public string RightOneButtonContent
+        {
+            get { return _rightOneButtonContent; }
+            set { _rightOneButtonContent = value; OnPropertyChanged("RightOneButtonContent"); }
+        }
+        private string _rightTwoButtonContent = "2";
+        public string RightTwoButtonContent
+        {
+            get { return _rightTwoButtonContent; }
+            set { _rightTwoButtonContent = value; OnPropertyChanged("RightTwoButtonContent"); }
+        }
+        private string _rightThreeButtonContent = "3";
+        public string RightThreeButtonContent
+        {
+            get { return _rightThreeButtonContent; }
+            set { _rightThreeButtonContent = value; OnPropertyChanged("RightThreeButtonContent"); }
+        }
+        private string _rightFourButtonContent = "4";
+        public string RightFourButtonContent
+        {
+            get { return _rightFourButtonContent; }
+            set { _rightFourButtonContent = value; OnPropertyChanged("RightFourButtonContent"); }
+        }
+        private string _rightFiveButtonContent = "5";
+        public string RightFiveButtonContent
+        {
+            get { return _rightFiveButtonContent; }
+            set { _rightFiveButtonContent = value; OnPropertyChanged("RightFiveButtonContent"); }
+        }
+        private string _rightSixButtonContent = "6";
+        public string RightSixButtonContent
+        {
+            get { return _rightSixButtonContent; }
+            set { _rightSixButtonContent = value; OnPropertyChanged("RightSixButtonContent"); }
+        }
+        private string _rightSevenButtonContent = "7";
+        public string RightSevenButtonContent
+        {
+            get { return _rightSevenButtonContent; }
+            set { _rightSevenButtonContent = value; OnPropertyChanged("RightSevenButtonContent"); }
+        }
         //private int _competitorLeftScore;
         //public int CompetitorLeftScore
         //{
@@ -630,13 +710,42 @@ namespace KfksScore
         {
             ScoreSign = "+";
 
-            LeftOneButtonContent = $"+ 1";
+            LeftOneButtonContent = $"+1";
+            LeftTwoButtonContent = $"+2";
+            LeftThreeButtonContent = $"+3";
+            LeftFourButtonContent = $"+4";
+            LeftFiveButtonContent = $"+5";
+            LeftSixButtonContent = $"+6";
+            LeftSevenButtonContent = $"+7";
+
+            RightOneButtonContent = $"+1";
+            RightTwoButtonContent = $"+2";
+            RightThreeButtonContent = $"+3";
+            RightFourButtonContent = $"+4";
+            RightFiveButtonContent = $"+5";
+            RightSixButtonContent = $"+6";
+            RightSevenButtonContent = $"+7";
         }
 
         private void MinusScoreChecked(object sender, RoutedEventArgs e)
         {
             ScoreSign = "-";
-            LeftOneButtonContent = $"- 1";
+
+            LeftOneButtonContent = $"-1";
+            LeftTwoButtonContent = $"-2";
+            LeftThreeButtonContent = $"-3";
+            LeftFourButtonContent = $"-4";
+            LeftFiveButtonContent = $"-5";
+            LeftSixButtonContent = $"-6";
+            LeftSevenButtonContent = $"-7";
+
+            RightOneButtonContent = $"-1";
+            RightTwoButtonContent = $"-2";
+            RightThreeButtonContent = $"-3";
+            RightFourButtonContent = $"-4";
+            RightFiveButtonContent = $"-5";
+            RightSixButtonContent = $"-6";
+            RightSevenButtonContent = $"-7";
         }
 
         private void LeftOneButtonPressed(object sender, RoutedEventArgs e)
