@@ -24,6 +24,8 @@ namespace KfksScore.Interfaces
         string CompetitorRightScoreHistory { get; set; }
         string CompetitorLeftName { get; set; }
         string CompetitorRightName { get; set; }
+        string WaitForCompetitorLeftText { get; set; }
+        string WaitForCompetitorRightText { get; set; }
         decimal TatamiNumber { get; set; }
         string FirstLeft1 { get; set; }
         string FirstLeft2 { get; set; }

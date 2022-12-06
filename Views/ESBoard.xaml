@@ -28,6 +28,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <StackPanel Orientation="Vertical" Margin="100,0,0,0" Background="LightGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock   TextWrapping="Wrap" Text="{Binding Board.WaitForCompetitorLeftText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
                     <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorLeftName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
                     <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorLeftScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
                     <!--<TextBlock x:Name="competitorLeftScore"   Text="{Binding Board.CompetitorLeftScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="700"  FontWeight="Bold" Foreground="Red" Width="{Binding Board.DisplayWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="{Binding Board.DisplayHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0">-->
@@ -51,6 +52,7 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Background="DarkGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock   TextWrapping="Wrap" Text="{Binding Board.WaitForCompetitorRightText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
                     <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorRightName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
                     <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorRightScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
                     <!--<TextBlock x:Name="competitorRightScore"   Text="{Binding Board.CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" FontFamily="Arial" FontSize="700"  FontWeight="Bold" Foreground="DarkBlue" Width="{Binding Board.DisplayWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="{Binding Board.DisplayHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0">-->

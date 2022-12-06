@@ -1,4 +1,5 @@
-﻿using KfksScore.Interfaces;
+﻿using DevExpress.XtraRichEdit.Import.OpenDocument;
+using KfksScore.Interfaces;
 using KfksScore.Models;
 using System;
 using System.Collections.Generic;
@@ -61,7 +62,8 @@ namespace KfksScore
             DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 300;
             CompetitorLeftName = "Петренко Петро";
             CompetitorRightName = "Васильченко Василь";
-
+            //WaitForCompetitorLeftText = "Очікування спортсмена";
+            //WaitForCompetitorRightText = "Очікування спортсмена";
 
 
             // eSBoard.Board = Board;
@@ -305,6 +307,20 @@ namespace KfksScore
         }
 
 
+        //private string _waitForCompetitorLeftText = "Очікування спортсмена";
+        public string WaitForCompetitorLeftTime
+        {
+            get { return Board.WaitForCompetitorLeftText; }
+            set { Board.WaitForCompetitorLeftText = value; OnPropertyChanged("WaitForCompetitorLeftTime"); }
+        }
+
+        //private string _waitForCompetitorRightText = "Очікування спортсмена";
+        public string WaitForCompetitorRightTime
+        {
+            get { return Board.WaitForCompetitorRightText; }
+            set { Board.WaitForCompetitorRightText = value; OnPropertyChanged("WaitForCompetitorRightTime"); }
+        }
+
 
         #endregion
         #region INotifyPropertyChanged
@@ -537,7 +553,9 @@ namespace KfksScore
         DispatcherTimer WaitTimerLeft { get; set; }
         DispatcherTimer WaitTimerRight { get; set; }
 
-        TimeSpan CountDownTime { get; set; } = TimeSpan.MinValue;
+        TimeSpan CountDownTimeLeft { get; set; } = TimeSpan.MinValue;
+        TimeSpan CountDownTimeRight { get; set; } = TimeSpan.MinValue;
+
         private void WaitForCompetitorLeft(object sender, RoutedEventArgs e)
         {
             if (WaitTimerLeft == null)
@@ -546,7 +564,7 @@ namespace KfksScore
 
             if (WaitForCompetitorLeftText.Equals("Очікування спортсмена"))
             {
-                CountDownTime = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+                CountDownTimeLeft = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
                 WaitTimerLeft.Start();
             }
             else
@@ -554,18 +572,20 @@ namespace KfksScore
                 WaitTimerLeft.Stop();
                 WaitForCompetitorLeftText = "Очікування спортсмена";
                 WaitTimerLeft = null;
+                WaitForCompetitorLeftTime = String.Empty;
             }
         }
 
         public void dispatcherTimerLeft(object sender, EventArgs e)
         {
-           var TimeElapsed = CountDownTime.ToString(@"mm\:ss");//.ToString("c");
+           var TimeElapsed = CountDownTimeLeft.ToString(@"mm\:ss");//.ToString("c");
             WaitForCompetitorLeftText = TimeElapsed;
+            WaitForCompetitorLeftTime = TimeElapsed;
 
-            if (CountDownTime == TimeSpan.Zero)
+            if (CountDownTimeLeft == TimeSpan.Zero)
                 WaitTimerLeft.Stop();
 
-            CountDownTime = CountDownTime.Add(TimeSpan.FromSeconds(-1));
+            CountDownTimeLeft = CountDownTimeLeft.Add(TimeSpan.FromSeconds(-1));
         }
 
         private void WaitForCompetitorRight(object sender, RoutedEventArgs e)
@@ -576,7 +596,7 @@ namespace KfksScore
 
             if (WaitForCompetitorRightText.Equals("Очікування спортсмена"))
             {
-                CountDownTime = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+                CountDownTimeRight = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
                 WaitTimerRight.Start();
             }
             else
@@ -584,18 +604,20 @@ namespace KfksScore
                 WaitTimerRight.Stop();
                 WaitForCompetitorRightText = "Очікування спортсмена";
                 WaitTimerRight = null;
+                WaitForCompetitorRightTime = String.Empty;
             }
 
         }
         public void dispatcherTimerRight(object sender, EventArgs e)
         {
-            var TimeElapsed = CountDownTime.ToString(@"mm\:ss");//.ToString("c");
+            var TimeElapsed = CountDownTimeRight.ToString(@"mm\:ss");//.ToString("c");
             WaitForCompetitorRightText = TimeElapsed;
+            WaitForCompetitorRightTime = TimeElapsed;
 
-            if (CountDownTime == TimeSpan.Zero)
+            if (CountDownTimeRight == TimeSpan.Zero)
                 WaitTimerRight.Stop();
 
-            CountDownTime = CountDownTime.Add(TimeSpan.FromSeconds(-1));
+            CountDownTimeRight = CountDownTimeRight.Add(TimeSpan.FromSeconds(-1));
         }
 
         private void FirstTechAction_Checked(object sender, RoutedEventArgs e)

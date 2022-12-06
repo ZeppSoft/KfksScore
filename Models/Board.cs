@@ -143,6 +143,19 @@ namespace KfksScore.Models
             get { return _timeDescription; }
             set { _timeDescription = value; OnPropertyChanged("TimeDescription"); }
         }
+        private string _waitForCompetitorLeftText;
+        public string WaitForCompetitorLeftText
+        {
+            get { return _waitForCompetitorLeftText; }
+            set { _waitForCompetitorLeftText = value; OnPropertyChanged("WaitForCompetitorLeftText"); }
+        }
+
+        private string _waitForCompetitorRightText;
+        public string WaitForCompetitorRightText
+        {
+            get { return _waitForCompetitorRightText; }
+            set { _waitForCompetitorRightText = value; OnPropertyChanged("WaitForCompetitorRightText"); }
+        }
 
 
         public string FirstLeft1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
