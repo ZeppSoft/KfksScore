@@ -169,6 +169,13 @@ namespace KfksScore.Models
         public string SecondLeft4 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string SecondLeft5 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        private int _scoreFontSize;
+        public int ScoreFontSize 
+        {
+            get { return _scoreFontSize; }
+            set { _scoreFontSize = value; OnPropertyChanged("ScoreFontSize"); }
+        }
+
         // public Timer Timer { get; set; } = new Timer();
         #endregion
 

@@ -67,6 +67,7 @@ namespace KfksScore
             DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 300;
             CompetitorLeftName = "Петренко Петро";
             CompetitorRightName = "Васильченко Василь";
+            Board.ScoreFontSize = 4000;
         }
 
         private ESBoard eSBoard;

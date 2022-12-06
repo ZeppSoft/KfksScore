@@ -18,6 +18,7 @@ namespace KfksScore.Interfaces
         int FormSizeHeight { get; set; }
         int DisplayWidth { get; set; }
         int DisplayHeight { get; set; }
+        int ScoreFontSize { get; set; }
         int CompetitorLeftScore { get; set; }
         int CompetitorRightScore { get; set; }
         string CompetitorLeftScoreHistory { get; set; }
