@@ -28,17 +28,17 @@ namespace KfksScore.Models
         private Stopwatch stopWatch;
         private bool isPaused;
 
-        [Obsolete]
-        public void StartTimer()
-        {
-            timer = new DispatcherTimer();
-            timer.Tick += dispatcherTimerTick_;
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
-            stopWatch = new Stopwatch();
-            stopWatch.Start();
-            timer.Start();
-            isPaused = false;
-        }
+        //[Obsolete]
+        //public void StartTimer()
+        //{
+        //    timer = new DispatcherTimer();
+        //    timer.Tick += dispatcherTimerTick_;
+        //    timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+        //    stopWatch = new Stopwatch();
+        //    stopWatch.Start();
+        //    timer.Start();
+        //    isPaused = false;
+        //}
 
         public void StartTimerNew(bool resume = false)
         {
@@ -50,7 +50,7 @@ namespace KfksScore.Models
                 CountDownTime = TimeSet;
             }
 
-            timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, dispatcherTimerTickNew, Application.Current.Dispatcher);
+            timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Send, dispatcherTimerTickNew, Application.Current.Dispatcher);
             timer.Start();
         }
 
@@ -61,16 +61,23 @@ namespace KfksScore.Models
 
         public void PauseStart()
         {
-           if(timer.IsEnabled && isPaused)
+            //if(timer.IsEnabled && isPaused)
+            if (isPaused)
             {
                 timer.Start();
                 isPaused = false;
             }
-           else
-            {
-                timer.Stop();
-                isPaused = true;
-            }
+           //else
+           // {
+           //     timer.Stop();
+           //     isPaused = true;
+           // }
+        }
+        
+        public void PauseStop()
+        {
+            timer.Stop();
+            isPaused = true;
         }
         //public TimeSpan TimeSet { get; set; } = TimeSpan.FromMinutes(3);//TimeSpan.FromSeconds(10);
         private TimeSpan _timeSet = TimeSpan.FromMinutes(3);
@@ -94,12 +101,12 @@ namespace KfksScore.Models
         }
         #endregion
 
-        [Obsolete]
-        private void dispatcherTimerTick_(object sender, EventArgs e)
-        {
-            TimeElapsed = stopWatch.Elapsed.TotalMilliseconds.ToString(); // Format as you wish
-            OnPropertyChanged("TimeElapsed");
-        }
+        //[Obsolete]
+        //private void dispatcherTimerTick_(object sender, EventArgs e)
+        //{
+        //    TimeElapsed = stopWatch.Elapsed.TotalMilliseconds.ToString(); // Format as you wish
+        //    OnPropertyChanged("TimeElapsed");
+        //}
 
         private void dispatcherTimerTickNew(object sender, EventArgs e)
         {

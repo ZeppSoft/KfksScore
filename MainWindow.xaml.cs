@@ -278,6 +278,13 @@ namespace KfksScore
         //    set { _competitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
         //}
 
+        private string _timerButtonText = "Почати";
+        public string TimerButtonText
+        {
+            get { return _timerButtonText; }
+            set { _timerButtonText = value; OnPropertyChanged("TimerButtonText"); }
+        }
+
         #endregion
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -304,7 +311,35 @@ namespace KfksScore
         private void TimerStart_Click(object sender, RoutedEventArgs e)
         {
             //Timer?.StartTimer();
-            Timer?.StartTimerNew();
+
+            switch(TimerButtonText)
+            {
+                case "Почати":
+                    {
+                        TimerButtonText = "Зупинити";
+                        Timer?.StartTimerNew();
+                    }
+                    break;
+
+                case "Зупинити":
+                    {
+                        TimerButtonText = "Продовжити";
+                        Timer?.PauseStop();
+                    }
+                    break;
+
+                case "Продовжити":
+                    {
+                        TimerButtonText = "Зупинити";
+                        Timer?.PauseStart();
+                    }
+                    break;
+
+                
+            }
+
+           
+           // Timer?.StartTimerNew();
 
 
         }
@@ -312,7 +347,23 @@ namespace KfksScore
         private void TimerStop_Click(object sender, RoutedEventArgs e)
         {
             Timer?.StopTimer();
-           //Timer?.PauseStart();
+            TimerButtonText = "Почати";
+
+            if (mainTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int)MainTimeSec);
+            }
+
+            else if (addTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)AddTimeMin, (int)AddTimeSec);
+            }
+            else if (waitTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+            }
+
+            //Timer?.PauseStart();
         }
 
         private void TatamiLeft_Checked(object sender, RoutedEventArgs e)
