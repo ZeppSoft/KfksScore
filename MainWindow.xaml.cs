@@ -840,5 +840,43 @@ namespace KfksScore
         {
             Close();
         }
+
+        private void TimeResetButtonClick(object sender, RoutedEventArgs e)
+        {
+            //if (mainTime.IsChecked == true)
+            //{
+            //    Timer.TimeSet = new TimeSpan(0, 3, 0);
+            //}
+
+            //else if (addTime.IsChecked == true)
+            //{
+            //    Timer.TimeSet = new TimeSpan(0, (int)AddTimeMin, (int)AddTimeSec);
+            //}
+            //else if (waitTime.IsChecked == true)
+            //{
+            //    Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+            //}
+            //else if (FirstTechAction.IsChecked == true)
+            //{
+            //    Timer.TimeSet = new TimeSpan(0, 0, 0);
+            //}
+        }
+
+        private void HistoryResetButtonClick(object sender, RoutedEventArgs e)
+        {
+            CompetitorLeftScoreHistory = String.Empty;
+            CompetitorRightScoreHistory = String.Empty;
+        }
+
+        private void ScoreResetButtonClick(object sender, RoutedEventArgs e)
+        {
+            CompetitorLeftScore = 0;
+            CompetitorRightScore = 0;
+        }
+
+        private void AtanaiResetButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
