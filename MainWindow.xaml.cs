@@ -843,23 +843,29 @@ namespace KfksScore
 
         private void TimeResetButtonClick(object sender, RoutedEventArgs e)
         {
-            //if (mainTime.IsChecked == true)
-            //{
-            //    Timer.TimeSet = new TimeSpan(0, 3, 0);
-            //}
+            if (mainTime.IsChecked == true)
+            {
+                MainTimeMin = 3;
+                MainTimeSec = 0;
+                Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int) MainTimeSec);
+            }
 
-            //else if (addTime.IsChecked == true)
-            //{
-            //    Timer.TimeSet = new TimeSpan(0, (int)AddTimeMin, (int)AddTimeSec);
-            //}
-            //else if (waitTime.IsChecked == true)
-            //{
-            //    Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
-            //}
-            //else if (FirstTechAction.IsChecked == true)
-            //{
-            //    Timer.TimeSet = new TimeSpan(0, 0, 0);
-            //}
+            else if (addTime.IsChecked == true)
+            {
+                AddTimeMin = 1;
+                AddTimeSec = 0;
+                Timer.TimeSet = new TimeSpan(0, (int)AddTimeMin, (int)AddTimeSec);
+            }
+            else if (waitTime.IsChecked == true)
+            {
+                WaitTimeMin = 1;
+                WaitTimeSec = 0;
+                Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+            }
+            else if (FirstTechAction.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, 0, 0);
+            }
         }
 
         private void HistoryResetButtonClick(object sender, RoutedEventArgs e)

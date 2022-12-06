@@ -338,7 +338,7 @@
                         <GroupBox Header="Скинути" Margin="10" Padding="10">
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Час"  Margin="0,10,0,0" Click="TimeResetButtonClick"  IsEnabled="False"></Button>
+                                    <Button Content="Час"  Margin="0,10,0,0" Click="TimeResetButtonClick"  ></Button>
                                     <Button Content="Історія"  Margin="0,10,0,0" Click="HistoryResetButtonClick" ></Button>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
