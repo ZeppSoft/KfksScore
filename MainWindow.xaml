@@ -210,7 +210,7 @@
 
 
             <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Width="auto">
                     <GroupBox Header="Час" Margin="10" Padding="10">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
@@ -315,13 +315,12 @@
                             <Button Margin="0,20">Add User</Button>-->
                         </StackPanel>
                     </GroupBox>
-
-                    <StackPanel Orientation="Vertical">
-                        <Button Content="{Binding TimerButtonText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="TimerStart_Click" Margin="0,10,0,0" ></Button>
-                        <Button Content="Закінчити" Click="TimerStop_Click" Margin="0,10,0,0" ></Button>
+                    <StackPanel Orientation="Vertical" Height="165" Width="auto" Margin="55,13,0,0">
+                        <Button Content="{Binding TimerButtonText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="TimerStart_Click" Margin="0,5,0,0" Height="77" RenderTransformOrigin="0.501,0.611" />
+                        <Button Content="Закінчити" Click="TimerStop_Click" Margin="0,20,0,0" Height="51" Width="186" />
                     </StackPanel>
 
-                    <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                    <StackPanel Orientation="Vertical" Margin="70,0,0,0">
                         <Button Content="Електронне табло" Click="ESBoard_Button_Click" Margin="0,10,0,0" ></Button>
                         <StackPanel Orientation="Horizontal">
                             <!--<GroupBox Header="Бали" Margin="10" Padding="10">-->
@@ -341,15 +340,16 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical">
-                        <GroupBox Header="Скинути" Margin="10" Padding="10">
+
+                        <GroupBox Header="Скинути" Padding="10">
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Час"  Margin="0,10,0,0" Click="TimeResetButtonClick"  ></Button>
-                                    <Button Content="Історія"  Margin="0,10,0,0" Click="HistoryResetButtonClick" ></Button>
+                                    <Button Content="Час"  Margin="0,10,0,0" Click="TimeResetButtonClick"  />
+                                    <Button Content="Історія"  Margin="0,10,0,0" Click="HistoryResetButtonClick" />
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Рахунок"  Margin="0,10,0,0" Click="ScoreResetButtonClick" ></Button>
-                                    <Button Content="Поперед."  Margin="0,10,0,0" Click="AtanaiResetButtonClick" ></Button>
+                                    <Button Content="Рахунок"  Margin="0,10,0,0" Click="ScoreResetButtonClick" />
+                                    <Button Content="Поперед."  Margin="0,10,0,0" Click="AtanaiResetButtonClick" />
                                 </StackPanel>
                             </StackPanel>
 
@@ -357,15 +357,15 @@
 
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Orientation="Vertical">
-                                <Button Content="Верх"  Margin="0,10,0,0" IsEnabled="False" ></Button>
+                                <Button Content="Верх"  Margin="0,10,0,0" IsEnabled="False" />
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="00"  Margin="0,10,0,0"  IsEnabled="False"></Button>
-                                    <Button Content="00"  Margin="0,10,0,0"  IsEnabled="False"></Button>
+                                    <Button Content="00"  Margin="0,10,0,0"  IsEnabled="False"/>
+                                    <Button Content="00"  Margin="0,10,0,0"  IsEnabled="False"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Vertical">
-                                <Button Content="Початк."  Margin="0,10,0,0" Click="ResetButton_Click" ></Button>
-                                <Button Content="Вийти"  Margin="0,10,0,0" Click="CloseButton_Click" ></Button>
+                                <Button Content="Початк."  Margin="0,10,0,0" Click="ResetButton_Click" />
+                                <Button Content="Вийти"  Margin="0,10,0,0" Click="CloseButton_Click" />
                             </StackPanel>
 
                         </StackPanel>
