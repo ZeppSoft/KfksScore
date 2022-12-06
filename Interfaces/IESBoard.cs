@@ -12,6 +12,7 @@ namespace KfksScore.Interfaces
         string CompetitionName { get; set; }
         string CompetitionCategory { get; set; }
         string CompetitionTime { get; set; }
+        string TimeDescription { get; set; }
         string CompetitionScore { get; set; }
         int FormSizeWidth { get; set; }
         int FormSizeHeight { get; set; }

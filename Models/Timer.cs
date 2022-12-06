@@ -13,7 +13,16 @@ namespace KfksScore.Models
 {
     public class Timer : INotifyPropertyChanged
     {
-        public string TimeElapsed { get; set; } = "00:00";
+
+        //public string TimeElapsed { get; set; } = "00:00";
+
+        private string _timeElapsed = "00:00";
+        public string TimeElapsed 
+        {
+            get { return _timeElapsed; }
+            set { _timeElapsed = value; OnPropertyChanged("TimeElapsed"); }
+        } 
+
 
         private DispatcherTimer timer;
         private Stopwatch stopWatch;
@@ -63,7 +72,14 @@ namespace KfksScore.Models
                 isPaused = true;
             }
         }
-        public TimeSpan TimeSet { get; set; } = TimeSpan.FromMinutes(3);//TimeSpan.FromSeconds(10);
+        //public TimeSpan TimeSet { get; set; } = TimeSpan.FromMinutes(3);//TimeSpan.FromSeconds(10);
+        private TimeSpan _timeSet = TimeSpan.FromMinutes(3);
+        public TimeSpan TimeSet 
+        {
+            get { return _timeSet; }
+            set { _timeSet = value; TimeElapsed = _timeSet.ToString(@"mm\:ss"); } 
+        } 
+
 
         public TimeSpan CountDownTime { get; set; } = TimeSpan.MinValue;
 

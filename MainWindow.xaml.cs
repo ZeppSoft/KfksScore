@@ -70,12 +70,13 @@ namespace KfksScore
         public Timer Timer { get; set; } = new Timer();
         public IESBoard Board { get; set; } = new Board();
 
-
+        
         public string CompetitionName { get { return Board.CompetitionName; } set { Board.CompetitionName = value; } }
         public string CompetitionCategory { get { return Board.CompetitionCategory; } set { Board.CompetitionCategory = value; } }
         public string CompetitionTime { get { return Board.CompetitionTime; } set { Board.CompetitionTime = value; } }
         public string CompetitionScore { get { return Board.CompetitionScore; } set { Board.CompetitionScore = value; } }
         //public string TimeElapsed { get { return Timer.TimeElapsed; } set { Timer.TimeElapsed = value; } }
+        public string TimeDescription { get { return Board.TimeDescription; } set { Board.TimeDescription = value; OnPropertyChanged("TimeDescription"); } }
 
         public string CompetitorLeftScoreHistory { get { return Board.CompetitorLeftScoreHistory; } set { Board.CompetitorLeftScoreHistory = value; OnPropertyChanged("CompetitorLeftScoreHistory"); } }
 
@@ -340,19 +341,65 @@ namespace KfksScore
 
         private void mainTime_Checked(object sender, RoutedEventArgs e)
         {
-
+            Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int)MainTimeSec);
+            TimeDescription = "Основний час";
+        }
+        private void MainTimeMinChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (mainTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int)MainTimeSec);
+            }
         }
 
+        private void MainTimeSecChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (mainTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int)MainTimeSec);
+            }
+        }
         private void addTime_Checked(object sender, RoutedEventArgs e)
         {
+            Timer.TimeSet = new TimeSpan(0, (int)AddTimeMin, (int)AddTimeSec);
+            TimeDescription = "Додатковий час";
+
 
         }
-
+        private void AddTimeMinChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (addTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)AddTimeMin, (int)AddTimeSec);
+            }
+        }
+        private void AddTimeSecChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (addTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)AddTimeMin, (int)AddTimeSec);
+            }
+        }
         private void waitTime_Checked(object sender, RoutedEventArgs e)
         {
+            Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+            TimeDescription = "Час очикування";
 
         }
-
+        private void WaitTimeMinChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (waitTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+            }
+        }
+        private void WaitTimeSecChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (waitTime.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+            }
+        }
         private void SexM_Checked(object sender, RoutedEventArgs e)
         {
             UpdateCompetitionCategory();
@@ -412,6 +459,7 @@ namespace KfksScore
 
         private void TillFirstTechAction(object sender, RoutedEventArgs e)
         {
+            TimeDescription = "До першої технічної дії";
 
         }
 

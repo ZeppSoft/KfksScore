@@ -136,6 +136,15 @@ namespace KfksScore.Models
             set { _competitorRightScoreHistory = value; OnPropertyChanged("CompetitorRightScoreHistory"); }
         }
 
+        private string _timeDescription;
+
+        public string TimeDescription 
+        {
+            get { return _timeDescription; }
+            set { _timeDescription = value; OnPropertyChanged("TimeDescription"); }
+        }
+
+
         public string FirstLeft1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string FirstLeft2 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string FirstLeft3 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
