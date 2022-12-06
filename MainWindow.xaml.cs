@@ -29,14 +29,19 @@ namespace KfksScore
         public MainWindow()
         {
             InitializeComponent();
+            Init();
+          
+            
+        }
 
-            //this.DataContext = Board;
-            // this.DataContext = Timer;
+        public void Init()
+        {
             this.DataContext = this;
             IsTatamiVisible = false;
             TatamiValue = 1;
             CompetitorLeftScore = 0;
             CompetitorRightScore = 0;
+            IsVeterans = false;
             IsMale = true;
             YearsFrom = 10;
             YearsTo = 11;
@@ -62,11 +67,6 @@ namespace KfksScore
             DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 300;
             CompetitorLeftName = "Петренко Петро";
             CompetitorRightName = "Васильченко Василь";
-            //WaitForCompetitorLeftText = "Очікування спортсмена";
-            //WaitForCompetitorRightText = "Очікування спортсмена";
-
-
-            // eSBoard.Board = Board;
         }
 
         private ESBoard eSBoard;
@@ -832,6 +832,13 @@ namespace KfksScore
             CompetitionCategory = sb.ToString();
         }
 
-       
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            Init();
+        }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
