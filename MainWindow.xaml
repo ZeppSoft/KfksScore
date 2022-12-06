@@ -111,11 +111,11 @@
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Очікування спортсмена" Width="440" Margin="10,0,0,0" Click="WaitForCompetitorLeft"/>
+                    <Button x:Name="waitForCompetitorLeftButton" Content="{Binding WaitForCompetitorLeftText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="440" Margin="10,0,0,0" Click="WaitForCompetitorLeft"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Очікування спортсмена" Width="430" Click="WaitForCompetitorRight"/>
+                    <Button Content="{Binding WaitForCompetitorRightText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="430" Click="WaitForCompetitorRight"/>
                 </StackPanel>
             </StackPanel>
 

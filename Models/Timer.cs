@@ -55,6 +55,12 @@ namespace KfksScore.Models
         //    timer.Start();
         //}
 
+        public void StartTimerDelegate(EventHandler method)
+        {
+            timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Send, method, Application.Current.Dispatcher);
+            timer.Start();
+        }
+
         public void StartTimerNew(bool isWaiting = false)
         {
             this.isWaiting = isWaiting;

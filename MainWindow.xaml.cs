@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace KfksScore
 {
@@ -61,6 +62,8 @@ namespace KfksScore
             CompetitorLeftName = "Петренко Петро";
             CompetitorRightName = "Васильченко Василь";
 
+
+
             // eSBoard.Board = Board;
         }
 
@@ -68,6 +71,8 @@ namespace KfksScore
         #region Public properties
 
         public Timer Timer { get; set; } = new Timer();
+        //public DispatcherTimer WaitTimer { get; set; } 
+
         public IESBoard Board { get; set; } = new Board();
 
         
@@ -284,6 +289,22 @@ namespace KfksScore
             get { return _timerButtonText; }
             set { _timerButtonText = value; OnPropertyChanged("TimerButtonText"); }
         }
+
+        private string _waitForCompetitorLeftText = "Очікування спортсмена";
+        public string WaitForCompetitorLeftText
+        {
+            get { return _waitForCompetitorLeftText; }
+            set { _waitForCompetitorLeftText = value; OnPropertyChanged("WaitForCompetitorLeftText"); }
+        }
+
+        private string _waitForCompetitorRightText = "Очікування спортсмена";
+        public string WaitForCompetitorRightText
+        {
+            get { return _waitForCompetitorRightText; }
+            set { _waitForCompetitorRightText = value; OnPropertyChanged("WaitForCompetitorRightText"); }
+        }
+
+
 
         #endregion
         #region INotifyPropertyChanged
@@ -512,14 +533,69 @@ namespace KfksScore
         {
             UpdateCompetitionCategory();
         }
+
+        DispatcherTimer WaitTimerLeft { get; set; }
+        DispatcherTimer WaitTimerRight { get; set; }
+
+        TimeSpan CountDownTime { get; set; } = TimeSpan.MinValue;
         private void WaitForCompetitorLeft(object sender, RoutedEventArgs e)
         {
+            if (WaitTimerLeft == null)
+                WaitTimerLeft = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Send, dispatcherTimerLeft, Application.Current.Dispatcher);
 
+
+            if (WaitForCompetitorLeftText.Equals("Очікування спортсмена"))
+            {
+                CountDownTime = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+                WaitTimerLeft.Start();
+            }
+            else
+            {
+                WaitTimerLeft.Stop();
+                WaitForCompetitorLeftText = "Очікування спортсмена";
+                WaitTimerLeft = null;
+            }
+        }
+
+        public void dispatcherTimerLeft(object sender, EventArgs e)
+        {
+           var TimeElapsed = CountDownTime.ToString(@"mm\:ss");//.ToString("c");
+            WaitForCompetitorLeftText = TimeElapsed;
+
+            if (CountDownTime == TimeSpan.Zero)
+                WaitTimerLeft.Stop();
+
+            CountDownTime = CountDownTime.Add(TimeSpan.FromSeconds(-1));
         }
 
         private void WaitForCompetitorRight(object sender, RoutedEventArgs e)
         {
+            if (WaitTimerRight == null)
+                WaitTimerRight = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Send, dispatcherTimerRight, Application.Current.Dispatcher);
 
+
+            if (WaitForCompetitorRightText.Equals("Очікування спортсмена"))
+            {
+                CountDownTime = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+                WaitTimerRight.Start();
+            }
+            else
+            {
+                WaitTimerRight.Stop();
+                WaitForCompetitorRightText = "Очікування спортсмена";
+                WaitTimerRight = null;
+            }
+
+        }
+        public void dispatcherTimerRight(object sender, EventArgs e)
+        {
+            var TimeElapsed = CountDownTime.ToString(@"mm\:ss");//.ToString("c");
+            WaitForCompetitorRightText = TimeElapsed;
+
+            if (CountDownTime == TimeSpan.Zero)
+                WaitTimerRight.Stop();
+
+            CountDownTime = CountDownTime.Add(TimeSpan.FromSeconds(-1));
         }
 
         private void FirstTechAction_Checked(object sender, RoutedEventArgs e)
