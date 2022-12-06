@@ -27,6 +27,7 @@ namespace KfksScore.Models
         private DispatcherTimer timer;
         private Stopwatch stopWatch;
         private bool isPaused;
+        private bool isWaiting;
 
         //[Obsolete]
         //public void StartTimer()
@@ -40,12 +41,28 @@ namespace KfksScore.Models
         //    isPaused = false;
         //}
 
-        public void StartTimerNew(bool resume = false)
+        //public void StartTimerNew(bool resume = false)
+        //{
+        //    if (timer != null && timer.IsEnabled)
+        //        return;
+
+        //    if (!resume || CountDownTime == TimeSpan.MinValue)
+        //    {
+        //        CountDownTime = TimeSet;
+        //    }
+
+        //    timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Send, dispatcherTimerTickNew, Application.Current.Dispatcher);
+        //    timer.Start();
+        //}
+
+        public void StartTimerNew(bool isWaiting = false)
         {
+            this.isWaiting = isWaiting;
+
             if (timer != null && timer.IsEnabled)
                 return;
 
-            if (!resume || CountDownTime == TimeSpan.MinValue)
+            if (CountDownTime == TimeSpan.MinValue)
             {
                 CountDownTime = TimeSet;
             }
@@ -53,6 +70,7 @@ namespace KfksScore.Models
             timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Send, dispatcherTimerTickNew, Application.Current.Dispatcher);
             timer.Start();
         }
+
 
         public void StopTimer()
         {
@@ -89,6 +107,7 @@ namespace KfksScore.Models
 
 
         public TimeSpan CountDownTime { get; set; } = TimeSpan.MinValue;
+       // public TimeSpan Time { get; set; } = TimeSpan.MinValue;
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -110,12 +129,20 @@ namespace KfksScore.Models
 
         private void dispatcherTimerTickNew(object sender, EventArgs e)
         {
-            TimeElapsed = CountDownTime.ToString(@"mm\:ss");//.ToString("c");
+            if (!isWaiting)
+            {
+                TimeElapsed = CountDownTime.ToString(@"mm\:ss");//.ToString("c");
 
-            if (CountDownTime == TimeSpan.Zero) 
-                timer.Stop();
+                if (CountDownTime == TimeSpan.Zero)
+                    timer.Stop();
 
-            CountDownTime = CountDownTime.Add(TimeSpan.FromSeconds(-1));
+                CountDownTime = CountDownTime.Add(TimeSpan.FromSeconds(-1));
+            }
+            else
+            {
+                TimeElapsed = CountDownTime.ToString(@"mm\:ss");//.ToString("c");
+                CountDownTime = CountDownTime.Add(TimeSpan.FromSeconds(+1));
+            }
 
             OnPropertyChanged("TimeElapsed");
            

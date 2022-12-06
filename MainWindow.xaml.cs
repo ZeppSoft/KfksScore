@@ -310,14 +310,24 @@ namespace KfksScore
 
         private void TimerStart_Click(object sender, RoutedEventArgs e)
         {
-            //Timer?.StartTimer();
+
+            //if (FirstTechAction.IsChecked == true)
+            //{
+
+            //}
+
 
             switch(TimerButtonText)
             {
                 case "Почати":
                     {
                         TimerButtonText = "Зупинити";
-                        Timer?.StartTimerNew();
+                        if (FirstTechAction.IsChecked == true)
+                        {
+                            Timer?.StartTimerNew(true);
+                        }
+                        else
+                            Timer?.StartTimerNew();
                     }
                     break;
 
@@ -361,6 +371,10 @@ namespace KfksScore
             else if (waitTime.IsChecked == true)
             {
                 Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
+            }
+            else if (FirstTechAction.IsChecked == true)
+            {
+                Timer.TimeSet = new TimeSpan(0, 0, 0);
             }
 
             //Timer?.PauseStart();
@@ -434,8 +448,8 @@ namespace KfksScore
         private void waitTime_Checked(object sender, RoutedEventArgs e)
         {
             Timer.TimeSet = new TimeSpan(0, (int)WaitTimeMin, (int)WaitTimeSec);
-            TimeDescription = "Час очикування";
-
+            TimeDescription = "Час очікування";
+            
         }
         private void WaitTimeMinChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
@@ -508,10 +522,10 @@ namespace KfksScore
 
         }
 
-        private void TillFirstTechAction(object sender, RoutedEventArgs e)
+        private void FirstTechAction_Checked(object sender, RoutedEventArgs e)
         {
             TimeDescription = "До першої технічної дії";
-
+            Timer.TimeSet = new TimeSpan(0, 0, 0);
         }
 
         private void PlusScoreChecked(object sender, RoutedEventArgs e)
@@ -720,6 +734,6 @@ namespace KfksScore
             CompetitionCategory = sb.ToString();
         }
 
-        
+       
     }
 }

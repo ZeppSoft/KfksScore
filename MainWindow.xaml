@@ -270,7 +270,7 @@
 
 
                             <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="waitTime" GroupName="Time" Content="Очикування" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsWaitTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="waitTime_Checked"/>
+                                <RadioButton x:Name="waitTime" GroupName="Time" Content="Очікування" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsWaitTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="waitTime_Checked"/>
 
                                 <dxe:SpinEdit x:Name="waitTimeMin" Width="60"
                               EditValue="{Binding WaitTimeMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -299,7 +299,8 @@
 
                             </StackPanel>
 
-                            <Button Content="До першої технічної дії"  Margin="0,10,0,0" Width="330" Click="TillFirstTechAction"></Button>
+                            <!--<Button Content="До першої технічної дії"  Margin="0,10,0,0" Width="330" Click="TillFirstTechAction"></Button>-->
+                            <RadioButton x:Name="FirstTechAction" Content="До першої технічної дії" Margin="0,10,0,0" Width="330" Style="{StaticResource {x:Type ToggleButton}}" GroupName="Time"   HorizontalAlignment="Center" FontFamily="Arial" FontSize="15"   VerticalAlignment="Center" Checked="FirstTechAction_Checked"  />
 
                             <!--<TextBlock>First name:</TextBlock>
                             <TextBox />
