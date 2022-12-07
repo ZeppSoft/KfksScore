@@ -38,16 +38,16 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -62,16 +62,16 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="1 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
-                        <TextBlock  TextWrapping="Wrap"  Text="2 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="10" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="1 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Чукоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Кейоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку Чуй" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Хансоку" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
+                        <TextBlock  TextWrapping="Wrap"  Text="2 Резервний" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="DarkGray" FontFamily="Arial" FontSize="15" FontWeight="Bold" Margin="10,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
