@@ -7,7 +7,7 @@
         xmlns:CustomControls="clr-namespace:KfksScore.Controls"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Київська федерація карате СІТО-РЮ (КФКС) Програма ведення обліку учасників змагання." Height="750" Width="1085">
+        Title="Київська федерація карате СІТО-РЮ (КФКС) Програма ведення обліку учасників змагання." Height="800" Width="1085">
     <Grid>
         <StackPanel  Orientation="Vertical"  >
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0"  HorizontalAlignment="Left">
@@ -138,27 +138,37 @@
                             <SolidColorBrush Color="LightGray" />
                         </TextBlock.Background>
                     </TextBlock>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Background="LightGray">
-                        <Button Content="{Binding LeftOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Click="LeftOneButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftTwoButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftThreeButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftFourButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftFiveButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftSixButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="LightGray" Margin="10,0,0,0" Click="LeftSevenButtonPressed" FontSize="30"></Button>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" >
+                        <Button Content="{Binding LeftOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Click="LeftOneButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftTwoButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftThreeButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftFourButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftFiveButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftSixButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftSevenButtonPressed" FontSize="30"></Button>
                     </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" >
-                        <RadioButton Content="1 Чук."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12"/>
-                        <RadioButton Content="1 Кей."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="5,0,0,0"/>
-                        <RadioButton Content="1 Хан. Чуй"  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                        <RadioButton Content="1 Хан."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                        <RadioButton Content="1 Резер."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                        <RadioButton Content="2 Чук."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                        <RadioButton Content="2 Кей."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                        <RadioButton Content="2 Хан. Чуй"  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                        <RadioButton Content="2 Хан."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                        <RadioButton Content="2 Резерв."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
+                       
+                        <ToggleButton Content="1 Чук." FontSize="12" Checked="AtanaiOneLeftButton_Checked" Unchecked="AtanaiOneLeftButton_UnChecked" />
+                        <ToggleButton Content="1 Кей."   FontSize="12" Margin="10,0,0,0"/>
+                        <ToggleButton Content="1 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
+                        <ToggleButton Content="1 Хан."   FontSize="12" Margin="10,0,0,0"/>
+                        <ToggleButton Content="1 Резерв."   FontSize="12" Margin="10,0,0,0"/>
                     </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                            <ToggleButton Content="2 Чук."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Кей."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Хан."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Vertical">
@@ -169,27 +179,46 @@
                                 <SolidColorBrush Color="DarkGray" />
                             </TextBlock.Background>
                         </TextBlock>
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Background="DarkGray">
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
                             <Button Content="{Binding RightOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Click="RightOneButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightTwoButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightThreeButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightFourButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightFiveButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightSixButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="10,0,0,0" Click="RightSevenButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightTwoButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightThreeButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightFourButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightFiveButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSixButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSevenButtonPressed" FontSize="30"></Button>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
-                            <RadioButton Content="1 Чук."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12"/>
-                            <RadioButton Content="1 Кей."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="5,0,0,0"/>
-                            <RadioButton Content="1 Хан. Чуй"  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                            <RadioButton Content="1 Хан."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                            <RadioButton Content="1 Резер."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                            <RadioButton Content="2 Чук."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                            <RadioButton Content="2 Кей."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                            <RadioButton Content="2 Хан. Чуй"  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                            <RadioButton Content="2 Хан."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
-                            <RadioButton Content="2 Резерв."  Style="{StaticResource {x:Type ToggleButton}}" FontSize="12" Margin="10,0,0,0"/>
+                        <StackPanel Orientation="Vertical" >
+
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+
+                                <ToggleButton Content="1 Чук." FontSize="12" Checked="AtanaiOneLeftButton_Checked" Unchecked="AtanaiOneLeftButton_UnChecked" />
+                                <ToggleButton Content="1 Кей."   FontSize="12" Margin="10,0,0,0"/>
+                                <ToggleButton Content="1 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
+                                <ToggleButton Content="1 Хан."   FontSize="12" Margin="10,0,0,0"/>
+                                <ToggleButton Content="1 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                                <ToggleButton Content="2 Чук."   FontSize="12" Margin="0,0,0,0"/>
+                                <ToggleButton Content="2 Кей."   FontSize="12" Margin="10,0,0,0"/>
+                                <ToggleButton Content="2 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
+                                <ToggleButton Content="2 Хан."   FontSize="12" Margin="10,0,0,0"/>
+                                <ToggleButton Content="2 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+                            </StackPanel>
+
                         </StackPanel>
+                        <!--<StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                            <ToggleButton Content="1 Чук."   FontSize="12"/>
+                            <ToggleButton Content="1 Кей."   FontSize="12" Margin="5,0,0,0"/>
+                            <ToggleButton Content="1 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="1 Хан."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="1 Резер."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Чук."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Кей."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Хан."   FontSize="12" Margin="10,0,0,0"/>
+                            <ToggleButton Content="2 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+                        </StackPanel>-->
                     </StackPanel>
 
 

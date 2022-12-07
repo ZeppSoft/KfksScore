@@ -157,23 +157,149 @@ namespace KfksScore.Models
             set { _waitForCompetitorRightText = value; OnPropertyChanged("WaitForCompetitorRightText"); }
         }
 
+        private string _atanaiOneLeft = string.Empty;
+        public string AtanaiOneLeft 
+        {
+            get { return _atanaiOneLeft; }
+            set { _atanaiOneLeft = value; OnPropertyChanged("AtanaiOneLeft"); }
+        }
 
-        public string FirstLeft1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string FirstLeft2 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string FirstLeft3 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string FirstLeft4 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string FirstLeft5 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SecondLeft1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SecondLeft2 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SecondLeft3 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SecondLeft4 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SecondLeft5 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private string _atanaiTwoLeft = string.Empty;
+        public string AtanaiTwoLeft
+        {
+            get { return _atanaiTwoLeft; }
+            set { _atanaiTwoLeft = value; OnPropertyChanged("AtanaiTwoLeft"); }
+        }
+        private string _atanaiThreeLeft = string.Empty;
+        public string AtanaiThreeLeft
+        {
+            get { return _atanaiThreeLeft; }
+            set { _atanaiThreeLeft = value; OnPropertyChanged("AtanaiThreeLeft"); }
+        }
+        private string _atanaiFourLeft = string.Empty;
+        public string AtanaiFourLeft
+        {
+            get { return _atanaiFourLeft; }
+            set { _atanaiFourLeft = value; OnPropertyChanged("AtanaiFourLeft"); }
+        }
+
+        private string _atanaiFiveLeft = string.Empty;
+        public string AtanaiFiveLeft
+        {
+            get { return _atanaiFiveLeft; }
+            set { _atanaiFiveLeft = value; OnPropertyChanged("AtanaiFiveLeft"); }
+        }
+
+        private string _atanaiSixLeft = string.Empty;
+        public string AtanaiSixLeft
+        {
+            get { return _atanaiSixLeft; }
+            set { _atanaiSixLeft = value; OnPropertyChanged("AtanaiSixLeft"); }
+        }
+
+        private string _atanaiSevenLeft = string.Empty;
+        public string AtanaiSevenLeft
+        {
+            get { return _atanaiSevenLeft; }
+            set { _atanaiSevenLeft = value; OnPropertyChanged("AtanaiSevenLeft"); }
+        }
+
+        private string _atanaiEightLeft = string.Empty;
+        public string AtanaiEightLeft
+        {
+            get { return _atanaiEightLeft; }
+            set { _atanaiEightLeft = value; OnPropertyChanged("AtanaiEightLeft"); }
+        }
+
+        private string _atanaiNineLeft = string.Empty;
+        public string AtanaiNineLeft
+        {
+            get { return _atanaiNineLeft; }
+            set { _atanaiNineLeft = value; OnPropertyChanged("AtanaiNineLeft"); }
+        }
+
+        private string _atanaiTenLeft = string.Empty;
+        public string AtanaiTenLeft
+        {
+            get { return _atanaiTenLeft; }
+            set { _atanaiTenLeft = value; OnPropertyChanged("AtanaiTenLeft"); }
+        }
 
         private int _scoreFontSize;
         public int ScoreFontSize 
         {
             get { return _scoreFontSize; }
             set { _scoreFontSize = value; OnPropertyChanged("ScoreFontSize"); }
+        }
+
+        private string _atanaiOneRight = string.Empty;
+        public string AtanaiOneRight
+        {
+            get { return _atanaiOneRight; }
+            set { _atanaiOneRight = value; OnPropertyChanged("AtanaiOneRight"); }
+        }
+
+        private string _atanaiTwoRight = string.Empty;
+        public string AtanaiTwoRight
+        {
+            get { return _atanaiTwoRight; }
+            set { _atanaiTwoRight = value; OnPropertyChanged("AtanaiTwoRight"); }
+        }
+
+        private string _atanaiThreeRight = string.Empty;
+        public string AtanaiThreeRight
+        {
+            get { return _atanaiThreeRight; }
+            set { _atanaiThreeRight = value; OnPropertyChanged("AtanaiThreeRight"); }
+        }
+
+        private string _atanaiFourRight = string.Empty;
+        public string AtanaiFourRight
+        {
+            get { return _atanaiFourRight; }
+            set { _atanaiFourRight = value; OnPropertyChanged("AtanaiFourRight"); }
+        }
+
+        private string _atanaiFiveRight = string.Empty;
+        public string AtanaiFiveRight
+        {
+            get { return _atanaiFiveRight; }
+            set { _atanaiFiveRight = value; OnPropertyChanged("AtanaiFiveRight"); }
+        }
+
+        private string _atanaiSixRight = string.Empty;
+        public string AtanaiSixRight
+        {
+            get { return _atanaiSixRight; }
+            set { _atanaiSixRight = value; OnPropertyChanged("AtanaiSixRight"); }
+        }
+
+        private string _atanaiSevenRight = string.Empty;
+        public string AtanaiSevenRight
+        {
+            get { return _atanaiSevenRight; }
+            set { _atanaiSevenRight = value; OnPropertyChanged("AtanaiSevenRight"); }
+        }
+
+        private string _atanaiEightRight = string.Empty;
+        public string AtanaiEightRight
+        {
+            get { return _atanaiEightRight; }
+            set { _atanaiEightRight = value; OnPropertyChanged("AtanaiEightRight"); }
+        }
+
+        private string _atanaiNineRight = string.Empty;
+        public string AtanaiNineRight
+        {
+            get { return _atanaiNineRight; }
+            set { _atanaiNineRight = value; OnPropertyChanged("AtanaiNineRight"); }
+        }
+
+        private string _atanaiTenRight = string.Empty;
+        public string AtanaiTenRight
+        {
+            get { return _atanaiTenRight; }
+            set { _atanaiTenRight = value; OnPropertyChanged("AtanaiTenRight"); }
         }
 
         // public Timer Timer { get; set; } = new Timer();

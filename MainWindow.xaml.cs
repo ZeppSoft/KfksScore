@@ -994,5 +994,21 @@ namespace KfksScore
         {
 
         }
+
+        private void AtanaiOneLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(Board.AtanaiOneLeft))
+            {
+                Board.AtanaiOneLeft = "1 Чукоку";
+            }
+        }
+
+        private void AtanaiOneLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Board.AtanaiOneLeft))
+            {
+                Board.AtanaiOneLeft = string.Empty;
+            }
+        }
     }
 }

@@ -28,16 +28,26 @@ namespace KfksScore.Interfaces
         string WaitForCompetitorLeftText { get; set; }
         string WaitForCompetitorRightText { get; set; }
         decimal TatamiNumber { get; set; }
-        string FirstLeft1 { get; set; }
-        string FirstLeft2 { get; set; }
-        string FirstLeft3 { get; set; }
-        string FirstLeft4 { get; set; }
-        string FirstLeft5 { get; set; }
-        string SecondLeft1 { get; set; }
-        string SecondLeft2 { get; set; }
-        string SecondLeft3 { get; set; }
-        string SecondLeft4 { get; set; }
-        string SecondLeft5 { get; set; }
+        string AtanaiOneLeft { get; set; }
+        string AtanaiTwoLeft { get; set; }
+        string AtanaiThreeLeft { get; set; }
+        string AtanaiFourLeft { get; set; }
+        string AtanaiFiveLeft { get; set; }
+        string AtanaiSixLeft { get; set; }
+        string AtanaiSevenLeft { get; set; }
+        string AtanaiEightLeft { get; set; }
+        string AtanaiNineLeft { get; set; }
+        string AtanaiTenLeft { get; set; }
+        string AtanaiOneRight { get; set; }
+        string AtanaiTwoRight { get; set; }
+        string AtanaiThreeRight { get; set; }
+        string AtanaiFourRight { get; set; }
+        string AtanaiFiveRight { get; set; }
+        string AtanaiSixRight { get; set; }
+        string AtanaiSevenRight { get; set; }
+        string AtanaiEightRight { get; set; }
+        string AtanaiNineRight { get; set; }
+        string AtanaiTenRight { get; set; }
 
 
 
