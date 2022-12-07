@@ -1030,179 +1030,257 @@ namespace KfksScore
 
         private void AtanaiThreeLeftButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiThreeLeft))
+            {
+                Board.AtanaiThreeLeft = "Атанай Хансоку";
+            }
         }
 
         private void AtanaiThreeLeftButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiThreeLeft))
+            {
+                Board.AtanaiThreeLeft = string.Empty;
+            }
         }
 
         private void AtanaiFourLeftButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiFourLeft))
+            {
+                Board.AtanaiFourLeft = "Мубобі";
+            }
         }
         private void AtanaiFourLeftButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiFourLeft))
+            {
+                Board.AtanaiFourLeft = string.Empty;
+            }
         }
 
         private void AtanaiFiveLeftButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiFiveLeft))
+            {
+                Board.AtanaiFiveLeft = "Мубобі Чуй";
+            }
         }
         private void AtanaiFiveLeftButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiFiveLeft))
+            {
+                Board.AtanaiFiveLeft = string.Empty;
+            }
         }
 
         private void AtanaiSixLeftButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiSixLeft))
+            {
+                Board.AtanaiSixLeft = "Мубобі Хансоку";
+            }
         }
         private void AtanaiSixLeftButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiSixLeft))
+            {
+                Board.AtanaiSixLeft = string.Empty;
+            }
         }
 
         private void AtanaiSevenLeftButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiSevenLeft))
+            {
+                Board.AtanaiSevenLeft = "Дзьогай";
+            }
         }
 
         private void AtanaiSevenLeftButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiSevenLeft))
+            {
+                Board.AtanaiSevenLeft = string.Empty;
+            }
         }
 
         private void AtanaiEightLeftButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiEightLeft))
+            {
+                Board.AtanaiEightLeft = "Дзьогай Чуй";
+            }
         }
 
         private void AtanaiEightLeftButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiEightLeft))
+            {
+                Board.AtanaiEightLeft = string.Empty;
+            }
         }
 
         private void AtanaiNineLeftButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiNineLeft))
+            {
+                Board.AtanaiNineLeft = "Дзьогай Хансоку";
+            }
         }
 
         private void AtanaiNineLeftButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiNineLeft))
+            {
+                Board.AtanaiNineLeft = string.Empty;
+            }
         }
 
-        private void AtanaiTenLeftButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AtanaiTenLeftButton_UnChecked(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void AtanaiOneRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiOneRight))
+            {
+                Board.AtanaiOneRight = "Атанай";
+            }
         }
 
         private void AtanaiOneRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiOneRight))
+            {
+                Board.AtanaiOneRight = string.Empty;
+            }
         }
 
         private void AtanaiTwoRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiTwoRight))
+            {
+                Board.AtanaiTwoRight = "Атанай Чуй";
+            }
         }
 
         private void AtanaiTwoRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiTwoRight))
+            {
+                Board.AtanaiTwoRight = string.Empty;
+            }
         }
 
         private void AtanaiThreeRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiThreeRight))
+            {
+                Board.AtanaiThreeRight = "Атанай Хансоку";
+            }
         }
 
         private void AtanaiThreeRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiThreeRight))
+            {
+                Board.AtanaiThreeRight = string.Empty;
+            }
         }
 
         private void AtanaiFourRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiFourRight))
+            {
+                Board.AtanaiFourRight = "Мубобі";
+            }
         }
 
         private void AtanaiFourRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiFourRight))
+            {
+                Board.AtanaiFourRight = string.Empty;
+            }
         }
 
         private void AtanaiFiveRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiFiveRight))
+            {
+                Board.AtanaiFiveRight = "Мубобі Чуй";
+            }
         }
 
         private void AtanaiFiveRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiFiveRight))
+            {
+                Board.AtanaiFiveRight = string.Empty;
+            }
         }
 
         private void AtanaiSixRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiSixRight))
+            {
+                Board.AtanaiSixRight = "Мубобі Хансоку";
+            }
         }
 
         private void AtanaiSixRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiSixRight))
+            {
+                Board.AtanaiSixRight = string.Empty;
+            }
         }
 
         private void AtanaiSevenRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiSevenRight))
+            {
+                Board.AtanaiSevenRight = "Дзьогай";
+            }
         }
 
         private void AtanaiSevenRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiSevenRight))
+            {
+                Board.AtanaiSevenRight = string.Empty;
+            }
         }
 
         private void AtanaiEightRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiEightRight))
+            {
+                Board.AtanaiEightRight = "Дзьогай Чуй";
+            }
         }
 
         private void AtanaiEightRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiEightRight))
+            {
+                Board.AtanaiEightRight = string.Empty;
+            }
         }
 
         private void AtanaiNineRightButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Board.AtanaiNineRight))
+            {
+                Board.AtanaiNineRight = "Дзьогай Хансоку";
+            }
         }
 
         private void AtanaiNineRightButton_UnChecked(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void AtanaiTenRightButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AtanaiTenRightButton_UnChecked(object sender, RoutedEventArgs e)
-        {
-
+            if (!string.IsNullOrEmpty(Board.AtanaiNineRight))
+            {
+                Board.AtanaiNineRight = string.Empty;
+            }
         }
     }
 }

@@ -158,8 +158,8 @@
                             
                     </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-                            <ToggleButton Content="Мубобі" Foreground="Red" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
-                            <ToggleButton Content="Мубобі Чуй" Foreground="Red" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
+                            <ToggleButton Content="Мубобі" Foreground="Red" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourLeftButton_Checked" Unchecked="AtanaiFourLeftButton_UnChecked"/>
+                            <ToggleButton Content="Мубобі Чуй" Foreground="Red" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveLeftButton_Checked" Unchecked="AtanaiFiveLeftButton_UnChecked"/>
                             <ToggleButton Content="Мубобі Хансоку" Foreground="Red" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixLeftButton_Checked" Unchecked="AtanaiSixLeftButton_UnChecked"/>
                             
                         </StackPanel>
