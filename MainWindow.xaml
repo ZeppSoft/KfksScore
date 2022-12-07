@@ -111,11 +111,11 @@
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="waitForCompetitorLeftButton" Content="{Binding WaitForCompetitorLeftText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="525" Margin="10,0,0,0" Click="WaitForCompetitorLeft"/>
+                    <Button x:Name="waitForCompetitorLeftButton" Content="{Binding WaitForCompetitorLeftText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="525" Margin="10,0,0,0" Click="WaitForCompetitorLeft" IsEnabled="{Binding IsWaitForCompetitorLeftButtonEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="{Binding WaitForCompetitorRightText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="525" Click="WaitForCompetitorRight"/>
+                    <Button Content="{Binding WaitForCompetitorRightText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="525" Click="WaitForCompetitorRight" IsEnabled="{Binding IsWaitForCompetitorRightButtonEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </StackPanel>
 
@@ -241,7 +241,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal" Width="auto">
-                    <GroupBox Header="Час" Margin="10" Padding="10">
+                    <GroupBox Header="Час" Margin="10" Padding="10" IsEnabled="{Binding IsGroupTimeEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <RadioButton x:Name="mainTime" GroupName="Time" Content="Основний" Width="120" Margin="-10,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsMainTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="mainTime_Checked"/>
@@ -374,7 +374,7 @@
                         <GroupBox Header="Скинути" Padding="10" >
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Час"  Margin="0,10,0,0" Click="TimeResetButtonClick" Width="68"  />
+                                    <Button Content="Час"  Margin="0,10,0,0" Click="TimeResetButtonClick" Width="68"  IsEnabled="{Binding IsResetTimeTimeEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     <Button Content="Історія"  Margin="10,10,0,0" Click="HistoryResetButtonClick" Width="75" />
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">

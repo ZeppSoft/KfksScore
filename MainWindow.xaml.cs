@@ -58,6 +58,10 @@ namespace KfksScore
             CompetitorRightScoreHistory = String.Empty;
 
             ScorePlus.IsChecked = true;
+            IsWaitForCompetitorLeftButtonEnabled = true;
+            IsWaitForCompetitorRightButtonEnabled = true;
+            IsGroupTimeEnabled = true;
+            IsResetTimeTimeEnabled = true;
 
             CompetitionName = "Зимове змагання КФКС";
             CompetitionCategory = String.Empty;//"Хлопчики 10-11 років вагою до 42кг";
@@ -97,6 +101,35 @@ namespace KfksScore
         }
 
         public string ScoreSign { get; set; } = "+";
+
+
+        private bool _isGroupTimeEnabled;
+        public bool IsGroupTimeEnabled
+        {
+            get { return _isGroupTimeEnabled; }
+            set { _isGroupTimeEnabled = value; OnPropertyChanged("IsGroupTimeEnabled"); }
+        }
+
+        private bool _isResetTimeTimeEnabled;
+        public bool IsResetTimeTimeEnabled
+        {
+            get { return _isResetTimeTimeEnabled; }
+            set { _isResetTimeTimeEnabled = value; OnPropertyChanged("IsResetTimeTimeEnabled"); }
+        }
+
+        private bool _isWaitForCompetitorLeftButtonEnabled;
+        public bool IsWaitForCompetitorLeftButtonEnabled
+        {
+            get { return _isWaitForCompetitorLeftButtonEnabled; }
+            set { _isWaitForCompetitorLeftButtonEnabled = value; OnPropertyChanged("IsWaitForCompetitorLeftButtonEnabled"); }
+        }
+
+        private bool _isWaitForCompetitorRightButtonEnabled;
+        public bool IsWaitForCompetitorRightButtonEnabled
+        {
+            get { return _isWaitForCompetitorRightButtonEnabled; }
+            set { _isWaitForCompetitorRightButtonEnabled = value; OnPropertyChanged("IsWaitForCompetitorRightButtonEnabled"); }
+        }
 
         private bool _isTatamiVisible;
         public bool IsTatamiVisible
@@ -428,14 +461,16 @@ namespace KfksScore
 
         private void TimerStart_Click(object sender, RoutedEventArgs e)
         {
+            IsWaitForCompetitorLeftButtonEnabled = false;
+            IsWaitForCompetitorRightButtonEnabled = false;
+            IsGroupTimeEnabled = false;
+            IsResetTimeTimeEnabled = false;
 
-            //if (FirstTechAction.IsChecked == true)
-            //{
-
-            //}
+            //if (Timer == null)
+            //        Timer = new Timer();
 
 
-            switch(TimerButtonText)
+            switch (TimerButtonText)
             {
                 case "Почати":
                     {
@@ -477,6 +512,8 @@ namespace KfksScore
             Timer?.StopTimer();
             TimerButtonText = "Почати";
 
+            Timer.CountDownTime  = TimeSpan.MinValue; ;
+
             if (mainTime.IsChecked == true)
             {
                 Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int)MainTimeSec);
@@ -494,6 +531,11 @@ namespace KfksScore
             {
                 Timer.TimeSet = new TimeSpan(0, 0, 0);
             }
+
+            IsWaitForCompetitorLeftButtonEnabled = true;
+            IsWaitForCompetitorRightButtonEnabled = true;
+            IsGroupTimeEnabled = true;
+            IsResetTimeTimeEnabled = true;
 
             //Timer?.PauseStart();
         }
