@@ -30,8 +30,8 @@ namespace KfksScore
         {
             InitializeComponent();
             Init();
-          
-            
+
+
         }
 
         public void Init()
@@ -74,7 +74,7 @@ namespace KfksScore
             Board.ScoreFontSize = 4000;
         }
 
-        private ESBoard eSBoard;
+        public ESBoard eSBoard;
         #region Public properties
 
         public Timer Timer { get; set; } = new Timer();
@@ -82,7 +82,7 @@ namespace KfksScore
 
         public IESBoard Board { get; set; } = new Board();
 
-        
+
         public string CompetitionName { get { return Board.CompetitionName; } set { Board.CompetitionName = value; } }
         public string CompetitionCategory { get { return Board.CompetitionCategory; } set { Board.CompetitionCategory = value; } }
         public string CompetitionTime { get { return Board.CompetitionTime; } set { Board.CompetitionTime = value; } }
@@ -436,7 +436,10 @@ namespace KfksScore
         }
 
 
+        //public bool IsEBoardActive { get; set; } = false;
+
         #endregion
+
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

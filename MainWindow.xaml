@@ -7,7 +7,7 @@
         xmlns:CustomControls="clr-namespace:KfksScore.Controls"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Київська федерація карате СІТО-РЮ (КФКС) Програма ведення обліку учасників змагання." Height="800" Width="1085">
+        Title="Київська федерація карате СІТО-РЮ (КФКС) Програма ведення обліку учасників змагання. Версія 1.00 від 07.12.2022 р." Height="820" Width="1085">
     <Grid>
         <StackPanel  Orientation="Vertical"  >
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0"  HorizontalAlignment="Left">
@@ -404,8 +404,12 @@
                     </StackPanel>
 
                 </StackPanel>
-            </StackPanel>
 
+               
+            </StackPanel>
+            <StackPanel >
+                <TextBlock Text="Designed and programmed by Viktor Shershnov 2022" HorizontalAlignment="Center"/>
+            </StackPanel>
 
         </StackPanel>
 

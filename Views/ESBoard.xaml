@@ -8,7 +8,7 @@
         Title="Єлектронне табло"  
         Width="{Binding Board.FormSizeWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         Height="{Binding Board.FormSizeHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-        LocationChanged="Window_LocationChanged">
+        LocationChanged="Window_LocationChanged"   Closed = "Board_Closed">
     <Grid>
         <StackPanel  Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
 

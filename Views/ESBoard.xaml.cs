@@ -74,5 +74,11 @@ namespace KfksScore
 
            
         }
+
+        private void Board_Closed(object sender, EventArgs e)
+        {
+            var owner = (KfksScore.MainWindow)this.Owner  ;
+            owner.eSBoard = null;
+        }
     }
 }
