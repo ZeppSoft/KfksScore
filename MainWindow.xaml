@@ -132,41 +132,41 @@
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock   TextWrapping="Wrap" Text="{Binding CompetitorLeftScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock   TextWrapping="Wrap" Text="{Binding CompetitorLeftScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Foreground="Red" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
                     <TextBlock x:Name="competitorLeftScore"   Text="{Binding CompetitorLeftScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="Red" Width="525" Margin="10,0,0,0">
                         <TextBlock.Background>
                             <SolidColorBrush Color="LightGray" />
                         </TextBlock.Background>
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="10,10,0,0" >
-                        <Button Content="{Binding LeftOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Click="LeftOneButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftTwoButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftThreeButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftFourButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftFiveButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftSixButtonPressed" FontSize="30"></Button>
-                        <Button Content="{Binding LeftSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftSevenButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftOneButtonContent,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="60" Background="LightGray" Click="LeftOneButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftTwoButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftThreeButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftFourButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftFiveButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftSixButtonPressed" FontSize="30"></Button>
+                        <Button Content="{Binding LeftSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftSevenButtonPressed" FontSize="30"></Button>
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
 
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" >
 
-                            <ToggleButton Content="Атанай" Background="LightGray" Width="115" FontSize="12" Checked="AtanaiOneLeftButton_Checked" Unchecked="AtanaiOneLeftButton_UnChecked" />
-                            <ToggleButton Content="Атанай Чуй" Background="LightGray"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoLeftButton_Checked" Unchecked="AtanaiTwoLeftButton_UnChecked"/>
-                            <ToggleButton Content="Атанай Хансоку" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
+                            <ToggleButton Content="Атанай" Foreground="Red" Width="115" FontSize="12" Checked="AtanaiOneLeftButton_Checked" Unchecked="AtanaiOneLeftButton_UnChecked" />
+                            <ToggleButton Content="Атанай Чуй" Foreground="Red"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoLeftButton_Checked" Unchecked="AtanaiTwoLeftButton_UnChecked"/>
+                            <ToggleButton Content="Атанай Хансоку" Foreground="Red" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
                             
                     </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-                            <ToggleButton Content="Мубобі" Background="LightGray" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
-                            <ToggleButton Content="Мубобі Чуй" Background="LightGray" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
-                            <ToggleButton Content="Мубобі Хансоку" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixLeftButton_Checked" Unchecked="AtanaiSixLeftButton_UnChecked"/>
+                            <ToggleButton Content="Мубобі" Foreground="Red" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
+                            <ToggleButton Content="Мубобі Чуй" Foreground="Red" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
+                            <ToggleButton Content="Мубобі Хансоку" Foreground="Red" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixLeftButton_Checked" Unchecked="AtanaiSixLeftButton_UnChecked"/>
                             
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-                            <ToggleButton Content="Дзьогай" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenLeftButton_Checked" Unchecked="AtanaiSevenLeftButton_UnChecked"/>
-                            <ToggleButton Content="Дзьогай Чуй" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightLeftButton_Checked" Unchecked="AtanaiEightLeftButton_UnChecked"/>
-                            <ToggleButton Content="Дзьогай Хансоку" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineLeftButton_Checked" Unchecked="AtanaiNineLeftButton_UnChecked"/>
+                            <ToggleButton Content="Дзьогай" Foreground="Red" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenLeftButton_Checked" Unchecked="AtanaiSevenLeftButton_UnChecked"/>
+                            <ToggleButton Content="Дзьогай Чуй" Foreground="Red" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightLeftButton_Checked" Unchecked="AtanaiEightLeftButton_UnChecked"/>
+                            <ToggleButton Content="Дзьогай Хансоку" Foreground="Red" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineLeftButton_Checked" Unchecked="AtanaiNineLeftButton_UnChecked"/>
                         </StackPanel>
 
                     </StackPanel>
@@ -175,7 +175,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock   TextWrapping="Wrap" Text="{Binding CompetitorRightScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Background="LightGray" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
+                        <TextBlock   TextWrapping="Wrap" Text="{Binding CompetitorRightScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Foreground="DarkBlue" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
 
                         <TextBlock x:Name="competitorRightScore"   Text="{Binding CompetitorRightScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="DarkBlue" Width="525" Margin="0,0,0,0">
                             <TextBlock.Background>
@@ -183,29 +183,29 @@
                             </TextBlock.Background>
                         </TextBlock>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-                            <Button Content="{Binding RightOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Click="RightOneButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightTwoButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightThreeButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightFourButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightFiveButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSixButtonPressed" FontSize="30"></Button>
-                            <Button Content="{Binding RightSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSevenButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightOneButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="DarkBlue" Background="DarkGray" Click="RightOneButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightTwoButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="DarkBlue" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightTwoButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightThreeButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="DarkBlue" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightThreeButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightFourButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="DarkBlue" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightFourButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightFiveButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="DarkBlue" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightFiveButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="DarkBlue" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSixButtonPressed" FontSize="30"></Button>
+                            <Button Content="{Binding RightSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="DarkBlue" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSevenButtonPressed" FontSize="30"></Button>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-                                <ToggleButton Content="Атанай" Background="DarkGray" Width="115" FontSize="12" Checked="AtanaiOneRightButton_Checked" Unchecked="AtanaiOneRightButton_UnChecked" />
-                                <ToggleButton Content="Атанай Чуй" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoRightButton_Checked" Unchecked="AtanaiTwoRightButton_UnChecked"/>
-                                <ToggleButton Content="Атанай Хансоку" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeRightButton_Checked" Unchecked="AtanaiThreeRightButton_UnChecked"/>
+                                <ToggleButton Content="Атанай" Foreground="DarkBlue" Width="115" FontSize="12" Checked="AtanaiOneRightButton_Checked" Unchecked="AtanaiOneRightButton_UnChecked" />
+                                <ToggleButton Content="Атанай Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoRightButton_Checked" Unchecked="AtanaiTwoRightButton_UnChecked"/>
+                                <ToggleButton Content="Атанай Хансоку" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeRightButton_Checked" Unchecked="AtanaiThreeRightButton_UnChecked"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
-                                <ToggleButton Content="Мубобі" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourRightButton_Checked" Unchecked="AtanaiFourRightButton_UnChecked"/>
-                                <ToggleButton Content="Мубобі Чуй" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveRightButton_Checked" Unchecked="AtanaiFiveRightButton_UnChecked"/>
-                                <ToggleButton Content="Мубобі Хансоку" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixRightButton_Checked" Unchecked="AtanaiSixRightButton_UnChecked"/>
+                                <ToggleButton Content="Мубобі" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourRightButton_Checked" Unchecked="AtanaiFourRightButton_UnChecked"/>
+                                <ToggleButton Content="Мубобі Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveRightButton_Checked" Unchecked="AtanaiFiveRightButton_UnChecked"/>
+                                <ToggleButton Content="Мубобі Хансоку" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixRightButton_Checked" Unchecked="AtanaiSixRightButton_UnChecked"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
-                                <ToggleButton Content="Дзьогай" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenRightButton_Checked" Unchecked="AtanaiSevenRightButton_UnChecked"/>
-                                <ToggleButton Content="Дзьогай Чуй" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightRightButton_Checked" Unchecked="AtanaiEightRightButton_UnChecked"/>
-                                <ToggleButton Content="Дзьогай Хансоку" Background="DarkGray"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineRightButton_Checked" Unchecked="AtanaiNineRightButton_UnChecked"/>
+                                <ToggleButton Content="Дзьогай" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenRightButton_Checked" Unchecked="AtanaiSevenRightButton_UnChecked"/>
+                                <ToggleButton Content="Дзьогай Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightRightButton_Checked" Unchecked="AtanaiEightRightButton_UnChecked"/>
+                                <ToggleButton Content="Дзьогай Хансоку" Foreground="DarkBlue"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineRightButton_Checked" Unchecked="AtanaiNineRightButton_UnChecked"/>
                             </StackPanel>
                         </StackPanel>
                         <!--<StackPanel Orientation="Horizontal" Margin="0,0,0,0" >

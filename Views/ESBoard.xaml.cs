@@ -63,8 +63,8 @@ namespace KfksScore
                 Board.FormSizeHeight = currentScreen.Bounds.Height;//720;//currentScreen.Bounds.Height;//currentScreen.Bounds.Height - 250;
 
                 Board.DisplayWidth = (int)(Board.FormSizeWidth * 0.50) -50;//(int)(Board.FormSizeWidth * 0.48);//(int)(Board.FormSizeWidth * 0.42); //(Board.FormSizeWidth / 2) - 100; //540 42%
-            Board.DisplayHeight = (int)(Board.FormSizeHeight * 0.65) ;//(int)(Board.FormSizeHeight * 0.65) ;////Board.FormSizeHeight/5;
-            Board.ScoreFontSize = (int)(Board.FormSizeHeight * 0.65);//700;//400;
+                Board.DisplayHeight = (int)(Board.FormSizeHeight * 0.65) ;//(int)(Board.FormSizeHeight * 0.65) ;////Board.FormSizeHeight/5;
+                Board.ScoreFontSize = (int)(Board.FormSizeHeight * 0.65);//700;//400;
                 //this.WindowState = WindowState.Maximized;
             //}
         }
