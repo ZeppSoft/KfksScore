@@ -63,7 +63,8 @@ namespace KfksScore
             IsGroupTimeEnabled = true;
             IsResetTimeTimeEnabled = true;
 
-            CompetitionName = "Зимове змагання КФКС";
+            CompetitionName = "Змагання КФКС";
+            ContentBoardButton = "Електронне табло";
             CompetitionCategory = String.Empty;//"Хлопчики 10-11 років вагою до 42кг";
 
 
@@ -434,7 +435,12 @@ namespace KfksScore
             get { return Board.WaitForCompetitorRightText; }
             set { Board.WaitForCompetitorRightText = value; OnPropertyChanged("WaitForCompetitorRightTime"); }
         }
-
+        private string _contentBoardButton = "Електронне табло";
+        public string ContentBoardButton
+        {
+            get { return _contentBoardButton; }
+            set { _contentBoardButton = value; OnPropertyChanged("ContentBoardButton"); }
+        }
 
         //public bool IsEBoardActive { get; set; } = false;
 
@@ -450,16 +456,24 @@ namespace KfksScore
         #endregion
         private void ESBoard_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (eSBoard == null)
+
+            if (ContentBoardButton.Equals("Закрити табло") && eSBoard != null)
+            {
+                MainWindow mainWind = Application.Current.MainWindow as MainWindow;
+                WindowCollection w = mainWind.OwnedWindows;
+                var w2 = w[0];
+                w2.Close();
+                ContentBoardButton = "Електронне табло";
+                return;
+            }
+
+            if (ContentBoardButton.Equals("Електронне табло") && eSBoard == null)
             {
                 eSBoard = new ESBoard(Board,Timer);
                 eSBoard.Show();
+                ContentBoardButton = "Закрити табло";
+                return ;
             }
-
-            //if (eSBoard.ShowDialog().Equals(true))
-            //{
-
-            //}
         }
 
         private void TimerStart_Click(object sender, RoutedEventArgs e)
@@ -1037,7 +1051,25 @@ namespace KfksScore
 
         private void AtanaiResetButtonClick(object sender, RoutedEventArgs e)
         {
+            atanaiOneLeftButton.IsChecked = false;
+            atanaiTwoLeftButton.IsChecked = false;
+            atanaiThreeLeftButton.IsChecked = false;
+            atanaiFourLeftButton.IsChecked = false;
+            atanaiFiveLeftButton.IsChecked = false;
+            atanaiSixLeftButton.IsChecked = false;
+            atanaiSevenLeftButton.IsChecked = false;
+            atanaiEightLeftButton.IsChecked = false;
+            atanaiNineLeftButton.IsChecked = false;
 
+            atanaiOneRightButton.IsChecked = false;
+            atanaiTwoRightButton.IsChecked = false;
+            atanaiThreeRightButton.IsChecked = false;
+            atanaiFourRightButton.IsChecked = false;
+            atanaiFiveRightButton.IsChecked = false;
+            atanaiSixRightButton.IsChecked = false;
+            atanaiSevenRightButton.IsChecked = false;
+            atanaiEightRightButton.IsChecked = false;
+            atanaiNineRightButton.IsChecked = false;
         }
 
         private void AtanaiOneLeftButton_Checked(object sender, RoutedEventArgs e)

@@ -79,6 +79,7 @@ namespace KfksScore
         {
             var owner = (KfksScore.MainWindow)this.Owner  ;
             owner.eSBoard = null;
+            owner.ContentBoardButton = "Електронне табло";
         }
     }
 }
