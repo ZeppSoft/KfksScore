@@ -148,22 +148,25 @@
                         <Button Content="{Binding LeftSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Background="LightGray" Margin="16,0,0,0" Click="LeftSevenButtonPressed" FontSize="30"></Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
 
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" >
-                       
-                        <ToggleButton Content="1 Чук." FontSize="12" Checked="AtanaiOneLeftButton_Checked" Unchecked="AtanaiOneLeftButton_UnChecked" />
-                        <ToggleButton Content="1 Кей."   FontSize="12" Margin="10,0,0,0"/>
-                        <ToggleButton Content="1 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
-                        <ToggleButton Content="1 Хан."   FontSize="12" Margin="10,0,0,0"/>
-                        <ToggleButton Content="1 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+
+                            <ToggleButton Content="Атанай" Background="LightGray" Width="115" FontSize="12" Checked="AtanaiOneLeftButton_Checked" Unchecked="AtanaiOneLeftButton_UnChecked" />
+                            <ToggleButton Content="Атанай Чуй" Background="LightGray"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoLeftButton_Checked" Unchecked="AtanaiTwoLeftButton_UnChecked"/>
+                            <ToggleButton Content="Атанай Хансоку" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
+                            
                     </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
-                            <ToggleButton Content="2 Чук."   FontSize="12" Margin="10,0,0,0"/>
-                            <ToggleButton Content="2 Кей."   FontSize="12" Margin="10,0,0,0"/>
-                            <ToggleButton Content="2 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
-                            <ToggleButton Content="2 Хан."   FontSize="12" Margin="10,0,0,0"/>
-                            <ToggleButton Content="2 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                            <ToggleButton Content="Мубобі" Background="LightGray" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
+                            <ToggleButton Content="Мубобі Чуй" Background="LightGray" Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveLeftButton_Checked" Unchecked="AtanaiThreeLeftButton_UnChecked"/>
+                            <ToggleButton Content="Мубобі Хансоку" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixLeftButton_Checked" Unchecked="AtanaiSixLeftButton_UnChecked"/>
+                            
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                            <ToggleButton Content="Дзьогай" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenLeftButton_Checked" Unchecked="AtanaiSevenLeftButton_UnChecked"/>
+                            <ToggleButton Content="Дзьогай Чуй" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightLeftButton_Checked" Unchecked="AtanaiEightLeftButton_UnChecked"/>
+                            <ToggleButton Content="Дзьогай Хансоку" Background="LightGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineLeftButton_Checked" Unchecked="AtanaiNineLeftButton_UnChecked"/>
                         </StackPanel>
 
                     </StackPanel>
@@ -188,24 +191,22 @@
                             <Button Content="{Binding RightSixButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSixButtonPressed" FontSize="30"></Button>
                             <Button Content="{Binding RightSevenButtonContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="DarkGray" Margin="16,0,0,0" Width="60" Click="RightSevenButtonPressed" FontSize="30"></Button>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" >
-
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-
-                                <ToggleButton Content="1 Чук." FontSize="12" Checked="AtanaiOneLeftButton_Checked" Unchecked="AtanaiOneLeftButton_UnChecked" />
-                                <ToggleButton Content="1 Кей."   FontSize="12" Margin="10,0,0,0"/>
-                                <ToggleButton Content="1 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
-                                <ToggleButton Content="1 Хан."   FontSize="12" Margin="10,0,0,0"/>
-                                <ToggleButton Content="1 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+                                <ToggleButton Content="Атанай" Background="DarkGray" Width="115" FontSize="12" Checked="AtanaiOneRightButton_Checked" Unchecked="AtanaiOneRightButton_UnChecked" />
+                                <ToggleButton Content="Атанай Чуй" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoRightButton_Checked" Unchecked="AtanaiTwoRightButton_UnChecked"/>
+                                <ToggleButton Content="Атанай Хансоку" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeRightButton_Checked" Unchecked="AtanaiThreeRightButton_UnChecked"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
-                                <ToggleButton Content="2 Чук."   FontSize="12" Margin="0,0,0,0"/>
-                                <ToggleButton Content="2 Кей."   FontSize="12" Margin="10,0,0,0"/>
-                                <ToggleButton Content="2 Хан. Чуй"   FontSize="12" Margin="10,0,0,0"/>
-                                <ToggleButton Content="2 Хан."   FontSize="12" Margin="10,0,0,0"/>
-                                <ToggleButton Content="2 Резерв."   FontSize="12" Margin="10,0,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
+                                <ToggleButton Content="Мубобі" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourRightButton_Checked" Unchecked="AtanaiFourRightButton_UnChecked"/>
+                                <ToggleButton Content="Мубобі Чуй" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveRightButton_Checked" Unchecked="AtanaiFiveRightButton_UnChecked"/>
+                                <ToggleButton Content="Мубобі Хансоку" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixRightButton_Checked" Unchecked="AtanaiSixRightButton_UnChecked"/>
                             </StackPanel>
-
+                            <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
+                                <ToggleButton Content="Дзьогай" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenRightButton_Checked" Unchecked="AtanaiSevenRightButton_UnChecked"/>
+                                <ToggleButton Content="Дзьогай Чуй" Background="DarkGray" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightRightButton_Checked" Unchecked="AtanaiEightRightButton_UnChecked"/>
+                                <ToggleButton Content="Дзьогай Хансоку" Background="DarkGray"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineRightButton_Checked" Unchecked="AtanaiNineRightButton_UnChecked"/>
+                            </StackPanel>
                         </StackPanel>
                         <!--<StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
                             <ToggleButton Content="1 Чук."   FontSize="12"/>

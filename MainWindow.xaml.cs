@@ -999,7 +999,7 @@ namespace KfksScore
         {
             if (string.IsNullOrEmpty(Board.AtanaiOneLeft))
             {
-                Board.AtanaiOneLeft = "1 Чукоку";
+                Board.AtanaiOneLeft = "Атанай";
             }
         }
 
@@ -1009,6 +1009,200 @@ namespace KfksScore
             {
                 Board.AtanaiOneLeft = string.Empty;
             }
+        }
+
+        private void AtanaiTwoLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(Board.AtanaiTwoLeft))
+            {
+                Board.AtanaiTwoLeft = "Атанай Чуй";
+            }
+
+        }
+
+        private void AtanaiTwoLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Board.AtanaiTwoLeft))
+            {
+                Board.AtanaiTwoLeft = string.Empty;
+            }
+        }
+
+        private void AtanaiThreeLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiThreeLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiFourLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void AtanaiFourLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiFiveLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void AtanaiFiveLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiSixLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void AtanaiSixLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiSevenLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiSevenLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiEightLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiEightLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiNineLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiNineLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiTenLeftButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiTenLeftButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiOneRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiOneRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiTwoRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiTwoRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiThreeRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiThreeRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiFourRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiFourRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiFiveRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiFiveRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiSixRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiSixRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiSevenRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiSevenRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiEightRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiEightRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiNineRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiNineRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiTenRightButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AtanaiTenRightButton_UnChecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
