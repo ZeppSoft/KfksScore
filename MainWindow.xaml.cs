@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraRichEdit.Import.OpenDocument;
 using KfksScore.Interfaces;
 using KfksScore.Models;
+using KfksScore.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,12 +77,18 @@ namespace KfksScore
         }
 
         public ESBoard eSBoard;
+        public KataForm kataFormLeft;
+        public KataForm kataFormRight;
+
         #region Public properties
 
         public Timer Timer { get; set; } = new Timer();
         //public DispatcherTimer WaitTimer { get; set; } 
 
         public IESBoard Board { get; set; } = new Board();
+        public IKataForm KataFormViewModelLeft { get; set; } = new KataFormViewModel();
+        public IKataForm KataFormViewModelRight { get; set; } = new KataFormViewModel();
+
 
 
         public string CompetitionName { get { return Board.CompetitionName; } set { Board.CompetitionName = value; } }
@@ -1358,6 +1365,37 @@ namespace KfksScore
             {
                 Board.AtanaiNineRight = string.Empty;
             }
+        }
+
+        private void KataLeftButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            kataFormLeft = new KataForm();
+            kataFormLeft.Show();
+
+            //if (ContentBoardButton.Equals("Закрити табло") && eSBoard != null)
+            //{
+            //    MainWindow mainWind = Application.Current.MainWindow as MainWindow;
+            //    WindowCollection w = mainWind.OwnedWindows;
+            //    var w2 = w[0];
+            //    w2.Close();
+            //    ContentBoardButton = "Електронне табло";
+            //    return;
+            //}
+
+            //if (ContentBoardButton.Equals("Електронне табло") && eSBoard == null)
+            //{
+            //    eSBoard = new ESBoard(Board, Timer);
+            //    eSBoard.Show();
+            //    ContentBoardButton = "Закрити табло";
+            //    return;
+            //}
+        }
+
+        private void KataRightButton_Click(object sender, RoutedEventArgs e)
+        {
+            kataFormRight  = new KataForm();
+            kataFormRight.Show();
         }
     }
 }
