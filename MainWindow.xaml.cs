@@ -22,6 +22,17 @@ using System.Windows.Threading;
 
 namespace KfksScore
 {
+    public class KataResult
+    {
+        public KataResult(double averageScore, string averageScoreHistory)
+        {
+            AverageScore = averageScore;
+            AverageScoreHistory = averageScoreHistory;  
+        }
+
+        public double AverageScore { get; set; }
+        public string AverageScoreHistory { get; set; }
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -89,6 +100,38 @@ namespace KfksScore
         public IKataForm KataFormViewModelLeft { get; set; } = new KataFormViewModel();
         public IKataForm KataFormViewModelRight { get; set; } = new KataFormViewModel();
 
+
+        private KataResult _kataResultLeft;
+        public KataResult KataResultLeft 
+        {
+            get { return _kataResultLeft; }
+            set 
+            {
+                _kataResultLeft = value; 
+
+                if (_kataResultLeft != null)
+                {
+                    CompetitorLeftScore = _kataResultLeft.AverageScore;
+                    CompetitorLeftScoreHistory = _kataResultLeft.AverageScoreHistory;
+                }
+            }
+        }
+
+        private KataResult _kataResultRight;
+        public KataResult KataResultRight
+        {
+            get { return _kataResultRight; }
+            set
+            {
+                _kataResultRight = value;
+
+                if (_kataResultRight != null)
+                {
+                    CompetitorRightScore = _kataResultRight.AverageScore;
+                    CompetitorRightScoreHistory = _kataResultRight.AverageScoreHistory;
+                }
+            }
+        }
 
 
         public string CompetitionName { get { return Board.CompetitionName; } set { Board.CompetitionName = value; } }
@@ -294,13 +337,13 @@ namespace KfksScore
         }
 
 
-        public int CompetitorLeftScore
+        public double CompetitorLeftScore
         {
             get { return Board.CompetitorLeftScore; }
             set { Board.CompetitorLeftScore = value; OnPropertyChanged("CompetitorLeftScore"); }
         }
 
-        public int CompetitorRightScore
+        public double CompetitorRightScore
         {
             get { return Board.CompetitorRightScore; }
             set { Board.CompetitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }
@@ -941,9 +984,9 @@ namespace KfksScore
                 CompetitorRightScoreHistory += $" {ScoreSign}{"7"}";
         }
 
-        private int CalculateScore(int scoreNewValue, int scoreCurrentValue)
+        private double CalculateScore(double scoreNewValue, double scoreCurrentValue)
         {
-            int score = 0;
+            double score = 0;
 
             if (ScoreSign.Equals("+"))
             {
@@ -1370,31 +1413,16 @@ namespace KfksScore
         private void KataLeftButton_Click(object sender, RoutedEventArgs e)
         {
 
-            kataFormLeft = new KataForm();
+            // kataFormLeft = new KataForm(KataFormViewModelLeft, true);
+            kataFormLeft = new KataForm(new KataFormViewModel(), true);
+
             kataFormLeft.Show();
-
-            //if (ContentBoardButton.Equals("Закрити табло") && eSBoard != null)
-            //{
-            //    MainWindow mainWind = Application.Current.MainWindow as MainWindow;
-            //    WindowCollection w = mainWind.OwnedWindows;
-            //    var w2 = w[0];
-            //    w2.Close();
-            //    ContentBoardButton = "Електронне табло";
-            //    return;
-            //}
-
-            //if (ContentBoardButton.Equals("Електронне табло") && eSBoard == null)
-            //{
-            //    eSBoard = new ESBoard(Board, Timer);
-            //    eSBoard.Show();
-            //    ContentBoardButton = "Закрити табло";
-            //    return;
-            //}
         }
 
         private void KataRightButton_Click(object sender, RoutedEventArgs e)
         {
-            kataFormRight  = new KataForm();
+            //kataFormRight  = new KataForm(KataFormViewModelRight, false);
+            kataFormRight = new KataForm(new KataFormViewModel(), false);
             kataFormRight.Show();
         }
     }

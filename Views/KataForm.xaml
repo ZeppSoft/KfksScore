@@ -3,10 +3,112 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KfksScore.Views"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"  
+        xmlns:local="clr-namespace:KfksScore.Views" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         mc:Ignorable="d"
-        Title="KataForm" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="Табло Ката" Height="450" Width="400">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <Label   Content="Оцінка судді №1" FontSize="14"   VerticalAlignment="Center"/>
+
+                <dxe:SpinEdit x:Name="judgeScore1" Width="60"
+                              EditValue="{Binding Kata.JudgeScore1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Increment="0.1" MinValue="6" AllowSpinOnMouseWheel="true"
+                                EditValueType="{x:Type sys:Double}" 
+                               Mask="f1" MaskUseAsDisplayFormat="True"
+                               Margin="10,0,0,0"
+                              
+                              MaskType="Numeric"
+                              Height="22" EditValueChanged="JudgeScore1Changed" 
+                              />
+
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <Label   Content="Оцінка судді №2" FontSize="14"   VerticalAlignment="Center"/>
+
+                <dxe:SpinEdit x:Name="judgeScore2" Width="60"
+                              EditValue="{Binding Kata.JudgeScore2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Increment="0.1" MinValue="6" AllowSpinOnMouseWheel="true"
+                               Mask="f1" MaskUseAsDisplayFormat="True"
+                                EditValueType="{x:Type sys:Double}"
+                               Margin="10,0,0,0"
+                              
+                              MaskType="Numeric"
+                              Height="22" EditValueChanged="JudgeScore2Changed" 
+                              />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <Label   Content="Оцінка судді №3" FontSize="14"   VerticalAlignment="Center"/>
+
+                <dxe:SpinEdit x:Name="judgeScore3" Width="60"
+                              EditValue="{Binding Kata.JudgeScore3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Increment="0.1" MinValue="6" AllowSpinOnMouseWheel="true"
+                               Mask="f1" MaskUseAsDisplayFormat="True"
+                               Margin="10,0,0,0"
+                              EditValueType="{x:Type sys:Double}"
+                              MaskType="Numeric"
+                              Height="22" EditValueChanged="JudgeScore3Changed" 
+                              />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <Label   Content="Оцінка судді №4" FontSize="14"   VerticalAlignment="Center"/>
+
+                <dxe:SpinEdit x:Name="judgeScore4" Width="60"
+                              EditValue="{Binding Kata.JudgeScore4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Increment="0.1" MinValue="6" AllowSpinOnMouseWheel="true"
+                               Mask="f1" MaskUseAsDisplayFormat="True"
+                               Margin="10,0,0,0"
+                              EditValueType="{x:Type sys:Double}"
+                              MaskType="Numeric"
+                              Height="22" EditValueChanged="JudgeScore4Changed" 
+                              />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <Label   Content="Оцінка судді №5" FontSize="14"   VerticalAlignment="Center"/>
+
+                <dxe:SpinEdit x:Name="judgeScore5" Width="60"
+                              EditValue="{Binding Kata.JudgeScore5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Increment="0.1" MinValue="6" AllowSpinOnMouseWheel="true"
+                                EditValueType="{x:Type sys:Double}"
+                              Mask="f1" MaskUseAsDisplayFormat="True"
+                               Margin="10,0,0,0"
+                              
+                              MaskType="Numeric"
+                              Height="22" EditValueChanged="JudgeScore5Changed" 
+                              />
+            </StackPanel>
+            <TextBlock   TextWrapping="Wrap" Text="Середній бал" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Foreground="Red" FontFamily="Arial" FontSize="20" FontWeight="Bold" Margin="0,10,0,0"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+
+                <!--<TextBlock   TextWrapping="Wrap" Text="{Binding Kata.ScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Foreground="Red" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>-->
+                <TextBlock x:Name="competitorAverageScore"   Text="{Binding Kata.AverageScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" FontFamily="Arial" FontSize="100"  FontWeight="Bold" Foreground="Red" Width="280" Margin="0,0,0,0" Height="117">
+                    <TextBlock.Background>
+                        <SolidColorBrush Color="LightGray" />
+                    </TextBlock.Background>
+                </TextBlock>
+                <!--<TextBlock x:Name="competitorAverageScore"   Text="{Binding CompetitorLeftScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" FontFamily="Arial" FontSize="200"  FontWeight="Bold" Foreground="Red" Width="192" Margin="10,0,0,0" Height="159">
+                    <TextBlock.Background>
+                        <SolidColorBrush Color="LightGray" />
+                    </TextBlock.Background>
+                </TextBlock>-->
+
+            </StackPanel>
+
+
+            <StackPanel>
+                <!--<Button Content="Час"  Margin="0,10,0,0" Click="TimeResetButtonClick" Width="68"  IsEnabled="{Binding IsResetTimeTimeEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+
+                <Button Width="280" Margin="0,10,0,0" Content="Відправити середній бал та закрити форму" FontFamily="Arial" FontSize="20" FontWeight="Bold" Click="ButtonSendScore_Click"/>
+            </StackPanel>
+
+
+
+
+        </StackPanel>
     </Grid>
 </Window>

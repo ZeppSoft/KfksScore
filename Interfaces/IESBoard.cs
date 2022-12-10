@@ -19,8 +19,8 @@ namespace KfksScore.Interfaces
         int DisplayWidth { get; set; }
         int DisplayHeight { get; set; }
         int ScoreFontSize { get; set; }
-        int CompetitorLeftScore { get; set; }
-        int CompetitorRightScore { get; set; }
+        double CompetitorLeftScore { get; set; }
+        double CompetitorRightScore { get; set; }
         string CompetitorLeftScoreHistory { get; set; }
         string CompetitorRightScoreHistory { get; set; }
         string CompetitorLeftName { get; set; }

@@ -72,15 +72,15 @@ namespace KfksScore.Models
         }
 
 
-        private int _competitorLeftScore;
-        public int CompetitorLeftScore
+        private double _competitorLeftScore;
+        public double CompetitorLeftScore
         {
             get { return _competitorLeftScore; }
             set { _competitorLeftScore = value; OnPropertyChanged("CompetitorLeftScore"); }
         }
 
-        private int _competitorRightScore;
-        public int CompetitorRightScore
+        private double _competitorRightScore;
+        public double CompetitorRightScore
         {
             get { return _competitorRightScore; }
             set { _competitorRightScore = value; OnPropertyChanged("CompetitorRightScore"); }

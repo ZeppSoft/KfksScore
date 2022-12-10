@@ -15,5 +15,7 @@ namespace KfksScore.Interfaces
         double JudgeScore5 { get; set; }
         double AverageScore { get; set; }
         string ScoreHistory { get; set; }
+        double CalculateAverage();
+        string GetScoreHistory();
     }
 }
