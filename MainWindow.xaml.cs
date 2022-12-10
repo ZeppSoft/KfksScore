@@ -968,7 +968,7 @@ namespace KfksScore
                 if (IsVeterans)
                     sb.Append("Чоловіки ветерани ");
                 else
-                    sb.Append("Хлопчики ");
+                    sb.Append("Юнаки ");
             }
             else if (IsFeMale)
             {
