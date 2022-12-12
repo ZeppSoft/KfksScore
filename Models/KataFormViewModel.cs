@@ -86,35 +86,35 @@ namespace KfksScore.Models
             //StringBuilder scoreHistorySb = new StringBuilder();
            // ScoreHistory = String.Empty;
 
-            if (JudgeScore1 >= 6)
+            if (JudgeScore1 >= 5)
             {
                 judgesScoreSum += JudgeScore1;
                 judgesCount += 1;
                 //scoreHistorySb.Append(JudgeScore1.ToString());
             }
 
-            if (JudgeScore2 >= 6)
+            if (JudgeScore2 >= 5)
             {
                 judgesScoreSum += JudgeScore2;
                 judgesCount += 1;
                 //scoreHistorySb.Append(JudgeScore2.ToString());
             }
 
-            if (JudgeScore3 >= 6)
+            if (JudgeScore3 >= 5)
             {
                 judgesScoreSum += JudgeScore3;
                 judgesCount += 1;
                 //scoreHistorySb.Append(JudgeScore3.ToString());
             }
 
-            if (JudgeScore4 >= 6)
+            if (JudgeScore4 >= 5)
             {
                 judgesScoreSum += JudgeScore4;
                 judgesCount += 1;
                 //scoreHistorySb.Append(JudgeScore4.ToString());
             }
 
-            if (JudgeScore5 >= 6)
+            if (JudgeScore5 >= 5)
             {
                 judgesScoreSum += JudgeScore5;
                 judgesCount += 1;
@@ -135,27 +135,27 @@ namespace KfksScore.Models
         {
             StringBuilder sh = new StringBuilder();
 
-            if (JudgeScore1 >= 6)
+            if (JudgeScore1 >= 5)
             {
                 sh.Append($"+{JudgeScore1}");
             }
 
-            if (JudgeScore2 >= 6)
+            if (JudgeScore2 >= 5)
             {
                 sh.Append($"+{JudgeScore2}");
             }
 
-            if (JudgeScore3 >= 6)
+            if (JudgeScore3 >= 5)
             {
                 sh.Append($"+{JudgeScore3}");
             }
 
-            if (JudgeScore4 >= 6)
+            if (JudgeScore4 >= 5)
             {
                 sh.Append($"+{JudgeScore4}");
             }
 
-            if (JudgeScore5 >= 6)
+            if (JudgeScore5 >= 5)
             {
                 sh.Append($"+{JudgeScore5}");
             }
