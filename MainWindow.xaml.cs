@@ -86,6 +86,9 @@ namespace KfksScore
             CompetitorRightName = "Васильченко Василь";
             ///Board.ScoreFontSize = 4000;
             Board.ScoreFontSize = 1000;
+
+            KataPanel.IsEnabled = false;
+            JudgesNum = 5;
         }
 
         public ESBoard eSBoard;
@@ -239,13 +242,18 @@ namespace KfksScore
             set { _isWeightTo = value; OnPropertyChanged("IsWeightTo"); }
         }
 
+        private decimal _judgesNumber;
+        public decimal JudgesNum
+        {
+            get { return _judgesNumber; }
+            set { _judgesNumber = value; OnPropertyChanged("JudgesNumber"); }
+        }
         private decimal _competitorsWeight;
         public decimal CompetitorsWeight
         {
             get { return _competitorsWeight; }
             set { _competitorsWeight = value; OnPropertyChanged("CompetitorsWeight"); }
         }
-
 
         private bool _isMainTime;
         public bool IsMainTime
@@ -1426,5 +1434,40 @@ namespace KfksScore
             kataFormRight = new KataForm(new KataFormViewModel(), false);
             kataFormRight.Show();
         }
+
+        private void KataCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            CompetitorLeftScoreHistory = String.Empty;
+            CompetitorRightScoreHistory = String.Empty;
+
+            CompetitorLeftScore = 0;
+            CompetitorRightScore = 0;
+
+            KataPanel.IsEnabled = true;
+            competitorLeftScorePanel.IsEnabled = false;
+            competitorRightScorePanel.IsEnabled = false;
+            competitorLeftAtanaiPanel.IsEnabled = false;
+            competitorRightAtanaiPanel.IsEnabled=false;
+        }
+
+        private void KataCheck_UnChecked(object sender, RoutedEventArgs e)
+        {
+            KataPanel.IsEnabled = false;
+            competitorLeftScorePanel.IsEnabled = true;
+            competitorRightScorePanel.IsEnabled = true;
+            competitorLeftAtanaiPanel.IsEnabled = true;
+            competitorRightAtanaiPanel.IsEnabled = true;
+
+            CompetitorLeftScoreHistory = String.Empty;
+            CompetitorRightScoreHistory = String.Empty;
+
+            CompetitorLeftScore = 0;
+            CompetitorRightScore = 0;
+        }
+        private void JudgesNumChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+
+        }
+        //JudgesNumber
     }
 }
