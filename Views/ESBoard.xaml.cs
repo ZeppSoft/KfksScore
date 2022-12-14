@@ -53,25 +53,36 @@ namespace KfksScore
 
         private void Window_LocationChanged(object sender, EventArgs e)
         {
+           
+
+
+
             //System.Windows.Forms.SystemInformation.MonitorCount;
 
             var currentScreen = GetSecondaryScreen();
 
+            var controlsize = (double)Math.Round((400 / 1080.0) * currentScreen.Bounds.Height, 0);
+
+            System.Windows.Application.Current.Resources.Remove("ControlFontSize");
+            System.Windows.Application.Current.Resources.Add("ControlFontSize", controlsize);
+
             //if (Screen.PrimaryScreen != currentScreen)
             //{
+          
                 Board.FormSizeWidth = currentScreen.Bounds.Width; //1280;//currentScreen.Bounds.Width; //(currentScreen.Bounds.Width / 2) - 100;
                 Board.FormSizeHeight = currentScreen.Bounds.Height;//720;//currentScreen.Bounds.Height;//currentScreen.Bounds.Height - 250;
 
-                Board.DisplayWidth = (int)(Board.FormSizeWidth * 0.50) -50;//(int)(Board.FormSizeWidth * 0.48);//(int)(Board.FormSizeWidth * 0.42); //(Board.FormSizeWidth / 2) - 100; //540 42%
-                Board.DisplayHeight = (int)(Board.FormSizeHeight * 0.65) ;//(int)(Board.FormSizeHeight * 0.65) ;////Board.FormSizeHeight/5;
-            Board.ScoreFontSize = 400;//(int)(Board.FormSizeHeight * 0.65);//700;//400;
-                //this.WindowState = WindowState.Maximized;
+                //Board.DisplayWidth = (int)(Board.FormSizeWidth * 0.50) -50;//(int)(Board.FormSizeWidth * 0.48);//(int)(Board.FormSizeWidth * 0.42); //(Board.FormSizeWidth / 2) - 100; //540 42%
+                //Board.DisplayHeight = (int)(Board.FormSizeHeight * 0.65) ;//(int)(Board.FormSizeHeight * 0.65) ;////Board.FormSizeHeight/5;
+                Board.ScoreFontSize = (int)Math.Round((25 / 1080.0) * currentScreen.Bounds.Height, 0);
+              
+            //this.WindowState = WindowState.Maximized;
             //}
         }
         private void FillBoard(IESBoard board)
         {
             Board = board;
-
+            //LeftCompetitorPanel.Visibility = Visibility.Collapsed;
            
         }
 
