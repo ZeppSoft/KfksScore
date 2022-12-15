@@ -70,7 +70,10 @@ namespace KfksScore.Models
 
             if (CountDownTime == TimeSpan.MinValue)
             {
-                CountDownTime = TimeSet;
+                if (isWaiting)
+                    CountDownTime = TimeSet.Add(TimeSpan.FromSeconds(+1));
+                else
+                    CountDownTime = TimeSet.Add(TimeSpan.FromSeconds(-1));
             }
 
             timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Send, dispatcherTimerTickNew, Application.Current.Dispatcher);
