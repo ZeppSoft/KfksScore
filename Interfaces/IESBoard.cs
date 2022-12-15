@@ -48,14 +48,5 @@ namespace KfksScore.Interfaces
         string AtanaiEightRight { get; set; }
         string AtanaiNineRight { get; set; }
         string AtanaiTenRight { get; set; }
-
-
-
-
-
-
-
-
-
     }
 }

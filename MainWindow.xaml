@@ -245,7 +245,7 @@
                             </StackPanel>
                         </StackPanel>
 
-                            <Button Visibility="Collapsed" Margin="10,10,0,0" x:Name="KataRightButton" Content="КАТА" Foreground="DarkBlue" Click="KataRightButton_Click"/>
+                            <!--<Button Visibility="Collapsed" Margin="10,10,0,0" x:Name="KataRightButton" Content="КАТА" Foreground="DarkBlue" Click="KataRightButton_Click"/>-->
                         </StackPanel>
                             
                             

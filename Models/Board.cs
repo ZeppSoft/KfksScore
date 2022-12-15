@@ -302,6 +302,8 @@ namespace KfksScore.Models
             set { _atanaiTenRight = value; OnPropertyChanged("AtanaiTenRight"); }
         }
 
+       
+
         // public Timer Timer { get; set; } = new Timer();
         #endregion
 

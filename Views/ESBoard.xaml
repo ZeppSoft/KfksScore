@@ -84,7 +84,7 @@
         </StackPanel>
 
                 <!--<StackPanel Orientation="Vertical" Background="DarkGray" HorizontalAlignment="Center" VerticalAlignment="Center">-->
-            <StackPanel  Grid.Column="2" Grid.Row="1" Orientation="Vertical" Margin="0,0,0,0" HorizontalAlignment="Center">
+        <StackPanel x:Name="RightCompetitorPanel" Grid.Column="2" Grid.Row="1" Orientation="Vertical" Margin="0,0,0,0" HorizontalAlignment="Center">
                     <TextBlock   TextWrapping="Wrap" Text="{Binding Board.WaitForCompetitorRightText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto"  FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
                     <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorRightName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto"  FontFamily="Arial" FontSize="30" FontWeight="Bold"/>
                     <TextBlock   TextWrapping="Wrap" Text="{Binding Board.CompetitorRightScoreHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  HorizontalAlignment="Center" Width="auto" Foreground="DarkBlue" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>

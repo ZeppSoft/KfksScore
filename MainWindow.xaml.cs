@@ -2,6 +2,7 @@
 using KfksScore.Interfaces;
 using KfksScore.Models;
 using KfksScore.Views;
+using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,8 +102,8 @@ namespace KfksScore
         //public DispatcherTimer WaitTimer { get; set; } 
 
         public IESBoard Board { get; set; } = new Board();
-        public IKataForm KataFormViewModelLeft { get; set; } = new KataFormViewModel();
-        public IKataForm KataFormViewModelRight { get; set; } = new KataFormViewModel();
+        public IKataForm KataFormViewModel { get; set; } 
+       // public IKataForm KataFormViewModelRight { get; set; } = new KataFormViewModel();
 
 
         private KataResult _kataResultLeft;
@@ -529,6 +530,7 @@ namespace KfksScore
             if (ContentBoardButton.Equals("Електронне табло") && eSBoard == null)
             {
                 eSBoard = new ESBoard(Board,Timer);
+                eSBoard.IsKata = KataCheck.IsChecked == true ? true : false;
                 eSBoard.Show();
                 ContentBoardButton = "Закрити табло";
                 return ;
@@ -1421,19 +1423,23 @@ namespace KfksScore
 
         private void KataLeftButton_Click(object sender, RoutedEventArgs e)
         {
+            if (KataFormViewModel == null)
+            {
+                KataFormViewModel = new KataFormViewModel();
 
-            // kataFormLeft = new KataForm(KataFormViewModelLeft, true);
-            kataFormLeft = new KataForm(new KataFormViewModel(), true);
+                // kataFormLeft = new KataForm(new KataFormViewModel(), (int)JudgesNum, true);
+                kataFormLeft = new KataForm(KataFormViewModel, (int)JudgesNum, true);
 
-            kataFormLeft.Show();
+                kataFormLeft.Show();
+            }
         }
 
-        private void KataRightButton_Click(object sender, RoutedEventArgs e)
-        {
-            //kataFormRight  = new KataForm(KataFormViewModelRight, false);
-            kataFormRight = new KataForm(new KataFormViewModel(), false);
-            kataFormRight.Show();
-        }
+        //private void KataRightButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //kataFormRight  = new KataForm(KataFormViewModelRight, false);
+        //    kataFormRight = new KataForm(new KataFormViewModel(), false);
+        //    kataFormRight.Show();
+        //}
 
         private void KataCheck_Checked(object sender, RoutedEventArgs e)
         {
@@ -1448,6 +1454,9 @@ namespace KfksScore
             competitorRightScorePanel.IsEnabled = false;
             competitorLeftAtanaiPanel.IsEnabled = false;
             competitorRightAtanaiPanel.IsEnabled=false;
+
+            if (eSBoard != null)
+                eSBoard.IsKata = true;
         }
 
         private void KataCheck_UnChecked(object sender, RoutedEventArgs e)
@@ -1463,6 +1472,9 @@ namespace KfksScore
 
             CompetitorLeftScore = 0;
             CompetitorRightScore = 0;
+
+            if (eSBoard != null)
+                eSBoard.IsKata = false;
         }
         private void JudgesNumChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {

@@ -26,7 +26,13 @@ namespace KfksScore
         public IESBoard Board { get; set; }
         public Timer Timer { get; set; }
 
-      
+        private bool _isKata;
+        public bool IsKata 
+        {
+            get { return _isKata;}
+            set { _isKata = value; SetKataMode(_isKata); } 
+        }
+
         public ESBoard(IESBoard board, Timer timer)
         {
             InitializeComponent();
@@ -84,6 +90,13 @@ namespace KfksScore
             Board = board;
             //LeftCompetitorPanel.Visibility = Visibility.Collapsed;
            
+        }
+        private void SetKataMode(bool isKata)
+        {
+            if (isKata)
+                RightCompetitorPanel.Visibility = Visibility.Collapsed;
+            else
+                RightCompetitorPanel.Visibility = Visibility.Visible;
         }
 
         private void Board_Closed(object sender, EventArgs e)
