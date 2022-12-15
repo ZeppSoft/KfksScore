@@ -94,9 +94,15 @@ namespace KfksScore
         private void SetKataMode(bool isKata)
         {
             if (isKata)
+            {
                 RightCompetitorPanel.Visibility = Visibility.Collapsed;
+                LeftCompetitorPanel.SetValue(Grid.ColumnProperty, 1);
+            }
             else
+            {
                 RightCompetitorPanel.Visibility = Visibility.Visible;
+                LeftCompetitorPanel.SetValue(Grid.ColumnProperty, 0);
+            }
         }
 
         private void Board_Closed(object sender, EventArgs e)
