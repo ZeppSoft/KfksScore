@@ -7,10 +7,28 @@
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
     <Platforms>AnyCPU;x86</Platforms>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Logo.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DevExpress.WindowsDesktop.Wpf" Version="20.2.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logo.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\" />
   </ItemGroup>
 
 </Project>
