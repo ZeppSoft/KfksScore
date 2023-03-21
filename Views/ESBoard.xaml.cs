@@ -67,7 +67,9 @@ namespace KfksScore
 
             var currentScreen = GetSecondaryScreen();
 
-            var controlsize = (double)Math.Round((400 / 1080.0) * currentScreen.Bounds.Height, 0);
+            //var controlsize = (double)Math.Round((400 / 1080.0) * currentScreen.Bounds.Height, 0);
+            var controlsize = (double)Math.Round((330 / 1080.0) * currentScreen.Bounds.Height, 0);
+
 
             System.Windows.Application.Current.Resources.Remove("ControlFontSize");
             System.Windows.Application.Current.Resources.Add("ControlFontSize", controlsize);

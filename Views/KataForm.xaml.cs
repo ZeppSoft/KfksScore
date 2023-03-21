@@ -62,27 +62,28 @@ namespace KfksScore.Views
 
         private void JudgeScore1Changed(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
-            Kata.AverageScore = Kata.CalculateAverage();
+            //Kata.AverageScore = Kata.CalculateAverage();
+            Kata.AverageScore = Kata.CalculateScore();
         }
 
         private void JudgeScore2Changed(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
-            Kata.AverageScore = Kata.CalculateAverage();
+            Kata.AverageScore = Kata.CalculateScore();
         }
 
         private void JudgeScore3Changed(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
-            Kata.AverageScore = Kata.CalculateAverage();
+            Kata.AverageScore = Kata.CalculateScore();
         }
 
         private void JudgeScore4Changed(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
-            Kata.AverageScore = Kata.CalculateAverage();
+            Kata.AverageScore = Kata.CalculateScore();
         }
 
         private void JudgeScore5Changed(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
-            Kata.AverageScore = Kata.CalculateAverage();
+            Kata.AverageScore = Kata.CalculateScore();
         }
 
         private void judgeScore1Check_Checked(object sender, RoutedEventArgs e)
@@ -199,29 +200,29 @@ namespace KfksScore.Views
                         Kata.JudgeScore5 = 0;
                     }
                     break;
-                case 4:
-                    {
-                        judgeScore1Check.IsChecked = null;
-                        judgeScore1Check.IsChecked = true;
-                        Kata.JudgeScore1 = minScore;
+                //case 4:
+                //    {
+                //        judgeScore1Check.IsChecked = null;
+                //        judgeScore1Check.IsChecked = true;
+                //        Kata.JudgeScore1 = minScore;
 
-                        judgeScore2Check.IsChecked = null;
-                        judgeScore2Check.IsChecked = true;
-                        Kata.JudgeScore2 = minScore;
+                //        judgeScore2Check.IsChecked = null;
+                //        judgeScore2Check.IsChecked = true;
+                //        Kata.JudgeScore2 = minScore;
 
-                        judgeScore3Check.IsChecked = null;
-                        judgeScore3Check.IsChecked = true;
-                        Kata.JudgeScore3 = minScore;
+                //        judgeScore3Check.IsChecked = null;
+                //        judgeScore3Check.IsChecked = true;
+                //        Kata.JudgeScore3 = minScore;
 
-                        judgeScore4Check.IsChecked = null;
-                        judgeScore4Check.IsChecked = true;
-                        Kata.JudgeScore4 = minScore;
+                //        judgeScore4Check.IsChecked = null;
+                //        judgeScore4Check.IsChecked = true;
+                //        Kata.JudgeScore4 = minScore;
 
-                        judgeScore5Check.IsChecked = null;
-                        judgeScore5Check.IsChecked = false;
-                        Kata.JudgeScore5 = 0;
-                    }
-                    break;
+                //        judgeScore5Check.IsChecked = null;
+                //        judgeScore5Check.IsChecked = false;
+                //        Kata.JudgeScore5 = 0;
+                //    }
+                //    break;
                 case 5:
                     {
                         judgeScore1Check.IsChecked = null;

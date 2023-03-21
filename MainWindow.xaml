@@ -252,7 +252,7 @@
 
                                         <dxe:SpinEdit  x:Name="JudgesNumber" Width="50"
                               EditValue="{Binding JudgesNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                              Increment="1" MinValue="3" MaxValue="5" AllowSpinOnMouseWheel="true"
+                              Increment="2" MinValue="3" MaxValue="5" AllowSpinOnMouseWheel="true"
                                Margin="25,0,0,0"
                               Mask="d0"
                               MaskType="Numeric"

@@ -18,7 +18,7 @@ namespace KfksScore.Models
             JudgeScore3 = 0.0;
             JudgeScore4 = 0.0;
             JudgeScore5 = 0.0;
-            AverageScore = CalculateAverage();
+            AverageScore = CalculateScore();//CalculateAverage();
             ScoreHistory = String.Empty;
         }
 
@@ -76,6 +76,64 @@ namespace KfksScore.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
         #endregion
+        public double CalculateScore()
+        {
+            double score = 0;
+            List<double>scores = new List<double>();
+
+
+            if (JudgeScore1 >= 5)
+            {
+                scores.Add(JudgeScore1);
+            }
+
+            if (JudgeScore2 >= 5)
+            {
+                scores.Add(JudgeScore2);
+            }
+
+            if (JudgeScore3 >= 5)
+            {
+                scores.Add(JudgeScore3);
+            }
+
+            if (JudgeScore4 >= 5)
+            {
+                scores.Add(JudgeScore4);
+            }
+
+            if (JudgeScore5 >= 5)
+            {
+                scores.Add(JudgeScore5);
+            }
+
+
+            if (scores.Count >= 3)
+            {
+                if (scores.Count == 3)
+                {
+                    score = scores.Sum();
+                    return Math.Round(score, 1);
+                }
+
+                if (scores.Count == 5)
+                {
+                    var max = scores.Max();
+                    var min = scores.Min(); 
+                    var sum = scores.Sum();
+
+                    score = sum - max - min;
+
+                    if (score >= 0)
+                        return Math.Round(score, 1);
+                    else
+                        return 0;
+                }
+            }
+
+            return Math.Round(score, 1);
+        }
+       
 
         public double CalculateAverage()
         {
