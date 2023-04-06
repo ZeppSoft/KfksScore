@@ -41,10 +41,11 @@
 
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                <CheckBox x:Name="TatamiLeft" Content="татамі"  Width="84"   Margin="0,0,0,0" Checked="TatamiLeft_Checked" Unchecked="TatamiLeft_Unchecked"/>
-                <RadioButton x:Name="SexM" GroupName="SexGroup" Content="Чол." IsChecked="{Binding IsMale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="67" Margin="30,0,0,0" VerticalAlignment="Center" Checked="SexM_Checked" Unchecked="SexM_UnChecked"/>
-                <RadioButton x:Name="SexF" GroupName="SexGroup" Content="Жін." IsChecked="{Binding IsFemale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="-10,0,0,0" VerticalAlignment="Center" Checked="SexF_Checked"/>
-                <CheckBox x:Name="Veterans" Content="Ветерани" Width="81" IsChecked="{Binding IsVeterans, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="80,0,0,0" VerticalAlignment="Center" Checked="Veterans_Checked" Unchecked="Veterans_UnChecked"/>
+                <CheckBox x:Name="IsRowEnabled" Content="Увікнути"  Width="84" Checked="IsRowEnabled_Checked"  Unchecked="IsRowEnabled_UnChecked"/>
+                <CheckBox x:Name="TatamiLeft" Content="татамі"  Width="84"   Margin="0,0,0,0" Checked="TatamiLeft_Checked" Unchecked="TatamiLeft_Unchecked" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <RadioButton x:Name="SexM" GroupName="SexGroup" Content="Чол." IsChecked="{Binding IsMale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="67" Margin="0,0,0,0" VerticalAlignment="Center" Checked="SexM_Checked" Unchecked="SexM_UnChecked" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <RadioButton x:Name="SexF" GroupName="SexGroup" Content="Жін." IsChecked="{Binding IsFemale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="-10,0,0,0" VerticalAlignment="Center" Checked="SexF_Checked" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="Veterans" Content="Ветерани" Width="81" IsChecked="{Binding IsVeterans, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="30,0,0,0" VerticalAlignment="Center" Checked="Veterans_Checked" Unchecked="Veterans_UnChecked" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <dxe:SpinEdit x:Name="AgeFrom" Width="60"
                               EditValue="{Binding YearsFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -53,12 +54,13 @@
                               Mask="d0"
                               MaskType="Numeric"
                               Height="22" EditValueChanged="YearsFromChanged"
+                              IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               />
 
 
 
 
-                <Label   Content="років" FontSize="14"  Margin="10,0,10,0" VerticalAlignment="Center"/>
+                <Label   Content="років" FontSize="14"  Margin="10,0,10,0" VerticalAlignment="Center" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <dxe:SpinEdit x:Name="AgeTo" Width="60"
                               EditValue="{Binding YearsTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -67,11 +69,12 @@
                               Mask="d0"
                               MaskType="Numeric"
                               Height="22" EditValueChanged="YearsToChanged"
+                              IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               />
 
 
-                <RadioButton x:Name="WeightAbove" GroupName="WeightGroup" Content="Понад" IsChecked="{Binding IsWeightOver, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Margin="90,0,0,0" VerticalAlignment="Center" Checked="WeightAbove_Checked" />
-                <RadioButton x:Name="WeightTo" GroupName="WeightGroup" Content="До" IsChecked="{Binding IsWeightTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="10,0,0,0" VerticalAlignment="Center" Checked="WeightTo_Checked" />
+                <RadioButton x:Name="WeightAbove" GroupName="WeightGroup" Content="Понад" IsChecked="{Binding IsWeightOver, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="60" Margin="90,0,0,0" VerticalAlignment="Center" Checked="WeightAbove_Checked" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <RadioButton x:Name="WeightTo" GroupName="WeightGroup" Content="До" IsChecked="{Binding IsWeightTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="48" Margin="10,0,0,0" VerticalAlignment="Center" Checked="WeightTo_Checked" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--<RadioButton GroupName="Group1" Content="Свыше" IsChecked="{Binding Path=RadioButton1IsChecked}" />
                 <RadioButton GroupName="Group1" Content="До" IsChecked="{Binding Path=RadioButton2IsChecked}" />-->
 
@@ -82,10 +85,11 @@
                               Mask="d0"
                               MaskType="Numeric"
                               Height="22" EditValueChanged="CompetitorsWeightChanged"
+                              IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               />
 
-                <Label   Content="кг" FontSize="14"  Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox x:Name="TatamiRight" Content="татамі"  Width="84" Margin="70,0,0,0" VerticalAlignment="Center" Checked="TatamiRight_Checked" Unchecked="TatamiRight_Unchecked" RenderTransformOrigin="0.692,0.593" HorizontalAlignment="Right"/>
+                <Label   Content="кг" FontSize="14"  Margin="5,0,0,0" VerticalAlignment="Center" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="TatamiRight" Content="татамі"  Width="84" Margin="70,0,0,0" VerticalAlignment="Center" Checked="TatamiRight_Checked" Unchecked="TatamiRight_Unchecked" RenderTransformOrigin="0.692,0.593" HorizontalAlignment="Right" IsEnabled="{Binding IsAgeRowEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
@@ -114,7 +118,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Button Content="{Binding WaitForCompetitorRightText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="525" Click="WaitForCompetitorRight" IsEnabled="{Binding IsWaitForCompetitorRightButtonEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                
+
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="waitForCompetitorLeftButton" Content="{Binding WaitForCompetitorLeftText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="525" Margin="10,0,0,0" Click="WaitForCompetitorLeft" IsEnabled="{Binding IsWaitForCompetitorLeftButtonEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
@@ -155,28 +159,28 @@
                         <StackPanel Orientation="Horizontal">
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" x:Name="competitorRightAtanaiPanel" Margin="5,0,0,0">
-                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-                                <ToggleButton x:Name="atanaiOneRightButton" Content="Атанай" Foreground="DarkBlue" Width="115" FontSize="12" Checked="AtanaiOneRightButton_Checked" Unchecked="AtanaiOneRightButton_UnChecked" />
-                                <ToggleButton x:Name="atanaiTwoRightButton" Content="Атанай Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoRightButton_Checked" Unchecked="AtanaiTwoRightButton_UnChecked"/>
-                                <ToggleButton x:Name="atanaiThreeRightButton" Content="Атанай Хансоку" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeRightButton_Checked" Unchecked="AtanaiThreeRightButton_UnChecked"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                                    <ToggleButton x:Name="atanaiOneRightButton" Content="Атанай" Foreground="DarkBlue" Width="115" FontSize="12" Checked="AtanaiOneRightButton_Checked" Unchecked="AtanaiOneRightButton_UnChecked" />
+                                    <ToggleButton x:Name="atanaiTwoRightButton" Content="Атанай Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiTwoRightButton_Checked" Unchecked="AtanaiTwoRightButton_UnChecked"/>
+                                    <ToggleButton x:Name="atanaiThreeRightButton" Content="Атанай Хансоку" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiThreeRightButton_Checked" Unchecked="AtanaiThreeRightButton_UnChecked"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
+                                    <ToggleButton x:Name="atanaiFourRightButton" Content="Мубобі" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourRightButton_Checked" Unchecked="AtanaiFourRightButton_UnChecked"/>
+                                    <ToggleButton x:Name="atanaiFiveRightButton" Content="Мубобі Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveRightButton_Checked" Unchecked="AtanaiFiveRightButton_UnChecked"/>
+                                    <ToggleButton x:Name="atanaiSixRightButton" Content="Мубобі Хансоку" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixRightButton_Checked" Unchecked="AtanaiSixRightButton_UnChecked"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
+                                    <ToggleButton x:Name="atanaiSevenRightButton" Content="Дзьогай" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenRightButton_Checked" Unchecked="AtanaiSevenRightButton_UnChecked"/>
+                                    <ToggleButton x:Name="atanaiEightRightButton" Content="Дзьогай Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightRightButton_Checked" Unchecked="AtanaiEightRightButton_UnChecked"/>
+                                    <ToggleButton x:Name="atanaiNineRightButton" Content="Дзьогай Хансоку" Foreground="DarkBlue"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineRightButton_Checked" Unchecked="AtanaiNineRightButton_UnChecked"/>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
-                                <ToggleButton x:Name="atanaiFourRightButton" Content="Мубобі" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFourRightButton_Checked" Unchecked="AtanaiFourRightButton_UnChecked"/>
-                                <ToggleButton x:Name="atanaiFiveRightButton" Content="Мубобі Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiFiveRightButton_Checked" Unchecked="AtanaiFiveRightButton_UnChecked"/>
-                                <ToggleButton x:Name="atanaiSixRightButton" Content="Мубобі Хансоку" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSixRightButton_Checked" Unchecked="AtanaiSixRightButton_UnChecked"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="-10,10,0,0" >
-                                <ToggleButton x:Name="atanaiSevenRightButton" Content="Дзьогай" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiSevenRightButton_Checked" Unchecked="AtanaiSevenRightButton_UnChecked"/>
-                                <ToggleButton x:Name="atanaiEightRightButton" Content="Дзьогай Чуй" Foreground="DarkBlue" Width="115"  FontSize="12" Margin="10,0,0,0" Checked="AtanaiEightRightButton_Checked" Unchecked="AtanaiEightRightButton_UnChecked"/>
-                                <ToggleButton x:Name="atanaiNineRightButton" Content="Дзьогай Хансоку" Foreground="DarkBlue"  Width="115" FontSize="12" Margin="10,0,0,0" Checked="AtanaiNineRightButton_Checked" Unchecked="AtanaiNineRightButton_UnChecked"/>
-                            </StackPanel>
-                        </StackPanel>
 
                             <!--<Button Visibility="Collapsed" Margin="10,10,0,0" x:Name="KataRightButton" Content="КАТА" Foreground="DarkBlue" Click="KataRightButton_Click"/>-->
                         </StackPanel>
-                            
-                            
-                            
+
+
+
                         <!--<StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
                             <ToggleButton Content="1 Чук."   FontSize="12"/>
                             <ToggleButton Content="1 Кей."   FontSize="12" Margin="5,0,0,0"/>
@@ -432,15 +436,29 @@
 
                         <StackPanel Orientation="Horizontal" Margin="0,-5,0,0">
                             <StackPanel Orientation="Vertical">
-                                <Button Content="Верх"  Margin="0,10,0,0" IsEnabled="False" />
+                                <Button Content="M/Rate"  Margin="0,10,0,0" Click="MRateButton_Click"  />
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="00"  Margin="0,10,0,0"  IsEnabled="False"/>
-                                    <Button Content="00"  Margin="0,10,0,0"  IsEnabled="False"/>
+                                    <dxe:SpinEdit x:Name="mRateWidth" Width="50"
+                              EditValue="{Binding MRateWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Increment="1" MinValue="0" AllowSpinOnMouseWheel="true"
+                               Margin="1,5,0,0"
+                              Mask="d0"
+                              MaskType="Numeric"
+                              Height="22" EditValueChanged="MRateWidthChanged"
+                              />
+                                    <dxe:SpinEdit x:Name="mRateHeight" Width="50"
+                              EditValue="{Binding MRateHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Increment="1" MinValue="0" AllowSpinOnMouseWheel="true"
+                               Margin="5,5,0,0"
+                              Mask="d0"
+                              MaskType="Numeric"
+                              Height="22" EditValueChanged="MRateHeightChanged"
+                              />
                                 </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Vertical" Margin="45,0,0,0">
+                            <StackPanel Orientation="Vertical" Margin="10,0,0,0">
                                 <Button Content="Початк."  Margin="0,10,0,0" Click="ResetButton_Click" />
-                                <Button Content="Вийти"  Margin="0,10,0,0" Click="CloseButton_Click" />
+                                <Button Content="Вийти"  Margin="0,5,0,0" Click="CloseButton_Click" />
                             </StackPanel>
 
                         </StackPanel>
@@ -450,7 +468,7 @@
 
                 </StackPanel>
 
-               
+
             </StackPanel>
             <StackPanel >
                 <TextBlock Text="Designed and programmed by Viktor Shershnov 2022" HorizontalAlignment="Center"/>

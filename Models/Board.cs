@@ -302,7 +302,20 @@ namespace KfksScore.Models
             set { _atanaiTenRight = value; OnPropertyChanged("AtanaiTenRight"); }
         }
 
-       
+        private decimal _mRateWidth;
+        public decimal MRateWidth
+        {
+            get { return _mRateWidth; }
+            set { _mRateWidth = value; OnPropertyChanged("MRateWidth"); }
+        }
+
+        private decimal _mRateHeight;
+        public decimal MRateHeight
+        {
+            get { return _mRateHeight; }
+            set { _mRateHeight = value; OnPropertyChanged("MRateHeight"); }
+        }
+
 
         // public Timer Timer { get; set; } = new Timer();
         #endregion

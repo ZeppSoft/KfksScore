@@ -51,6 +51,7 @@ namespace KfksScore
         {
             this.DataContext = this;
             IsTatamiVisible = false;
+            IsAgeRowEnabled = false;
             TatamiValue = 1;
             CompetitorLeftScore = 0;
             CompetitorRightScore = 0;
@@ -83,13 +84,37 @@ namespace KfksScore
 
             DisplayWidth = ((int)System.Windows.SystemParameters.PrimaryScreenWidth / 2) - 100;
             DisplayHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight - 300;
-            CompetitorLeftName = "Петренко Петро";
-            CompetitorRightName = "Васильченко Василь";
+            CompetitorLeftName = string.Empty;//"Петренко Петро";
+            CompetitorRightName = string.Empty;//"Васильченко Василь";
             ///Board.ScoreFontSize = 4000;
             Board.ScoreFontSize = 1000;
 
             KataPanel.IsEnabled = false;
             JudgesNum = 5;
+
+            MRateWidth = 330;
+            MRateHeight = 1080;
+
+
+            atanaiOneLeftButton.IsChecked = false;
+            atanaiTwoLeftButton.IsChecked = false;
+            atanaiThreeLeftButton.IsChecked = false;
+            atanaiFourLeftButton.IsChecked = false;
+            atanaiFiveLeftButton.IsChecked = false;
+            atanaiSixLeftButton.IsChecked = false;
+            atanaiSevenLeftButton.IsChecked = false;
+            atanaiEightLeftButton.IsChecked = false;
+            atanaiNineLeftButton.IsChecked = false;
+
+            atanaiOneRightButton.IsChecked = false;
+            atanaiTwoRightButton.IsChecked = false;
+            atanaiThreeRightButton.IsChecked = false;
+            atanaiFourRightButton.IsChecked = false;
+            atanaiFiveRightButton.IsChecked = false;
+            atanaiSixRightButton.IsChecked = false;
+            atanaiSevenRightButton.IsChecked = false;
+            atanaiEightRightButton.IsChecked = false;
+            atanaiNineRightButton.IsChecked = false;
         }
 
         public ESBoard eSBoard;
@@ -157,8 +182,17 @@ namespace KfksScore
         }
 
         public string ScoreSign { get; set; } = "+";
-
-
+        
+        public decimal MRateWidth
+        {
+            get { return Board.MRateWidth; }
+            set { Board.MRateWidth = value; OnPropertyChanged("MRateWidth"); }
+        }
+        public decimal MRateHeight
+        {
+            get { return Board.MRateHeight; }
+            set { Board.MRateHeight = value; OnPropertyChanged("MRateHeight"); }
+        }
         private bool _isGroupTimeEnabled;
         public bool IsGroupTimeEnabled
         {
@@ -193,6 +227,14 @@ namespace KfksScore
             get { return _isTatamiVisible; }
             set { _isTatamiVisible = value; OnPropertyChanged("IsTatamiVisible"); }
         }
+
+        private bool _isAgeRowEnabled;
+        public bool IsAgeRowEnabled
+        {
+            get { return _isAgeRowEnabled; }
+            set { _isAgeRowEnabled = value; OnPropertyChanged("IsAgeRowEnabled"); }
+        }
+        
 
         private bool _isMale;
         public bool IsMale
@@ -276,6 +318,20 @@ namespace KfksScore
             get { return _mainTimeSec; }
             set { _mainTimeSec = value; OnPropertyChanged("MainTimeSec"); }
         }
+
+        //private decimal _mRateWidth;
+        //public decimal MRateWidth
+        //{
+        //    get { return _mRateWidth; }
+        //    set { _mRateWidth = value; OnPropertyChanged("MRateWidth"); }
+        //}
+
+        //private decimal _mRateHeight;
+        //public decimal MRateHeight
+        //{
+        //    get { return _mRateHeight; }
+        //    set { _mRateHeight = value; OnPropertyChanged("MRateHeight"); }
+        //}
 
 
         private bool _isAddTime;
@@ -654,7 +710,6 @@ namespace KfksScore
                 Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int)MainTimeSec);
             }
         }
-
         private void MainTimeSecChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
             if (mainTime.IsChecked == true)
@@ -1020,7 +1075,11 @@ namespace KfksScore
         }
         private void UpdateCompetitionCategory()
         {
-            string res = string.Empty;
+            if (!IsAgeRowEnabled)
+            {
+                CompetitionCategory = string.Empty;
+                return;
+            }
 
             StringBuilder sb = new StringBuilder();
 
@@ -1455,6 +1514,8 @@ namespace KfksScore
             competitorLeftAtanaiPanel.IsEnabled = false;
             competitorRightAtanaiPanel.IsEnabled=false;
 
+            //CompetitionName = "Змагання КФКС Ката/Кабудо";
+
             if (eSBoard != null)
                 eSBoard.IsKata = true;
         }
@@ -1473,6 +1534,8 @@ namespace KfksScore
             CompetitorLeftScore = 0;
             CompetitorRightScore = 0;
 
+            //CompetitionName = "Змагання КФКС Куміте";
+
             if (eSBoard != null)
                 eSBoard.IsKata = false;
         }
@@ -1480,6 +1543,34 @@ namespace KfksScore
         {
 
         }
-        //JudgesNumber
+
+        private void IsRowEnabled_Checked(object sender, RoutedEventArgs e)
+        {
+            IsAgeRowEnabled = true;
+            UpdateCompetitionCategory();
+        }
+        private void IsRowEnabled_UnChecked(object sender, RoutedEventArgs e)
+        {
+            IsAgeRowEnabled = false;
+            UpdateCompetitionCategory();
+        }
+
+        private void MRateButton_Click(object sender, RoutedEventArgs e)
+        {
+            MRateWidth = 330;
+            MRateHeight = 1080;
+        }
+        private void MRateWidthChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+           //MRateWidth
+        }
+
+        private void MRateHeightChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            //if (mainTime.IsChecked == true)
+            //{
+            //    Timer.TimeSet = new TimeSpan(0, (int)MainTimeMin, (int)MainTimeSec);
+            //}
+        }
     }
 }
