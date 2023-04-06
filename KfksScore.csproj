@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Logo.ico" />
+    <Content Include="Logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -24,7 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Logo.PNG" />
+    <Resource Include="Logo.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
