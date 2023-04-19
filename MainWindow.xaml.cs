@@ -42,6 +42,7 @@ namespace KfksScore
         public MainWindow()
         {
             InitializeComponent();
+            TatamiValue = 1;
             Init();
 
 
@@ -52,7 +53,7 @@ namespace KfksScore
             this.DataContext = this;
             IsTatamiVisible = false;
             IsAgeRowEnabled = false;
-            TatamiValue = 1;
+            //TatamiValue = 1;
             CompetitorLeftScore = 0;
             CompetitorRightScore = 0;
             IsVeterans = false;
